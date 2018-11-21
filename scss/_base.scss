@@ -1,0 +1,82 @@
+/*--------------------------------------------body*/
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  font-family: $base_font;
+  font-weight: normal;
+  color:$base_color;
+  line-height:1.6;
+  letter-spacing:0.02em;
+  text-align:justify;
+  word-break : break-all;
+}
+//ドラッグした時の色
+::-moz-selection {
+  background: $selection;
+  color: $selection;
+}
+::selection {
+  background: $selection;
+  color: $selection;
+}
+//リンクカラー
+a{
+  color:$link_color;
+}
+
+/*marginset*/
+.mgt0{
+  margin-top:0!important;
+}
+.mgt1{
+  margin-top:1em!important;
+}
+.mgt2{
+  margin-top:2em!important;
+}
+.mgt4{
+  margin-top:4em!important;
+}
+.mgb2 {
+  margin-bottom:2em !important;
+}
+.mgb3 {
+  margin-bottom:3em !important;
+}
+//フォント装飾
+.b {
+  font-weight: bold!important;
+}
+
+.spbreak {
+  display: block;
+}
+
+.pcbreak {
+  display: inline;
+}
+
+.clear {
+  clear: both;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+/*pre*/
+pre{
+  background:#f9f5f5;
+  max-height:200px;
+  overflow:scroll;
+  margin-top:2em
+}

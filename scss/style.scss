@@ -1,0 +1,37 @@
+ @charset "utf-8";
+/*!
+Theme Name: Oncolo
+Description: Oncolo テーマ
+Author: tera
+Version: 1.0
+*/
+@import "lib/mixin";//関数
+@import "lib/reset";//リセット
+//pc用サイズ
+@mixin pcsize{
+  max-width:1040px;
+  margin: 0 auto;
+  width: 100%;
+}
+//--設定------------------------------
+//デフォルトフォント
+$base_font:"ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo,  Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+//ベースカラー
+$base_color:#000000;
+//ドラッグした際の背景
+$selection:#cccccc;
+//リンクの色
+$link_color:#0000cc;
+
+@import "base";//共通パーツ
+@import "wp";//WP特有のもの
+@import "layout";//外枠レイアウト
+@import "header";//ヘッダー
+@import "side";//サイド
+@import "footer";//フッター
+@import "content";//コンテンツ
+@import "cat";//アーカイブ関係
+@import "error";//error
+@import "spstyle";//レスポSPサイド
+
+@import "lib/anime";//アニメーション

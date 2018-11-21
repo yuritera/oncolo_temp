@@ -1,0 +1,176 @@
+//ポジション指定トップ＆左
+@mixin aposi-top-left($top: 0, $left: 0) {
+  position: absolute;
+  top: $top + px;
+  left: $left + px;
+}
+//ポジション指定
+@mixin aposi-top-right($top: 0, $right: 0) {
+  position: absolute;
+  top: $top + px;
+  right: $right + px;
+}
+//フレックボックス
+@mixin flexbox{
+	display:-webkit-flex;
+  display:flex;
+  -webkit-flex-wrap:wrap;
+  flex-wrap:wrap;
+}
+//両端そろえ
+@mixin flexhashi{
+  -webkit-justify-content: space-between;
+  justify-content:         space-between;
+}
+//均等そろえ
+@mixin flexkin{
+  -webkit-justify-content: space-around;
+  justify-content:         space-around;
+}
+//インボックス設定
+@mixin divin{
+  width: 100%;
+  max-width:1000px;
+  margin: 0 auto;
+}
+//グラデーション指定
+@mixin gradient($start-color, $end-color, $orientation){
+	background: $start-color;
+	@if $orientation == tate
+	{
+	// vertical(tete)
+	background: -webkit-linear-gradient(top, $start-color 0%,$end-color 100%);
+	background: linear-gradient(to bottom, $start-color 0%,$end-color 100%);
+	}
+	@else if $orientation == yoko
+	{
+	// horizontal(yoko)
+	background: -webkit-linear-gradient(left, $start-color 0%,$end-color 100%);
+	background: linear-gradient(to right, $start-color 0%,$end-color 100%);
+	}
+	@else
+	{
+	// radial(maru)
+	background: -webkit-radial-gradient(center, ellipse cover, $start-color 0%,$end-color 100%);
+	background: radial-gradient(ellipse at center, $start-color 0%,$end-color 100%);
+	}
+}
+//ライン
+@mixin line($color){
+  font-weight: bold;
+  display: inline;
+  background: -webkit-linear-gradient(top, transparent 50%, $color 50%, $color 90%, transparent 90%);
+  background: linear-gradient(to bottom, transparent 50%, $color 50%, $color 90%, transparent 90%);
+}
+//アニメーション指定(キーフレーム、時間、ループ回数、動き)
+@mixin anime($anitype){
+	animation: $anitype;
+  -webkit-animation: $anitype;
+}
+//アニメーションキーフレーム
+@mixin keyframes($animationName)
+{
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+@mixin marginset($size){
+.mgb#{$size}{
+  margin-bottom: $size + em;
+}
+.mgt#{$size}{
+  margin-top: $size + em;
+}
+.mgr#{$size}{
+  margin-right: $size + em;
+}
+.mgl#{$size}{
+  margin-left: $size + em;
+}
+}
+@mixin paddingset($size){
+.pdb#{$size}{
+  margin-bottom: $size + em;
+}
+.pdt#{$size}{
+  margin-top: $size + em;
+}
+.pdr#{$size}{
+  margin-right: $size + em;
+}
+.pdl#{$size}{
+  margin-left: $size + em;
+}
+}
+@mixin placeholder {
+    &:placeholder-shown {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        opacity: 1;
+        @content;
+    }
+    &::-moz-placeholder {
+        opacity: 1;
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+//grid
+// display: gridの指定
+@mixin grid-layout {
+  display: grid;
+  display: -ms-grid;
+}
+// grid-template-column（列）の幅の指定
+// 最大で4 × 4のグリッドを想定しています 最大4列
+@mixin grid-layout-column($cell1, $cell2, $cell3:0, $cell4:0) {
+  @if $cell3 == null and $cell4 == null {
+    grid-template-columns: $cell1 $cell2;
+    -ms-grid-columns: $cell1 $cell2;
+  }
+  @else if $cell4 == null {
+    grid-template-columns: $cell1 $cell2 $cell3;
+    -ms-grid-columns: $cell1 $cell2 $cell3;
+  }
+  @else {
+    grid-template-columns: $cell1 $cell2 $cell3 $cell4;
+    -ms-grid-columns: $cell1 $cell2 $cell3 $cell4;
+  }
+}
+// grid-template-row（行）の幅の指定
+// 最大で4 × 4のグリッドを想定しています 最大4行
+@mixin grid-layout-row( $cell1, $cell2, $cell3:0, $cell4:0) {
+  @if $cell3 == null and $cell4 == null {
+    grid-template-rows:  $cell1 $cell2;
+    -ms-grid-rows: $cell1 $cell2;
+  }
+  @else if $cell4 == null {
+    grid-template-rows:  $cell1 $cell2 $cell3;
+    -ms-grid-rows: $cell1 $cell2 $cell3;
+  }
+  @else {
+    grid-template-rows:  $cell1 $cell2 $cell3 $cell4;
+    -ms-grid-rows: $cell1 $cell2 $cell3 $cell4;
+  }
+}
+// grid-column（列）の位置の指定
+@mixin grid-column($start, $end) {
+  grid-column: $start #{'/'} $end;
+  -ms-grid-column: $start;
+  -ms-grid-column-span: $end - $start;
+}
+// grid-row（行）の位置の指定
+@mixin grid-row($start, $end) {
+  grid-row: $start #{'/'} $end;
+  -ms-grid-row: $start;
+  -ms-grid-row-span: $end - $start;
+}

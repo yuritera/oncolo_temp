@@ -1,0 +1,13 @@
+@media screen and (max-width: 1000px) {
+
+}//end media
+
+@media screen and (max-width: 768px) {
+@import "base";//共通パーツ
+@import "header";//ヘッダー
+@import "side";//サイド
+@import "footer";//フッター
+@import "content";//コンテンツ
+@import "cat";//アーカイブ関係
+@import "error";//error
+}//end media
