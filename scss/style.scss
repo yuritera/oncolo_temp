@@ -9,7 +9,7 @@ Version: 1.0
 @import "lib/reset";//リセット
 //pc用サイズ
 @mixin pcsize{
-  max-width:1040px;
+  max-width:1000px;
   margin: 0 auto;
   width: 100%;
 }

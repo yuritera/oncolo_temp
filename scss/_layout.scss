@@ -1,0 +1,14 @@
+.ly{
+  &_header{
+    width: 100%;
+    border:solid 1px red;
+  }
+  &_inner{
+    @include pcsize;
+  }
+  &_headnews{
+    border-top:3px solid #fdc800;
+    border-bottom:3px solid #fdc800;
+    text-align: center;
+  }
+}

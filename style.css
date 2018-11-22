@@ -244,9 +244,21 @@ img[class*="attachment-"] {
   clear: both;
 }
 
-.area-side {
-  padding-bottom: 2em;
-  background: #fff;
+.ly_header {
+  width: 100%;
+  border: solid 1px red;
+}
+
+.ly_inner {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ly_headnews {
+  border-top: 3px solid #fdc800;
+  border-bottom: 3px solid #fdc800;
+  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -320,10 +332,6 @@ img[class*="attachment-"] {
     max-height: 200px;
     overflow: scroll;
     margin-top: 2em;
-  }
-  .area-side {
-    padding-bottom: 2em;
-    background: #fff;
   }
 }
 
