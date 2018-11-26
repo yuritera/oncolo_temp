@@ -27,7 +27,7 @@ $url= rtrim($str, '/');
   <meta name="twitter:card" content="photo">
   <meta name="twitter:site" content="">
 
-  <link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png">
+  <!-- <link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png"> -->
   <link rel="canonical" href="<?php echo $url; ?>">
   <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
   <link rel="dns-prefetch" href="//code.jquery.com">
@@ -43,14 +43,59 @@ $url= rtrim($str, '/');
   <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+
+  <script src="<?php echo get_template_directory_uri(); ?>/js/picturefill.min.js"></script>
   <?php wp_head(); ?>
 <?php //タグエリア ?>
 </head>
-<body class="<?php if(is_home()){echo 'home ';}if(!is_mobile()){echo 'pc';}else{echo 'sp';} ?>">
-<?php //タグエリア ?>
+<body class="<?php if(is_home()){echo 'home ';} ?>">
+<div class="spwrap">
 <header class="ly_header">
-  <div class="ly_inner">
-  <?php if(is_home()){echo '<h1'; }else{ echo '<p'; } ?> class="header_logo">オンコロ<?php if(is_home()){echo '</h1>'; }else{ echo '</p>'; } ?>
+  <div class="ly_inner header">
+    <?php if(is_home()){echo '<h1'; }else{ echo '<p'; } ?> class="header_logo"><a href="<?php echo home_url( '/' ); ?>">
+    <picture>
+      <source media="(max-width: 850px)" srcset="<?php echo get_template_directory_uri(); ?>/images/logo_oncolo2.png">
+      <source srcset="<?php echo get_template_directory_uri(); ?>/images/logo_oncolo.png"><!-- 画面サイズ993px以上 -->
+      <img src="<?php echo get_template_directory_uri(); ?>/images/logo_oncolo.png" alt="がん情報サイト「オンコロ」">
+    </picture>
+    </a><?php if(is_home()){echo '</h1>'; }else{ echo '</p>'; } ?>
+    <div class="header_search pc">
+			<div class="header_search_box">
+        <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+          <input type="text" name="s" id="searchbox" placeholder="サイト内を検索する" class="header_search_txt"/>
+          <input type="image" id="searchsubmit" class="header_search_btn" src="<?php echo get_template_directory_uri( '' ); ?>/images/icon_search.gif" alt="検索する" />
+        </form>
+      </div>
+		</div>
+    <div class="header_btn">
+      <ul class="header_btn_list">
+        <li class="header_btn_maga pc"><a href="/newsletter">
+          <img src="<?php echo get_template_directory_uri( '' ); ?>/images/icon_header_mailmaga_p.png" alt="メルマガ登録">
+        </a></li>
+        <li class="header_btn_mail"><a href="/contact">
+          <picture>
+            <source media="(max-width: 850px)" srcset="<?php echo get_template_directory_uri(); ?>/images/icon_header_mail_s.png">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/images/icon_header_mail_p.png"><!-- 画面サイズ993px以上 -->
+            <img src="<?php echo get_template_directory_uri( '' ); ?>/images/icon_header_mail_p.png" alt="お問い合わせ">
+          </picture>
+        </a></li>
+        <li class="header_btn_tel">
+          <?php if(is_mobile()){echo '<a href="tel:0120974268">';} ?>
+          <picture>
+            <source media="(max-width: 850px)" srcset="<?php echo get_template_directory_uri(); ?>/images/icon_header_tel_s.png">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/images/bnr_header_tel.png"><!-- 画面サイズ993px以上 -->
+            <img src="<?php echo get_template_directory_uri(); ?>/images/bnr_header_tel.png" alt="0120-974-268">
+          </picture>
+          <?php echo '</a>'; ?>
+        </li>
+      </ul>
+    </div>
+    <div class="header_spmenu sp">
+      <div class="toggle"><img src="<?php echo get_template_directory_uri(); ?>/images/icon_header_burger.png" alt=""></div>
+      <div class="spmenu">
+        menu
+      </div>
+    </div>
   </div>
 </header>
 <nav class="ly_gnavi">

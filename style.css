@@ -8,6 +8,8 @@ Version: 1.0
 /* リセット
 ---------------------------------*/
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -191,7 +193,23 @@ pre {
   margin-top: 2em;
 }
 
-p {
+.sp {
+  display: none;
+}
+
+.pc {
+  display: block;
+}
+
+.spbreak {
+  display: inline;
+}
+
+.pcbreak {
+  display: block;
+}
+
+.wp_content > p {
   display: block;
   margin: 0 0 1em 0;
 }
@@ -246,7 +264,7 @@ img[class*="attachment-"] {
 
 .ly_header {
   width: 100%;
-  border: solid 1px red;
+  margin-bottom: 0.5em;
 }
 
 .ly_inner {
@@ -259,54 +277,83 @@ img[class*="attachment-"] {
   border-top: 3px solid #fdc800;
   border-bottom: 3px solid #fdc800;
   text-align: center;
+  padding: 1em;
 }
 
-@media screen and (max-width: 768px) {
-  /*--------------------------------------------body*/
-  body {
-    margin: 0;
-    padding: 0;
-    -webkit-text-size-adjust: none;
-    font-family: "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-    font-weight: normal;
-    color: #000;
-    line-height: 1.6;
-    letter-spacing: 0.02em;
-    text-align: justify;
-    word-break: break-all;
+.header {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+
+.header > :first-child {
+  margin-right: auto;
+}
+
+.header_logo {
+  width: 280px;
+  padding: 0.7em 0 0 0;
+}
+
+.header_search {
+  padding: 0.6em 0.5em 0.5em 0;
+}
+
+.header_search_box {
+  background: #d8e8f7;
+  border-radius: 6px;
+}
+
+.header_search_txt {
+  border: none;
+  padding: 0.5em;
+  background: #d8e8f7;
+  font-size: 0.9em;
+  border-radius: 6px 0 0 6px;
+}
+
+.header_search_btn {
+  padding: 0.5em;
+  vertical-align: top;
+}
+
+.header_btn {
+  padding: 0.3em 0;
+}
+
+.header_btn_list {
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.header_btn_maga {
+  width: 50px;
+  margin-right: 0.5em;
+}
+
+.header_btn_mail {
+  width: 50px;
+}
+
+.header_btn_tel {
+  width: 230px;
+  margin-left: 0.5em;
+}
+
+@media screen and (max-width: 850px) {
+  .sp {
+    display: block;
   }
-  ::-moz-selection {
-    background: #ccc;
-    color: #ccc;
-  }
-  ::selection {
-    background: #ccc;
-    color: #ccc;
-  }
-  a {
-    color: #00c;
-  }
-  /*marginset*/
-  .mgt0 {
-    margin-top: 0 !important;
-  }
-  .mgt1 {
-    margin-top: 1em !important;
-  }
-  .mgt2 {
-    margin-top: 2em !important;
-  }
-  .mgt4 {
-    margin-top: 4em !important;
-  }
-  .mgb2 {
-    margin-bottom: 2em !important;
-  }
-  .mgb3 {
-    margin-bottom: 3em !important;
-  }
-  .b {
-    font-weight: bold !important;
+  .pc {
+    display: none;
   }
   .spbreak {
     display: block;
@@ -314,24 +361,61 @@ img[class*="attachment-"] {
   .pcbreak {
     display: inline;
   }
-  .clear {
-    clear: both;
+  .header {
+    padding: 0.7em 1em;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
   }
-  .center {
-    text-align: center;
+  .header_logo {
+    width: 35%;
+    max-width: 110px;
+    padding: 0;
   }
-  .right {
-    text-align: right;
+  .header_btn {
+    padding: 0.5em 0 0 0;
+    margin-right: 0.5em;
   }
-  .left {
-    text-align: left;
+  .header_btn_mail {
+    width: auto;
+    margin-right: 0.5em;
+    padding: 0;
+    height: 30px;
   }
-  /*pre*/
-  pre {
-    background: #f9f5f5;
-    max-height: 200px;
-    overflow: scroll;
-    margin-top: 2em;
+  .header_btn_tel {
+    width: auto;
+    padding: 0;
+    height: 30px;
+    margin: 0;
+  }
+  .header_btn img {
+    height: 100%;
+    width: auto;
+  }
+  .header_spmenu {
+    vertical-align: bottom;
+  }
+  .header_spmenu .toggle {
+    width: auto;
+    padding: 0 0 0 0;
+    height: 30px;
+  }
+  .header_spmenu .toggle img {
+    height: 100%;
+    width: auto;
+  }
+  .header_spmenu .spmenu {
+    position: fixed;
+    right: -70%;
+    top: 0;
+    background: #333;
+    display: block;
+    width: 70%;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  .spwrap.open {
+    transform: translateX(-70%);
   }
 }
 

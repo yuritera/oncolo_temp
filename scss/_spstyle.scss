@@ -2,12 +2,12 @@
 
 }//end media
 
-@media screen and (max-width: 768px) {
-@import "base";//共通パーツ
-@import "header";//ヘッダー
-@import "side";//サイド
-@import "footer";//フッター
-@import "content";//コンテンツ
-@import "cat";//アーカイブ関係
-@import "error";//error
+@media screen and (max-width: 850px) {
+@import "sp/base";//共通パーツ
+@import "sp/header";//ヘッダー
+@import "sp/side";//サイド
+@import "sp/footer";//フッター
+@import "sp/content";//コンテンツ
+@import "sp/cat";//アーカイブ関係
+@import "sp/error";//error
 }//end media

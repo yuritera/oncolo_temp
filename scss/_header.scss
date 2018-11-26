@@ -1,0 +1,49 @@
+.header{
+  @include flexbox;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+  > :first-child{
+    margin-right: auto;
+  }
+  &_logo{
+    width:280px;
+    padding:0.7em 0 0 0;
+  }
+  &_search{
+    padding:0.6em 0.5em 0.5em 0;
+    &_box{
+      background: #d8e8f7;
+      border-radius: 6px;
+    }
+    &_txt{
+      border:none;
+      padding:0.5em;
+      background: #d8e8f7;
+      font-size: 0.9em;
+      border-radius: 6px 0 0 6px;
+    }
+    &_btn{
+      padding: 0.5em;
+      vertical-align: top;
+    }
+  }
+  &_btn{
+    padding:0.3em 0;
+    &_list{
+      list-style: none;
+      @include flexbox;
+      @include flexhashi;
+    }
+    &_maga{
+      width:50px;
+      margin-right:0.5em;
+    }
+    &_mail{
+      width: 50px;
+    }
+    &_tel{
+      width:230px;
+      margin-left:0.5em;
+    }
+  }
+}

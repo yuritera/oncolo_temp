@@ -1,7 +1,13 @@
+.sp{
+  display: block;
+}
+.pc{
+  display: none;
+}
 .spbreak {
-  display: inline;
+  display: block;
 }
 
 .pcbreak {
-  display: block;
+  display: inline;
 }
