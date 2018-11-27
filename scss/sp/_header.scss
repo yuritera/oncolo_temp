@@ -39,18 +39,22 @@
       width:auto;
       }
     }
-    .spmenu{
-      position: fixed;
-      right: -70%;
-      top: 0;
-      background: #333;
-      display: block;
-      width: 70%;
-      height: 100vh;
-      overflow-y: scroll;
-    }
   }
 }
-.spwrap.open{
+.spwrap{
+  background:#fff;
+  &.spmenuopen{
   transform: translateX(-70%);
+  }
+}
+.spmenu{
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #333;
+  display: block;
+  width: 70%;
+  height: 100vh;
+  overflow-y: scroll;
+  z-index: -1;
 }

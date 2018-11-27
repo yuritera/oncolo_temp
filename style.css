@@ -280,6 +280,24 @@ img[class*="attachment-"] {
   padding: 1em;
 }
 
+.ly_subcontent {
+  width: 100%;
+  margin: 0;
+}
+
+.ly_photo {
+  width: 100%;
+  background: #d8e8f7;
+  padding: 2em;
+  text-align: center;
+}
+
+.ly_link {
+  width: 100%;
+  padding: 2em;
+  text-align: center;
+}
+
 .header {
   display: -webkit-flex;
   display: flex;
@@ -348,6 +366,40 @@ img[class*="attachment-"] {
   margin-left: 0.5em;
 }
 
+.gotop {
+  width: 100%;
+  border-bottom: 3px solid #14578b;
+  text-align: center;
+  height: 2.7em;
+}
+
+.gotop_icon {
+  display: block;
+  width: 2.5em;
+  height: 3em;
+  line-height: 3em;
+  background: #14578b;
+  margin: 0 auto;
+  color: #ffffff;
+  transform: scale(1, 0.7);
+  cursor: pointer;
+}
+
+/*title*/
+.ttl_bblue {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #14578b;
+  margin-bottom: 1.3em;
+}
+
+.ttl_bblack {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1.3em;
+}
+
 @media screen and (max-width: 850px) {
   .sp {
     display: block;
@@ -404,18 +456,22 @@ img[class*="attachment-"] {
     height: 100%;
     width: auto;
   }
-  .header_spmenu .spmenu {
+  .spwrap {
+    background: #fff;
+  }
+  .spwrap.spmenuopen {
+    transform: translateX(-70%);
+  }
+  .spmenu {
     position: fixed;
-    right: -70%;
+    right: 0;
     top: 0;
     background: #333;
     display: block;
     width: 70%;
     height: 100vh;
     overflow-y: scroll;
-  }
-  .spwrap.open {
-    transform: translateX(-70%);
+    z-index: -1;
   }
 }
 

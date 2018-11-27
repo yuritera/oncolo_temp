@@ -42,14 +42,13 @@ $url= rtrim($str, '/');
 
   <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
 
   <script src="<?php echo get_template_directory_uri(); ?>/js/picturefill.min.js"></script>
   <?php wp_head(); ?>
 <?php //タグエリア ?>
 </head>
 <body class="<?php if(is_home()){echo 'home ';} ?>">
-<div class="spwrap">
+<div class="spwrap" id="spWrap">
 <header class="ly_header">
   <div class="ly_inner header">
     <?php if(is_home()){echo '<h1'; }else{ echo '<p'; } ?> class="header_logo"><a href="<?php echo home_url( '/' ); ?>">
@@ -91,10 +90,7 @@ $url= rtrim($str, '/');
       </ul>
     </div>
     <div class="header_spmenu sp">
-      <div class="toggle"><img src="<?php echo get_template_directory_uri(); ?>/images/icon_header_burger.png" alt=""></div>
-      <div class="spmenu">
-        menu
-      </div>
+      <div class="toggle" id="spToggle"><img src="<?php echo get_template_directory_uri(); ?>/images/icon_header_burger.png" alt=""></div>
     </div>
   </div>
 </header>

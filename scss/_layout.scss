@@ -12,4 +12,19 @@
     text-align: center;
     padding:1em;
   }
+  &_subcontent{
+    width: 100%;
+    margin:0;
+  }
+  &_photo{
+    width: 100%;
+    background: #d8e8f7;
+    padding:2em;
+    text-align: center;
+  }
+  &_link{
+    width: 100%;
+    padding:2em;
+    text-align: center;
+  }
 }
