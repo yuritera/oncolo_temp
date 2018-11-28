@@ -15,3 +15,81 @@
     cursor: pointer;
   }
 }
+.footer{
+  @include flexbox;
+  @include flexhashi;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding:2em 0;
+  &_left{
+    width: 48%;
+    @include flexbox;
+  }
+  &_right{
+    width: 48%;
+  }
+  &_links{
+    width: 100%;
+  }
+  &_sns{
+    width: 100px;
+    @include flexbox;
+    @include flexhashi;
+    list-style: none;
+    &_item{
+      width: 46%;
+    }
+  }
+  &_honcode{
+    width: calc(95% - 100px);
+    margin-left:5%;
+    @include flexbox;
+    @include flexhashi;
+    &_img{
+      width: 15%;
+      margin:0;
+    }
+    &_txt{
+      width: 81%;
+      font-size: 0.8rem;
+      span{
+        display: block;
+      }
+    }
+  }
+  &_mark{
+    width: 100%;
+    padding-top:1em;
+    @include flexbox;
+    list-style: none;
+    &_item{
+      margin-right:1em;
+      height:80px;
+      img{
+        height:100%;
+        width: auto;
+      }
+    }
+  }
+  &_conduct{
+    padding-top:1em;
+    font-size: 0.8rem;
+  }
+  &_copy{
+    background: #dcdcdc;
+    text-align: center;
+    padding:1em;
+    margin-bottom:2em;
+    address{
+      font-style: normal;
+      a{
+        color:#000000;
+        text-decoration: none;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@
 
 @media screen and (max-width: 850px) {
 @import "sp/base";//共通パーツ
+@import "sp/layout";//レイアウト
 @import "sp/header";//ヘッダー
 @import "sp/side";//サイド
 @import "sp/footer";//フッター
