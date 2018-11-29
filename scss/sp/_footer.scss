@@ -12,14 +12,24 @@
   }
   &_sns{
     width: 30%;
-    margin:0 auto;
+    margin:0 auto 1em;
   }
   &_honcode{
-    width: 100%;
-    margin:0;
-    display:block;
+    width: 94%;
+    margin:0 3%;
   }
   &_copy{
     margin:0;
   }
+  &_mark{
+    display: block;
+    text-align: center;
+  }
+  &_conduct{
+    width:94%;
+    margin:0 3% 2em;
+  }
+}
+.fbbox{
+  padding:0 3%;
 }

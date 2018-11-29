@@ -47,3 +47,17 @@
     }
   }
 }
+//gnavi
+.gnavi{
+  &_list{
+    @include flexbox;
+    @include flexhashi;
+    list-style: none;
+    >li{
+      width: calc(100% / 6);
+    }
+    .sub-menu{
+      display: none;
+    }
+  }
+}

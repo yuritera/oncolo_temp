@@ -103,7 +103,18 @@ $url= rtrim($str, '/');
     </div>
   </header>
   <nav class="ly_gnavi">
-    <div class="ly_inner">gnavi</div>
+    <div class="ly_inner">
+    <nav class="gnavi">
+      <?php
+        wp_nav_menu( array(
+          'theme_location' => 'topnavi',
+          'container'      => '',
+          'depth'          => 0,
+          'items_wrap'      => '<ul class="gnavi_list">%3$s</ul>',
+        ) );
+      ?>
+    </nav>
+    </div>
   </nav>
 </div><!--end fixed -->
 <nav class="ly_subnavi pc">
