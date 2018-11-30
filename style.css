@@ -380,6 +380,11 @@ img[class*="attachment-"] {
   width: calc(100% / 6);
 }
 
+.gnavi_list > li a {
+  display: block;
+  padding: 1em;
+}
+
 .gnavi_list .sub-menu {
   display: none;
 }

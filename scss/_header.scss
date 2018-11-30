@@ -55,6 +55,10 @@
     list-style: none;
     >li{
       width: calc(100% / 6);
+      a{
+        display: block;
+        padding:1em;
+      }
     }
     .sub-menu{
       display: none;
