@@ -3,6 +3,17 @@
   <aside class="ly_photo">
     <div class="ly_inner">
       <h2 class="ttl_bblue">オンコロ応援団</h2>
+      <?php
+      $gallery_rand = get_post_meta( '50099', 'foogallery_attachments', true );
+      $gallery_keys  = array_rand($gallery_rand , 6);
+      if($gallery_keys ){
+        echo '<ul class="photo_list">';
+        foreach ($gallery_keys  as $gallery_key ) {
+          echo '<li class="photo_item">'.wp_get_attachment_image( $gallery_rand[$gallery_key], 'full' ).'</li>';
+        }
+        echo '</ul>';
+      }
+      ?>
     </div>
   </aside>
   <aside class="ly_link">

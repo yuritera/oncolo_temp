@@ -105,5 +105,24 @@
   <div class="ly_inner">サブナビ</div>
 </nav>
 <div class="ly_headnews">
-  <p class="headnews"><a href="">テストテスト</a></p>
+  <?php
+  $args = array(
+    'posts_per_page'   => 1,
+    'orderby'          => 'modified',  //更新順
+    'order'            => 'ASC', //昇順
+    'meta_key' => 'headline_news_chk', //カスタムフィールドのキー
+    'meta_value' => '1', //カスタムフィールドの値
+    'meta_compare' => 'LIKE' , //'meta_value'のテスト演算子
+    'no_found_rows' => true,
+      );
+    $headlinenews= get_posts($args);
+    if(!empty($headlinenews)){
+      $headlinetxt = get_post_meta($headlinenews[0]->ID,'headline_news_text',true);
+      if(empty($headlinetxt)){
+        $headlinetxt = $headlinenews[0]->post_title;
+      }
+      $headlinelink = get_permalink( $headlinenews[0]->ID);
+      echo '<p class="headnews"><a href="'.$headlinelink .'">'.$headlinetxt.'</a></p>';
+    }
+    ?>
 </div>
