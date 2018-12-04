@@ -86,24 +86,39 @@
       </div>
     </div>
   </header>
-  <nav class="ly_gnavi">
+  <div class="ly_gnavi">
     <div class="ly_inner">
     <nav class="gnavi">
+    <ul class="gnavi_list <?php if(is_mobile()){echo 'gnavi_sp';} ?>" <?php if(is_mobile()){echo 'id="gnavi_sp"';} ?>>
       <?php
         wp_nav_menu( array(
           'theme_location' => 'topnavi',
           'container'      => '',
           'depth'          => 0,
-          'items_wrap'      => '<ul class="gnavi_list">%3$s</ul>',
+          'items_wrap'      => '%3$s'
         ) );
       ?>
+      </ul>
     </nav>
     </div>
-  </nav>
+  </div>
 </div><!--end fixed -->
-<nav class="ly_subnavi pc">
-  <div class="ly_inner">サブナビ</div>
-</nav>
+<div class="ly_subnavi pc">
+  <div class="ly_inner">
+    <nav class="subnavi">
+    <ul class="subnavi_list">
+      <?php
+        wp_nav_menu( array(
+          'theme_location' => 'topsubnavi',
+          'container'      => '',
+          'depth'          => 0,
+          'items_wrap'      => '%3$s'
+        ) );
+      ?>
+      </ul>
+    </nav>
+  </div>
+</div>
 <div class="ly_headnews">
   <?php
   $args = array(

@@ -27,6 +27,11 @@
   -webkit-justify-content: space-around;
   justify-content:         space-around;
 }
+//センター揃え
+@mixin flexcen{
+  -webkit-justify-content: center;
+  justify-content:         center;
+}
 //インボックス設定
 @mixin divin{
   width: 100%;

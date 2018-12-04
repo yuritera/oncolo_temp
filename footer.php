@@ -9,18 +9,43 @@
       if($gallery_keys ){
         echo '<ul class="photo_list">';
         foreach ($gallery_keys  as $gallery_key ) {
-          echo '<li class="photo_item">'.wp_get_attachment_image( $gallery_rand[$gallery_key], 'full' ).'</li>';
+          $gallery_key_img = parse_url( wp_get_attachment_url($gallery_rand[$gallery_key] ) );
+          $gallery_key_img = dirname( $gallery_key_img [ 'path' ] ) . '/' . rawurlencode( basename( $gallery_key_img[ 'path' ] ) );
+          echo '<li class="photo_item"><a href="'.$gallery_key_img.'" class="foobox" ><img src="'.$gallery_key_img.'" alt=""></a></li>';
         }
         echo '</ul>';
       }
       ?>
+      <p class="photo_link"><a href="/cheer">写真ギャラリーを見る »</a></p>
     </div>
   </aside>
   <aside class="ly_link">
     <div class="ly_inner">
       <h2 class="ttl_bblack">リンク</h2>
-      リスト1
-      リスト2
+      <div class="link1">
+        <ul class="link_list1">
+          <?php
+            wp_nav_menu( array(
+              'theme_location' => 'ftlink1',
+              'container'      => '',
+              'depth'          => 1,
+              'items_wrap'      => '%3$s'
+            ) );
+          ?>
+        </ul>
+      </div>
+      <div class="link2">
+        <ul class="link_list2">
+          <?php
+            wp_nav_menu( array(
+              'theme_location' => 'ftlink2',
+              'container'      => '',
+              'depth'          => 1,
+              'items_wrap'      => '%3$s'
+            ) );
+          ?>
+        </ul>
+      </div>
     </div>
   </aside>
 </div>
@@ -28,7 +53,18 @@
 <footer class="ly_footer" id="footer">
   <div class="ly_inner footer">
     <div class="footer_left">
-      <div class="footer_links">リスト</div>
+      <div class="footer_links">
+        <ul class="footer_links_list">
+          <?php
+            wp_nav_menu( array(
+              'theme_location' => 'ftnavi',
+              'container'      => '',
+              'depth'          => 1,
+              'items_wrap'      => '%3$s'
+            ) );
+          ?>
+        </ul>
+      </div>
       <ul class="footer_sns">
         <li class="footer_sns_item"><a href="https://www.facebook.com/ct.oncolo/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/icon_footer_fb.png" alt=""></a></li>
         <li class="footer_sns_item"><a href="https://twitter.com/oncolo_ct" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/icon_footer_twitter.png" alt="Twitter"></a></li>
@@ -54,7 +90,24 @@
 </footer>
 </div>
 <div class="spmenu sp">
-  menu
+  <div class="spmenu_close"><button class="spmenu_close_btn" id="spClose"></button></div>
+  <nav class="spmenu_inner">
+    <div class="spmenu_search">
+      <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+        <input type="text" name="s" id="searchbox" placeholder="サイト内を検索する" class="spmenu_search_txt"/><input type="submit" id="searchsubmit" class="spmenu_search_btn" value="検索" />
+      </form>
+    </div>
+    <ul class="spmenu_list">
+      <?php
+        wp_nav_menu( array(
+          'theme_location' => 'spnavi',
+          'container'      => '',
+          'depth'          => 0,
+          'items_wrap'      => '%3$s'
+        ) );
+      ?>
+    </ul>
+  </nav>
 </div>
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/base.js"></script>

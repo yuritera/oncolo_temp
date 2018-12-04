@@ -11,6 +11,9 @@
     border-bottom:3px solid #fdc800;
     text-align: center;
     padding:1em;
+    a{
+      color:#626262;
+    }
   }
   &_subcontent{
     width: 100%;
@@ -24,7 +27,14 @@
   }
   &_link{
     width: 100%;
-    padding:2em;
+    padding:2em 0 0 0;
     text-align: center;
+  }
+  &_fixed{
+    position:fixed;
+    margin:0;
+    background: #ffffff;
+    width: 100%;
+    z-index: 10;
   }
 }
