@@ -138,6 +138,7 @@
   &_list{
     >li{
       width: calc(100% / 4);
+      margin:0;
       &:nth-child(5){
         display:none;
       }

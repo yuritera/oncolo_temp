@@ -9,6 +9,25 @@
   }
   &_links{
     width: 100%;
+    &_list{
+      width: 94%;
+      @include flexcen;
+      list-style: none;
+      margin:0 3% 1em 3%;
+      > li {
+      margin-bottom:0em;
+      a{
+        border-top:none;
+      }
+        &:nth-of-type(1) a,
+        &:nth-of-type(2) a{
+          border-top:3px solid #14578b;
+        }
+        &:nth-of-type(even) a{
+          border-left:none;
+        }
+      }
+    }
   }
   &_sns{
     width: 30%;
@@ -32,4 +51,33 @@
 }
 .fbbox{
   padding:0 3%;
+}
+//photo
+.photo{
+  &_list{
+    padding:0;
+  }
+  &_item{
+    width: calc(100% / 3);
+  }
+}
+//link
+.link_list1{
+  display: block;
+  padding:0 1em;
+  >li{
+    margin:0 0 1em 0;
+    height: 90px;
+    &:last-of-type{
+      height:auto;
+      width:100%;
+      padding:1em 0;
+    }
+  }
+}
+.link_list2{
+  padding:0 1em;
+  >li{
+    width:100%;
+  }
 }

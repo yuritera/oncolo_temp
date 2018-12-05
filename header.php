@@ -40,7 +40,7 @@
 <body class="<?php if(is_home()){echo 'home ';} ?>">
 <div id="fb-root"></div>
 <div class="spwrap" id="spWrap">
-<div class="ly_fixed">
+<div class="ly_fixed" id="pc_fix">
   <header class="ly_header">
     <div class="ly_inner header">
       <?php if(is_home()){echo '<h1'; }else{ echo '<p'; } ?> class="header_logo"><a href="<?php echo home_url( '/' ); ?>">

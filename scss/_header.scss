@@ -8,6 +8,9 @@
   &_logo{
     width:300px;
     padding:0.7em 0 0 0;
+    .is_fixed & {
+      width:280px;
+    }
   }
   &_search{
     padding:0.6em 0.5em 0.5em 0;
@@ -37,13 +40,22 @@
     &_maga{
       width:65px;
       margin-right:0.5em;
+      .is_fixed & {
+        width:50px;
+      }
     }
     &_mail{
       width: 65px;
+      .is_fixed & {
+        width:50px;
+      }
     }
     &_tel{
       width:260px;
       margin-left:0.5em;
+      .is_fixed & {
+        width:205px;
+      }
     }
   }
 }
@@ -53,8 +65,12 @@
     @include flexbox;
     @include flexhashi;
     list-style: none;
-    margin:1em 0;
+    margin:1em 0 0 0;
     position: relative;
+    .is_fixed &{
+      margin: 0.3em 0 0 0;
+      font-size: 0.9em;
+    }
     >li{
       width: calc(100% / 6);
       border-bottom:solid 4px #aaaaaa;

@@ -33,4 +33,45 @@ window.onload = function () {
       return false;
     });
   });
+
+
+  (function (win) {
+    var timer = null, polyfill;
+    polyfill = function (callback) {
+      clearTimeout(timer);
+      setTimeout(callback, 1000 / 60);
+    };
+    win.requestAnimationFrame = win.requestAnimationFrame
+      || win.mozRequestAnimationFrame
+      || win.webkitRequestAnimationFrame
+      || polyfill;
+  }(window));
+
+  const target = document.getElementById('pc_fix'),
+    height = 159;
+  lastPosition = 0,
+    ticking = false;
+
+  function onScroll(lastPosition, lastWidth) {
+    if (lastWidth < 850) {
+      return;
+    } else {
+      if (lastPosition > height) {
+        target.classList.add('is_fixed');
+      } else {
+        target.classList.remove('is_fixed');
+      }
+    }
+  }
+  window.addEventListener('scroll', function (e) {
+    lastPosition = window.scrollY;
+    lastWidth = window.innerWidth;
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        onScroll(lastPosition, lastWidth);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
 }
