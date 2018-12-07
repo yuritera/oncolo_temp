@@ -22,6 +22,7 @@
   <link rel="dns-prefetch" href="//graph.facebook.com">
 
   <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script src="<?php echo get_template_directory_uri(); ?>/js/picturefill.min.js"></script>

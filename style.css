@@ -284,6 +284,7 @@ img[class*="attachment-"] {
   border-bottom: 3px solid #fdc800;
   text-align: center;
   padding: 1em;
+  margin-bottom: 1em;
 }
 
 .ly_headnews a {
@@ -825,6 +826,209 @@ img[class*="attachment-"] {
   margin-bottom: 1.3em;
 }
 
+.slider {
+  background: #d8e8f7;
+  padding: 1em 80px;
+  overflow: hidden;
+}
+
+.slider_item > a {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #000000;
+}
+
+.slider_image {
+  width: 50%;
+}
+
+.slider_content {
+  width: 50%;
+  text-align: left;
+  padding: 0 0 0 1em;
+}
+
+.slider_ttl {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+}
+
+.slider_txt {
+  font-size: 1rem;
+  margin-bottom: 2em;
+}
+
+.slider_more {
+  text-align: right;
+}
+
+.slider_more span {
+  display: inline-block;
+  background: #ffffff;
+  color: #0886af;
+  font-weight: bold;
+  padding: 0.5em 1em;
+}
+
+fade-enter-active, .fade-leave-active {
+  transition: all .8s ease;
+  opacity: 1;
+}
+
+.fade-enter,
+.fade-leave-active,
+.fade-leave {
+  opacity: 0;
+}
+
+.pickup_nav {
+  display: block;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.pickup_nav_list {
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.pickup_nav_item {
+  margin: 0 0.5em;
+  padding: 0.5em 1em;
+  border: solid 1px #d8e8f7;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+}
+
+.pickup_nav_item.active {
+  background: #d8e8f7;
+}
+
+.pickup_list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.pickup_more {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.pickup_more a {
+  background: #14578b;
+  color: #ffffff;
+  padding: 0.5em 1em;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.postlist_type1 {
+  width: 31%;
+  display: block;
+  background: #d8e8f7;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.postlist_type1:hover .recent_popup {
+  opacity: 1;
+}
+
+.postlist_type1 .recent_triger {
+  cursor: pointer;
+}
+
+.postlist_type1 .recent_popup {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.postlist_type1 .recent_popup a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 2;
+  padding: 2em;
+  text-decoration: none;
+  color: #000000;
+  line-height: 1.6;
+}
+
+.postlist_type1 .recent_popup a:hover {
+  opacity: 0.9;
+  -ms-filter: "alpha(opacity=90)";
+}
+
+.postlist_type1 .recent_popup .more {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  background: #0886af;
+  color: #ffffff;
+  padding: 0.5em 1em;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.postlist_type1 .recent_popup .more:hover {
+  opacity: 0.7;
+  -ms-filter: "alpha(opacity=70)";
+}
+
+.postlist_type1 .eyecach img {
+  width: 100%;
+}
+
+.postlist_type1 .textarea {
+  padding: 1em;
+  font-size: 0.9em;
+}
+
+.postlist_type1 .cat_list {
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 0.5em;
+}
+
+.postlist_type1 .cat_list li {
+  background: #14578b;
+  color: #ffffff;
+  font-size: 0.9em;
+  margin: 0 0.5em 0.5em 0;
+  padding: 0 0.5em;
+}
+
+.postlist_type1 .ttl {
+  font-weight: bold;
+  line-height: 1.6;
+}
+
 @media screen and (max-width: 850px) {
   .sp {
     display: block;
@@ -1091,6 +1295,26 @@ img[class*="attachment-"] {
   }
   .link_list2 > li {
     width: 100%;
+  }
+  .slider {
+    padding: 1em;
+  }
+  .slider_image {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  .slider_content {
+    width: 100%;
+  }
+  .slider_ttl {
+    font-size: 1em;
+  }
+  .slider_txt {
+    font-size: 0.75rem;
+    margin-bottom: 1em;
+  }
+  .slider_more {
+    display: none;
   }
 }
 
