@@ -42,4 +42,19 @@
   &_subnavi{
     padding-top:120px;
   }
+  &_flex{
+    @include flexbox;
+    &.justify{
+      @include flexhashi;
+    }
+    &.center{
+      @include flexcen;
+    }
+    &.equality{
+      @include flexkin;
+    }
+  }
+  &_bread{
+    margin-bottom:2em;
+  }
 }

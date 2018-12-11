@@ -5,12 +5,23 @@
     font-weight: bold;
     color:#14578b;
     margin-bottom:1.3em;
+    text-align: center;
   }
   &_bblack{
     font-size: 1.7rem;
     font-weight: bold;
     color:#000000;
     margin-bottom:1.3em;
+    text-align: center;
+  }
+  &_blblue{
+    font-size: 2rem;
+    font-weight: bold;
+    color:#14578b;
+    margin-bottom:1em;
+    text-align: center;
+    border-bottom:5px solid #d8e8f7;
+    padding: 0 0 0.5em 0;
   }
 }
 
@@ -65,7 +76,12 @@ fade-enter-active, .fade-leave-active {
 .fade-leave{
   opacity: 0;
 }
+
+//pickup
 .pickup{
+  &_wrap{
+    margin-bottom: 2em;
+  }
   &_nav{
     display: block;
     text-align: center;
@@ -103,5 +119,102 @@ fade-enter-active, .fade-leave-active {
       display: inline-block;
       text-decoration: none;
     }
+  }
+}
+
+//ranking
+.ranking{
+  &_wrap{
+    width:46%;
+    margin-bottom:4em;
+  }
+  &_nav{
+    &_list{
+      list-style: none;
+      @include flexbox;
+      @include flexkin;
+      align-items: flex-end;
+      -webkit-align-items: flex-end;
+      padding:0 0.5em;
+    }
+    &_item{
+      padding:0.5em 1em;
+      background:#eeeeee;
+      color:#777777;
+      cursor: pointer;
+      text-align: center;
+      width:31%;
+      &.active{
+        background:#d8e8f7;
+        padding:1em 1em 0.5em;
+      }
+    }
+  }
+  &_list{
+    padding:1em 0.5em;
+    border:solid 1px #d8e8f7;
+    .wpp-list{
+      list-style-type: decimal !important;
+      list-style-position: inside !important;
+      li{
+        margin-bottom:1em;
+        &:nth-child(-n+3){
+          font-weight: bold;
+          font-size: 1.1em;
+        }
+      }
+      a{
+        text-decoration: none;
+        color:#333333;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+//newpost
+.newpost{
+  &_wrap{
+    width:46%;
+    margin-bottom:4em;
+  }
+  &_list{
+    list-style: none;
+    a{
+      color: #0886af;
+      padding: 0 0 1em 6em;
+      position: relative;
+      display: block;
+    }
+  }
+  &_day{
+    color: #333333;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.content{
+  margin-bottom: 4em;
+  &_head{
+    @include flexbox;
+    @include flexhashi;
+    margin-bottom:1em;
+    [class^="ttl_"]{
+      width: 100%;
+    }
+    .wp_social_bookmarking_light{
+      width:40%;
+    }
+  }
+  &_day{
+    width: 40%;
+    @include flexbox;
+    justify-content: flex-end;
+    -webkit-box-pack: end;
+    list-style: none;
   }
 }

@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <div class="ly_wrap">
-  <div class="ly_slider">
+
+  <div class="ly_slider" id="homeSlider">
   <script type="text/javascript" src="<?php echo get_template_directory_uri( '' ); ?>/js/slick/slick.min.js"></script>
   <link rel="stylesheet" href="<?php echo get_template_directory_uri( '' ); ?>/js/slick/slick.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri( '' ); ?>/js/slick/slick-theme.css">
@@ -76,6 +77,18 @@ SLIDER;
     </section>
     <div class="ly_inner">
     <section class="pickup_wrap" id="homePicup">
+    <?php
+    //picuplist function
+    function homePicupList($cat){
+      $args = array(
+        'category' => $cat,
+        'posts_per_page' => 9,
+        'no_found_rows' => true,
+      );
+      $post_ids = get_posts( $args );
+      return $post_ids;
+      }
+    ?>
       <nav class="pickup_nav">
         <ul class="pickup_nav_list">
           <li class="pickup_nav_item" @click="show('new')" v-bind:class="{'active': current === 'new'}">新着</li>
@@ -90,68 +103,49 @@ SLIDER;
 
         <div class="pickup_list" v-if="isCurrent('new')" key="new">
         <?php
-        $args = array(
-          'category' => '12,22,174,10,50,57,173,15',
-          'posts_per_page' => 9,
-          'no_found_rows' => true,
-        );
-        $post_ids = get_posts( $args );
-        get_template_part('post_list');
+        $picup_cat = '12,22,174,10,50,57,173,15';
+        $post_ids = homePicupList($picup_cat);
+        get_template_part('temp/post_list');
         ?>
         <p class="pickup_more"><a href="/latest">もっと見る &#8811; </a></p>
         </div>
 
         <div class="pickup_list" v-if="isCurrent('news')" key="news">
         <?php
-        $args = array(
-          'category' => '12',
-          'posts_per_page' => 9,
-          'no_found_rows' => true,
-        );
-        $post_ids = get_posts( $args );
-        get_template_part('post_list');
+        $picup_cat = '12';
+        $post_ids = homePicupList($picup_cat);
+        get_template_part('temp/post_list');
         ?>
         <p class="pickup_more"><a href="/category/news">もっと見る &#8811; </a></p>
         </div>
 
         <div class="pickup_list" v-if="isCurrent('feature')" key="feature">
         <?php
-        $args = array(
-          'category' => '174',
-          'posts_per_page' => 9,
-          'no_found_rows' => true,
-        );
-        $post_ids = get_posts( $args );
-        get_template_part('post_list');
+        $picup_cat = '174';
+        $post_ids = homePicupList($picup_cat);
+        get_template_part('temp/post_list');
         ?>
         <p class="pickup_more"><a href="/category/feature">もっと見る &#8811; </a></p>
         </div>
 
         <div class="pickup_list" v-if="isCurrent('movie')" key="movie">
         <?php
-        $args = array(
-          'category' => '779',
-          'posts_per_page' => 9,
-          'no_found_rows' => true,
-        );
-        $post_ids = get_posts( $args );
-        get_template_part('post_list');
+        $picup_cat = '779';
+        $post_ids = homePicupList($picup_cat);
+        get_template_part('temp/post_list');
         ?>
         <p class="pickup_more"><a href="/category/seminar_video">もっと見る &#8811; </a></p>
         </div>
 
         <div class="pickup_list" v-if="isCurrent('ct')" key="ct">
         <?php
-        $args = array(
-          'category' => '12,22,174,10,50,57,173,15',
-          'posts_per_page' => 9,
-          'no_found_rows' => true,
-        );
-        $post_ids = get_posts( $args );
-        get_template_part('post_list');
+        $picup_cat = '12,22,174,10,50,57,173,15';
+        $post_ids = homePicupList($picup_cat);
+        get_template_part('temp/post_list');
         ?>
         <p class="pickup_more"><a href="/latest">もっと見る &#8811; </a></p>
         </div>
+
       </transition>
       </div>
       <script>
@@ -171,8 +165,67 @@ SLIDER;
       })
       </script>
     </section>
-    <div class="ly_inner">
-      <h2 class="ttl_bblue">イベント情報</h2>
+
+    <section class="eventlst_wrap" id="homeEvent">
+      <div class="ly_inner">
+        <h2 class="ttl_bblue">イベント情報</h2>
+        <?php
+        $cat_view = "event";
+        $post_datas  = array();
+        $post_datas[] = [
+          'post_num'=>21673,
+          'post_title'=>'全国のがんイベント情報一覧','post_img'=>'/wp-content/uploads/2017/11/ibent1.jpg',
+          'post_link'=>''
+        ];
+        $post_datas[] = [
+          'post_num'=>39879,
+          'post_title'=>'',
+          'post_img'=>'',
+          'post_link'=>''
+        ];
+        $post_datas[] = [
+          'post_num'=>'',
+          'post_title'=>'〜希少がんを知り・学び・集うセミナー！〜希少がん Meet the Expert2018 参加者募集！',
+          'post_img'=>'/wp-content/uploads/2017/11/02fd2a8b45935818c98874362f9b7d7d.jpg',
+          'post_link'=>'https://oncolo.jp/rarecancer_mte2018/',
+        ];
+        $post_datas[] = [
+          'post_num'=>33312,
+          'post_title'=>'',
+          'post_img'=>'',
+          'post_link'=>''
+        ];
+        get_template_part('temp/post_list2_c');
+        ?>
+      </div>
+    </section>
+
+    <section class="information_wrap" id="homeInformation">
+      <div class="ly_inner">
+        <h2 class="ttl_bblue">オンコロInformation</h2>
+      </div>
+    </section>
+
+    <div class="ly_flex justify">
+
+      <?php get_template_part('temp/ranking'); ?>
+
+      <section class="newpost_wrap" id="homeNewPost">
+        <h2 class="ttl_bblue">新着情報</h2>
+        <ul class="newpost_list">
+          <?php
+          $args = array(
+            'category' => '50,12,176,173,174,9,73,74,10,22,15',
+            'posts_per_page' => 10,
+            'no_found_rows' => true,
+          );
+          $new_posts = get_posts($args);
+          foreach ($new_posts as $new_post) {
+            echo '<li class="newpost_item"><a href="'.get_the_permalink( $new_post -> ID ).'"><span class="newpost_day">'.get_the_date( 'Y.m.d', $new_post -> ID ).'</span>'.$new_post -> post_title.'</a></li>';
+          }
+          ?>
+        </ul>
+      </section>
     </div>
     </div>
   </div>

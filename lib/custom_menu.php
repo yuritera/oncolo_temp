@@ -3,5 +3,5 @@
 カスタムメニュー関係
 --------------------------------*/
 //カスタムメニュー
-register_nav_menus(array('topnavi' => 'グローバルナビ','topsubnavi' => 'トップサブナビ','ftlink1' => 'リンク１','ftlink2' => 'リンク２','ftnavi' => 'フッターナビ','spnavi' => 'スマホメニュー'));
+register_nav_menus(array('topnavi' => 'グローバルナビ','topsubnavi' => 'トップサブナビ','ftlink1' => 'リンク１','ftlink2' => 'リンク２','ftnavi' => 'フッターナビ','spnavi' => 'スマホメニュー','topinfo' => 'インフォメーション'));
 ?>
