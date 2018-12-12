@@ -103,10 +103,6 @@ fade-enter-active, .fade-leave-active {
       }
     }
   }
-  &_list{
-    @include flexbox;
-    @include flexhashi;
-  }
   &_more{
     text-align: center;
     display: block;

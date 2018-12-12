@@ -1,5 +1,6 @@
 <?php
 if ($wp_query->have_posts()):
+  echo '<div class="postlist_type1_wrap">';
 while($wp_query->have_posts()) : $wp_query->the_post();
 $cat_ids = get_the_category();
 ?>
@@ -28,6 +29,7 @@ $cat_ids = get_the_category();
 </section>
 <?php
 endwhile;
+echo '</div>';
 else:
 echo '<p class="nolist">記事がありません</p>';
 endif;

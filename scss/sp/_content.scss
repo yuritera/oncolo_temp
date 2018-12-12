@@ -1,3 +1,12 @@
+/*title*/
+.ttl{
+  &_bblue{
+    margin-bottom:0.5em;
+  }
+  &_bblack{
+    margin-bottom:0.5em;
+  }
+}
 //slider
 .slider{
   padding:1em;
@@ -17,5 +26,60 @@
   }
   &_more{
     display: none;
+  }
+}
+//pickup
+.pickup{
+  &_wrap{
+    margin-bottom:4em;
+  }
+  &_nav{
+    &_item{
+      margin:0 0.2em;
+      padding:0.2em 0.4em;
+    }
+  }
+  &_list{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    .postlist_type1{
+      display: inline-block;
+      width: 70%;
+      white-space: normal;
+      vertical-align: top;
+      height:270px;
+      &_wrap{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block;
+      }
+      .cat_list{
+        display: none;
+      }
+    }
+  }
+}
+//ranking
+.ranking{
+  &_wrap{
+    width:90%;
+    margin:0 5% 2em;
+  }
+  }
+//newpost
+.newpost{
+  &_wrap{
+    width:90%;
+    margin:0 5% 4em;
+  }
+}
+.eventlist{
+  &_wrap{
+    margin-bottom:4em;
+  }
+}
+.information{
+  &_wrap{
+    margin-bottom:4em;
   }
 }

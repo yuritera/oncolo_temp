@@ -1,5 +1,6 @@
 <?php
 global $post_ids;
+echo '<div class="postlist_type2_wrap">';
 foreach( $post_ids as $post ) :setup_postdata($post);
 $cat_ids = get_the_category();
 ?>
@@ -17,4 +18,6 @@ $cat_ids = get_the_category();
     </div>
     </a>
 </section>
-<?php endforeach; wp_reset_postdata(); ?>
+<?php endforeach;
+echo '</div>';
+wp_reset_postdata(); ?>

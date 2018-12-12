@@ -1,5 +1,9 @@
 //list_type1
 .postlist_type1{
+  &_wrap{
+    @include flexbox;
+    @include flexhashi;
+  }
   width: 31%;;
   display: block;
   background: #d8e8f7;
@@ -74,5 +78,153 @@
   .ttl{
     font-weight: bold;
     line-height: 1.6;
+  }
+}
+
+//type2
+.postlist_type2{
+  &_wrap{
+    @include flexbox;
+    @include flexhashi;
+  }
+  width: 48%;
+  display: block;
+  position: relative;
+  margin-bottom:2em;
+  border:1px solid #adadad;
+  padding:0.8em;
+  .eyecach{
+    background: #ccc;
+    margin-bottom:0.8em;
+    img{
+      border:1px solid #d1d1d1;
+    }
+  }
+  .cat_list{
+    list-style: none;
+    @include flexbox;
+    margin-bottom:0.5em;
+    li{
+      background:#14578b;
+      color:#ffffff;
+      font-size:0.9em;
+      margin:0 0.5em 0.5em 0;
+      padding:0 0.5em;
+    }
+  }
+  a{
+    color:#000000;
+    text-decoration: none;
+  }
+  .ttl{
+    font-weight: bold;
+    line-height: 1.6;
+  }
+}
+//list type3
+.postlist_type3{
+  margin-bottom:1em;
+  &_wrap{
+    margin-bottom: 2em;
+  }
+  a{
+    border:1px solid #ccc;
+    padding:1em;
+    @include flexbox;
+    @include flexhashi;
+    .eyecach{
+      width: 150px;
+    }
+    .textarea{
+      width: calc(100% - 170px);
+    }
+    text-decoration: none;
+    .ttl{
+      font-weight: bold;
+      color:#0886af;
+      font-size: 1.2rem;
+      line-height: 1.4em;
+      margin-bottom:0.5em;
+    }
+    .update{
+      display: inline;
+      color:#000;
+    }
+    .cat_list{
+      list-style: none;
+      margin-bottom:0.5em;
+      display: inline-block;
+      li{
+        background:#666666;
+        color:#ffffff;
+        font-size:0.9em;
+        margin:0 0.5em 0.5em 0;
+        padding:0 0.5em;
+        display: inline-block;
+      }
+    }
+    .txt{
+      font-size:0.9rem;
+      color:#555555;
+    }
+  }
+}
+//pager
+.wp-pagenavi {
+	clear: both;
+	text-align:center;
+}
+.wp-pagenavi a, .wp-pagenavi span {
+	color: #0886af;
+	background-color: #FFFFFF;
+	padding: 8px 15px;
+	margin: 0 2px;
+	white-space: nowrap;
+	-webkit-transition: 0.2s ease-in-out;
+	-moz-transition: 0.2s ease-in-out;
+	-o-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
+	text-align: center;
+	text-decoration: none;
+	border: thin dotted #0886af;
+}
+.wp-pagenavi a:hover{
+	color: #fff;
+	background-color: #0886af;
+    }
+.wp-pagenavi span.current{
+	color: #fff;
+	background-color: #0886af;
+    }
+
+//news_navi
+.news_navi{
+  max-width:800px;
+  margin:0 auto 2em;
+  &_list{
+    @include flexbox;
+    @include flexhashi;
+    list-style: none;
+  }
+  &_item{
+    width:23%;
+    &.active{
+      background:#d8e8f7;
+    }
+    a{
+      border:solid;
+      display: block;
+      border: 1px solid #d8e8f7;
+      color:#333333;
+      text-decoration: none;
+      text-align: center;
+      padding:0.5em;
+      font-weight: bold;
+      &:hover{
+        background:#40b3cc;
+        border:solid 1px #40b3cc;
+        color:#ffffff;
+      }
+    }
   }
 }

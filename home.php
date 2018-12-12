@@ -100,49 +100,58 @@ SLIDER;
       </nav>
       <div class="pickup_body">
       <transition name="fade" mode="out-in">
-
+        <div class="picup">
         <div class="pickup_list" v-if="isCurrent('new')" key="new">
         <?php
         $picup_cat = '12,22,174,10,50,57,173,15';
         $post_ids = homePicupList($picup_cat);
         get_template_part('temp/post_list');
         ?>
+        </div>
         <p class="pickup_more"><a href="/latest">もっと見る &#8811; </a></p>
         </div>
 
+        <div class="picup">
         <div class="pickup_list" v-if="isCurrent('news')" key="news">
         <?php
         $picup_cat = '12';
         $post_ids = homePicupList($picup_cat);
         get_template_part('temp/post_list');
         ?>
+        </div>
         <p class="pickup_more"><a href="/category/news">もっと見る &#8811; </a></p>
         </div>
 
+        <div class="picup">
         <div class="pickup_list" v-if="isCurrent('feature')" key="feature">
         <?php
         $picup_cat = '174';
         $post_ids = homePicupList($picup_cat);
         get_template_part('temp/post_list');
         ?>
+        </div>
         <p class="pickup_more"><a href="/category/feature">もっと見る &#8811; </a></p>
         </div>
 
+        <div class="picup">
         <div class="pickup_list" v-if="isCurrent('movie')" key="movie">
         <?php
         $picup_cat = '779';
         $post_ids = homePicupList($picup_cat);
         get_template_part('temp/post_list');
         ?>
+        </div>
         <p class="pickup_more"><a href="/category/seminar_video">もっと見る &#8811; </a></p>
         </div>
 
+        <div class="picup">
         <div class="pickup_list" v-if="isCurrent('ct')" key="ct">
         <?php
         $picup_cat = '12,22,174,10,50,57,173,15';
         $post_ids = homePicupList($picup_cat);
         get_template_part('temp/post_list');
         ?>
+        </div>
         <p class="pickup_more"><a href="/latest">もっと見る &#8811; </a></p>
         </div>
 
@@ -166,11 +175,12 @@ SLIDER;
       </script>
     </section>
 
-    <section class="eventlst_wrap" id="homeEvent">
+    <section class="eventlist_wrap" id="homeEvent">
       <div class="ly_inner">
         <h2 class="ttl_bblue">イベント情報</h2>
         <?php
         $cat_view = "event";
+        $date_view = false;
         $post_datas  = array();
         $post_datas[] = [
           'post_num'=>21673,
@@ -203,6 +213,21 @@ SLIDER;
     <section class="information_wrap" id="homeInformation">
       <div class="ly_inner">
         <h2 class="ttl_bblue">オンコロInformation</h2>
+        <?php
+        $cat_view = false;
+        $date_view = false;
+        $post_datas  = array();
+        $info_posts = wp_get_nav_menu_items( 'top_info' );
+        foreach ($info_posts as $info_post) {
+          $post_datas[] = [
+          'post_num'=>$info_post -> object_id,
+          'post_title'=>$info_post -> title,
+          'post_img'=>'',
+          'post_link'=>$info_post -> url
+        ];
+        }
+        get_template_part('temp/post_list2_c');
+        ?>
       </div>
     </section>
 

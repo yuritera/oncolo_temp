@@ -958,15 +958,6 @@ fade-enter-active, .fade-leave-active {
   background: #d8e8f7;
 }
 
-.pickup_list {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-}
-
 .pickup_more {
   text-align: center;
   display: block;
@@ -1106,6 +1097,15 @@ fade-enter-active, .fade-leave-active {
   margin-bottom: 1em;
 }
 
+.postlist_type1_wrap {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
 .postlist_type1:hover .recent_popup {
   opacity: 1;
 }
@@ -1183,6 +1183,244 @@ fade-enter-active, .fade-leave-active {
 .postlist_type1 .ttl {
   font-weight: bold;
   line-height: 1.6;
+}
+
+.postlist_type2 {
+  width: 48%;
+  display: block;
+  position: relative;
+  margin-bottom: 2em;
+  border: 1px solid #adadad;
+  padding: 0.8em;
+}
+
+.postlist_type2_wrap {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.postlist_type2 .eyecach {
+  background: #ccc;
+  margin-bottom: 0.8em;
+}
+
+.postlist_type2 .eyecach img {
+  border: 1px solid #d1d1d1;
+}
+
+.postlist_type2 .cat_list {
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 0.5em;
+}
+
+.postlist_type2 .cat_list li {
+  background: #14578b;
+  color: #ffffff;
+  font-size: 0.9em;
+  margin: 0 0.5em 0.5em 0;
+  padding: 0 0.5em;
+}
+
+.postlist_type2 a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.postlist_type2 .ttl {
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.postlist_type3 {
+  margin-bottom: 1em;
+}
+
+.postlist_type3_wrap {
+  margin-bottom: 2em;
+}
+
+.postlist_type3 a {
+  border: 1px solid #ccc;
+  padding: 1em;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.postlist_type3 a .eyecach {
+  width: 150px;
+}
+
+.postlist_type3 a .textarea {
+  width: calc(100% - 170px);
+}
+
+.postlist_type3 a .ttl {
+  font-weight: bold;
+  color: #0886af;
+  font-size: 1.2rem;
+  line-height: 1.4em;
+  margin-bottom: 0.5em;
+}
+
+.postlist_type3 a .update {
+  display: inline;
+  color: #000;
+}
+
+.postlist_type3 a .cat_list {
+  list-style: none;
+  margin-bottom: 0.5em;
+  display: inline-block;
+}
+
+.postlist_type3 a .cat_list li {
+  background: #666666;
+  color: #ffffff;
+  font-size: 0.9em;
+  margin: 0 0.5em 0.5em 0;
+  padding: 0 0.5em;
+  display: inline-block;
+}
+
+.postlist_type3 a .txt {
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+.wp-pagenavi {
+  clear: both;
+  text-align: center;
+}
+
+.wp-pagenavi a, .wp-pagenavi span {
+  color: #0886af;
+  background-color: #FFFFFF;
+  padding: 8px 15px;
+  margin: 0 2px;
+  white-space: nowrap;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  text-align: center;
+  text-decoration: none;
+  border: thin dotted #0886af;
+}
+
+.wp-pagenavi a:hover {
+  color: #fff;
+  background-color: #0886af;
+}
+
+.wp-pagenavi span.current {
+  color: #fff;
+  background-color: #0886af;
+}
+
+.news_navi {
+  max-width: 800px;
+  margin: 0 auto 2em;
+}
+
+.news_navi_list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.news_navi_item {
+  width: 23%;
+}
+
+.news_navi_item.active {
+  background: #d8e8f7;
+}
+
+.news_navi_item a {
+  border: solid;
+  display: block;
+  border: 1px solid #d8e8f7;
+  color: #333333;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5em;
+  font-weight: bold;
+}
+
+.news_navi_item a:hover {
+  background: #40b3cc;
+  border: solid 1px #40b3cc;
+  color: #ffffff;
+}
+
+.dic_navi {
+  text-align: center;
+  margin: 1em 0 2em 0;
+}
+
+.dic_navi_list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.dic_navi_list li {
+  margin: 0 0.2em;
+}
+
+.dic_navi_list li a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  width: 3em;
+  height: 3em;
+  background: #00B3E0;
+  text-align: center;
+  line-height: 3em;
+}
+
+.dic_ttl {
+  font-size: 1.4em;
+  font-weight: bold;
+  border-bottom: 1px dotted #92BBEC;
+  padding: 0 0 0.4em;
+  margin-bottom: 1em;
+}
+
+.dic_link a {
+  color: #000000;
+  margin-bottom: 0.5em;
+  font-size: 1rem;
+}
+
+.dic_box {
+  margin-bottom: 2em;
+}
+
+.dic_box .back {
+  text-align: right;
+  font-size: 0.9em;
 }
 
 @media screen and (max-width: 850px) {
@@ -1343,6 +1581,9 @@ fade-enter-active, .fade-leave-active {
   .gnavi {
     font-size: 0.9em;
   }
+  .gnavi_list {
+    margin: 0;
+  }
   .gnavi_list > li {
     width: calc(100% / 4);
     margin: 0;
@@ -1452,6 +1693,13 @@ fade-enter-active, .fade-leave-active {
   .link_list2 > li {
     width: 100%;
   }
+  /*title*/
+  .ttl_bblue {
+    margin-bottom: 0.5em;
+  }
+  .ttl_bblack {
+    margin-bottom: 0.5em;
+  }
   .slider {
     padding: 1em;
   }
@@ -1471,6 +1719,53 @@ fade-enter-active, .fade-leave-active {
   }
   .slider_more {
     display: none;
+  }
+  .pickup_wrap {
+    margin-bottom: 4em;
+  }
+  .pickup_nav_item {
+    margin: 0 0.2em;
+    padding: 0.2em 0.4em;
+  }
+  .pickup_list {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .pickup_list .postlist_type1 {
+    display: inline-block;
+    width: 70%;
+    white-space: normal;
+    vertical-align: top;
+    height: 270px;
+  }
+  .pickup_list .postlist_type1_wrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+  }
+  .pickup_list .postlist_type1 .cat_list {
+    display: none;
+  }
+  .ranking_wrap {
+    width: 90%;
+    margin: 0 5% 2em;
+  }
+  .newpost_wrap {
+    width: 90%;
+    margin: 0 5% 4em;
+  }
+  .eventlist_wrap {
+    margin-bottom: 4em;
+  }
+  .information_wrap {
+    margin-bottom: 4em;
+  }
+  .postlist_type2 {
+    width: 90%;
+    margin: 0 5% 1em;
+  }
+  .postlist_type2_wrap {
+    display: block;
   }
 }
 

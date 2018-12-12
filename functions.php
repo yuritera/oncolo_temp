@@ -24,4 +24,6 @@ add_filter( 'pre_get_posts', 'search_exclude_custom_post_type' );
 
 add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 SCF::add_options_page( 'スライダー追加', 'スライダーオプション', 'manage_options', 'oncolo_slider_option' );
+
+//object 
 ?>

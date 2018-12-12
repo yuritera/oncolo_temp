@@ -136,6 +136,7 @@
 .gnavi{
   font-size:0.9em;
   &_list{
+    margin:0;
     >li{
       width: calc(100% / 4);
       margin:0;
