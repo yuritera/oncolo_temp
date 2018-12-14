@@ -121,7 +121,9 @@ fade-enter-active, .fade-leave-active {
 //ranking
 .ranking{
   &_wrap{
-    width:46%;
+    .ly_flex &{
+      width:46%;
+    }
     margin-bottom:4em;
   }
   &_nav{
@@ -206,6 +208,12 @@ fade-enter-active, .fade-leave-active {
       width:40%;
     }
   }
+  &_main{
+    margin-bottom:4em;
+  }
+  &_eyecach{
+    margin-bottom:2em;
+  }
   &_day{
     width: 40%;
     @include flexbox;
@@ -213,4 +221,85 @@ fade-enter-active, .fade-leave-active {
     -webkit-box-pack: end;
     list-style: none;
   }
+  &_author{
+    display: block;
+    width: 100%;
+    border:solid 2px #cccccc;
+    @include flexbox;
+    @include flexhashi;
+    padding:1em;
+    margin-bottom:2em;
+    position: relative;
+    &_icon{
+      width:100px;
+    }
+    &_info{
+      width:calc(100% - 120px);
+      h3{
+        font-weight: bold;
+        margin-bottom:0.5em;
+      }
+      p{
+        font-size: 0.9rem;
+      }
+      a{
+        display: block;
+        padding: 0.5em 1.5em;
+        background: #d8e8f7;
+        font-weight: bold;
+        color: #0886af;
+        position: absolute;
+        margin:0;
+        text-decoration: none;
+        bottom:0.5em;
+        right:1.5em;
+      }
+    }
+  }
+  &_prifits{
+    margin:2em 0;
+  }
+}
+
+//entry
+.entry-content{
+  h2{
+    background-color: #eee;
+    border-left: 5px solid #00a1e9;
+    padding: 0.5em 2em;
+    margin: 0 0 1.3em 0;
+    font-size: 1.6em;
+    line-height: 1.6;
+    width:100%;
+    &.top-sub-title{
+      color:#666;
+      text-align: center;
+    }
+  }
+  h3{
+    border-bottom: 3px solid #abcf22;
+    padding: 0 0px 0.2em 0;
+    margin:0 0 1.3em 0;
+    font-size: 1.4em;
+    line-height: 1.6;
+    clear: both;
+    &.cancer-topic-title{
+      color: #777;
+      text-align: center;
+    }
+  }
+  .readmore{
+    display: block;
+    text-align: right;
+    margin:0 0 1em 0;
+  }
+  p{
+    margin:0 0 1.3em 0;
+  }
+  .linkitpop{
+    color:#333333;
+    text-decoration: none;
+    border-bottom: 2px dotted #333333;
+  }
+
 }

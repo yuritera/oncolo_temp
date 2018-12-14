@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#008cb1">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 
-  <!-- <link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png"> -->
+  <link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.png">
 
   <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
   <link rel="dns-prefetch" href="//code.jquery.com">

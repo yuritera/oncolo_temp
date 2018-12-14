@@ -6,5 +6,5 @@
 
 <!-- 利益相反-->
 <?php if(get_post_meta($post->ID,'conflict',true) == '利益相反無しの表示を出す'): ?>
-<p>この記事に利益相反はありません。</p>
+<p class="content_profits">この記事に利益相反はありません。</p>
 <?php endif; ?>

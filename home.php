@@ -100,8 +100,8 @@ SLIDER;
       </nav>
       <div class="pickup_body">
       <transition name="fade" mode="out-in">
-        <div class="picup">
-        <div class="pickup_list" v-if="isCurrent('new')" key="new">
+        <div class="picup" v-if="isCurrent('new')" key="new">
+        <div class="pickup_list">
         <?php
         $picup_cat = '12,22,174,10,50,57,173,15';
         $post_ids = homePicupList($picup_cat);
@@ -111,8 +111,8 @@ SLIDER;
         <p class="pickup_more"><a href="/latest">もっと見る &#8811; </a></p>
         </div>
 
-        <div class="picup">
-        <div class="pickup_list" v-if="isCurrent('news')" key="news">
+        <div class="picup" v-if="isCurrent('news')" key="news">
+        <div class="pickup_list">
         <?php
         $picup_cat = '12';
         $post_ids = homePicupList($picup_cat);
@@ -122,8 +122,8 @@ SLIDER;
         <p class="pickup_more"><a href="/category/news">もっと見る &#8811; </a></p>
         </div>
 
-        <div class="picup">
-        <div class="pickup_list" v-if="isCurrent('feature')" key="feature">
+        <div class="picup" v-if="isCurrent('feature')" key="feature">
+        <div class="pickup_list">
         <?php
         $picup_cat = '174';
         $post_ids = homePicupList($picup_cat);
@@ -133,8 +133,8 @@ SLIDER;
         <p class="pickup_more"><a href="/category/feature">もっと見る &#8811; </a></p>
         </div>
 
-        <div class="picup">
-        <div class="pickup_list" v-if="isCurrent('movie')" key="movie">
+        <div class="picup" v-if="isCurrent('movie')" key="movie">
+        <div class="pickup_list">
         <?php
         $picup_cat = '779';
         $post_ids = homePicupList($picup_cat);
@@ -144,8 +144,8 @@ SLIDER;
         <p class="pickup_more"><a href="/category/seminar_video">もっと見る &#8811; </a></p>
         </div>
 
-        <div class="picup">
-        <div class="pickup_list" v-if="isCurrent('ct')" key="ct">
+        <div class="picup" v-if="isCurrent('ct')" key="ct">
+        <div class="pickup_list">
         <?php
         $picup_cat = '12,22,174,10,50,57,173,15';
         $post_ids = homePicupList($picup_cat);

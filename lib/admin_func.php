@@ -33,19 +33,19 @@ add_action( 'get_image_tag', 'my_remove_img_attr', 1 ,6);
 //アイキャッチサムネイル
 add_theme_support('post-thumbnails');
 
-// オートフォーマット関連の無効化
-add_action('init', function() {
-	remove_filter('the_title', 'wptexturize');
-	remove_filter('the_content', 'wptexturize');
-	remove_filter('the_excerpt', 'wptexturize');
-	remove_filter('the_title', 'wpautop');
-	remove_filter('the_content', 'wpautop');
-	remove_filter('the_excerpt', 'wpautop');
-	remove_filter('the_editor_content', 'wp_richedit_pre');
-    remove_filter('the_content', 'convert_chars');
-    remove_filter('the_title'  , 'convert_chars');
-    remove_filter('the_excerpt', 'convert_chars');
-});
+// // オートフォーマット関連の無効化
+// add_action('init', function() {
+// 	remove_filter('the_title', 'wptexturize');
+// 	remove_filter('the_content', 'wptexturize');
+// 	remove_filter('the_excerpt', 'wptexturize');
+// 	remove_filter('the_title', 'wpautop');
+// 	remove_filter('the_content', 'wpautop');
+// 	remove_filter('the_excerpt', 'wpautop');
+// 	remove_filter('the_editor_content', 'wp_richedit_pre');
+//     remove_filter('the_content', 'convert_chars');
+//     remove_filter('the_title'  , 'convert_chars');
+//     remove_filter('the_excerpt', 'convert_chars');
+// });
 function remove_p_on_images($content){
     return preg_replace('/<p>(\s*)(<img .* \/>)(\s*)<\/p>/iU', '\2', $content);
 }

@@ -974,8 +974,11 @@ fade-enter-active, .fade-leave-active {
 }
 
 .ranking_wrap {
-  width: 46%;
   margin-bottom: 4em;
+}
+
+.ly_flex .ranking_wrap {
+  width: 46%;
 }
 
 .ranking_nav_list {
@@ -1078,6 +1081,14 @@ fade-enter-active, .fade-leave-active {
   width: 40%;
 }
 
+.content_main {
+  margin-bottom: 4em;
+}
+
+.content_eyecach {
+  margin-bottom: 2em;
+}
+
 .content_day {
   width: 40%;
   display: -webkit-flex;
@@ -1087,6 +1098,100 @@ fade-enter-active, .fade-leave-active {
   justify-content: flex-end;
   -webkit-box-pack: end;
   list-style: none;
+}
+
+.content_author {
+  display: block;
+  width: 100%;
+  border: solid 2px #cccccc;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 1em;
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.content_author_icon {
+  width: 100px;
+}
+
+.content_author_info {
+  width: calc(100% - 120px);
+}
+
+.content_author_info h3 {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.content_author_info p {
+  font-size: 0.9rem;
+}
+
+.content_author_info a {
+  display: block;
+  padding: 0.5em 1.5em;
+  background: #d8e8f7;
+  font-weight: bold;
+  color: #0886af;
+  position: absolute;
+  margin: 0;
+  text-decoration: none;
+  bottom: 0.5em;
+  right: 1.5em;
+}
+
+.content_prifits {
+  margin: 2em 0;
+}
+
+.entry-content h2 {
+  background-color: #eee;
+  border-left: 5px solid #00a1e9;
+  padding: 0.5em 2em;
+  margin: 0 0 1.3em 0;
+  font-size: 1.6em;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.entry-content h2.top-sub-title {
+  color: #666;
+  text-align: center;
+}
+
+.entry-content h3 {
+  border-bottom: 3px solid #abcf22;
+  padding: 0 0px 0.2em 0;
+  margin: 0 0 1.3em 0;
+  font-size: 1.4em;
+  line-height: 1.6;
+  clear: both;
+}
+
+.entry-content h3.cancer-topic-title {
+  color: #777;
+  text-align: center;
+}
+
+.entry-content .readmore {
+  display: block;
+  text-align: right;
+  margin: 0 0 1em 0;
+}
+
+.entry-content p {
+  margin: 0 0 1.3em 0;
+}
+
+.entry-content .linkitpop {
+  color: #333333;
+  text-decoration: none;
+  border-bottom: 2px dotted #333333;
 }
 
 .postlist_type1 {
@@ -1370,6 +1475,47 @@ fade-enter-active, .fade-leave-active {
   color: #ffffff;
 }
 
+.dic_navlink {
+  max-width: 800px;
+  margin: 3em auto 2em;
+}
+
+.dic_navlink_list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.dic_navlink_item {
+  width: 23%;
+}
+
+.dic_navlink_item.active {
+  background: #d8e8f7;
+}
+
+.dic_navlink_item a {
+  border: solid;
+  display: block;
+  border: 1px solid #d8e8f7;
+  color: #333333;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5em;
+  font-weight: bold;
+  margin: 0 0.5em;
+}
+
+.dic_navlink_item a:hover {
+  background: #40b3cc;
+  border: solid 1px #40b3cc;
+  color: #ffffff;
+}
+
 .dic_navi {
   text-align: center;
   margin: 1em 0 2em 0;
@@ -1421,6 +1567,156 @@ fade-enter-active, .fade-leave-active {
 .dic_box .back {
   text-align: right;
   font-size: 0.9em;
+}
+
+.cancer_ttl {
+  font-size: 1.6em;
+  text-align: center;
+  margin: 0 0 1em 0;
+  font-weight: bold;
+}
+
+.cancer_wrap {
+  margin: 0 0 4em 0;
+}
+
+.cancer_nav {
+  text-align: center;
+  margin: 0 0 1.5em 0;
+}
+
+.cancer_nav_list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.cancer_nav_item {
+  padding: 0.4em 1em;
+  border: solid 1px #aaa;
+  background: #ffffff;
+  margin: 0 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  width: 28%;
+  max-width: 170px;
+}
+
+.cancer_nav_item a {
+  text-decoration: none;
+  color: #333333;
+  width: 100%;
+}
+
+.cancer_nav_item:hover a, .cancer_nav_item.active a {
+  color: #ffffff;
+}
+
+.cancer_head {
+  margin: 0 0 2em 0;
+  width: 100%;
+}
+
+.cancer_head .ly_inner {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.cancer_head_box {
+  width: 50%;
+  padding: 1em;
+}
+
+.cancer_head_ttl {
+  font-size: 1.8em;
+  margin: 0.5em 0 1em;
+}
+
+.cancer_submenu_list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.cancer_submenu_item {
+  width: 48%;
+  margin-bottom: 0.5em;
+}
+
+.cancer_submenu_item a {
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  background: #ffffff;
+  position: relative;
+  text-decoration: none;
+  border: solid 2px #aaa;
+}
+
+.cancer_submenu_item a::before {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 5px solid transparent;
+  border-left-color: #333;
+  top: 50%;
+  right: 10px;
+  margin-top: -5px;
+}
+
+.cancer_more {
+  text-align: center;
+}
+
+.cancer_more a {
+  display: inline-block;
+  padding: 0.7em 1.2em;
+  background: #aaa;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.8em;
+  color: #fff;
+}
+
+.cancer_topcontent {
+  background: #fff;
+  padding: 1.5em 1em;
+}
+
+.cancer_topcontent > * {
+  margin: 0 0 1em 0;
+}
+
+.cancer_topcontent h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.cancer_topcontent h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.cancer_topcontent h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.cancer_topcontent a {
+  text-align: right;
 }
 
 @media screen and (max-width: 850px) {

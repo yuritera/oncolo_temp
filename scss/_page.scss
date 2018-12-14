@@ -1,4 +1,35 @@
 .dic{
+  &_navlink{
+    max-width:800px;
+    margin:3em auto 2em;
+    &_list{
+      @include flexbox;
+      @include flexcen;
+      list-style: none;
+    }
+    &_item{
+      width:23%;
+      &.active{
+        background:#d8e8f7;
+      }
+      a{
+        border:solid;
+        display: block;
+        border: 1px solid #d8e8f7;
+        color:#333333;
+        text-decoration: none;
+        text-align: center;
+        padding:0.5em;
+        font-weight: bold;
+        margin:0 0.5em;
+        &:hover{
+          background:#40b3cc;
+          border:solid 1px #40b3cc;
+          color:#ffffff;
+        }
+      }
+    }
+  }
   &_navi{
     text-align: center;
     margin:1em 0 2em 0;
@@ -40,6 +71,130 @@
     .back{
     text-align: right;
     font-size: 0.9em;
+    }
+  }
+}
+
+//cancer
+.cancer{
+  &_ttl{
+    font-size: 1.6em;
+    text-align: center;
+    margin:0 0 1em 0;
+    font-weight: bold;
+  }
+  &_wrap{
+    margin:0 0 4em 0;
+  }
+  &_nav{
+    text-align: center;
+    margin:0 0 1.5em 0;
+    &_list{
+      @include flexbox;
+      @include flexcen;
+      list-style: none;
+    }
+    &_item{
+      padding:0.4em 1em;
+      border:solid 1px #aaa;
+      background: #ffffff;
+      margin:0 0.5em;
+      cursor: pointer;
+      font-weight: bold;
+      width:28%;
+      max-width: 170px;
+      a{
+        text-decoration: none;
+        color:#333333;
+        width: 100%;
+      }
+      &:hover,
+      &.active{
+        a{
+          color:#ffffff;
+        }
+      }
+    }
+  }
+  &_head{
+    margin:0 0 2em 0;
+    width:100%;
+    .ly_inner{
+      @include flexbox;
+      @include flexhashi;
+    }
+    &_box{
+      width:50%;
+      padding:1em;
+    }
+    &_ttl{
+      font-size:1.8em;
+      margin:0.5em 0 1em;
+    }
+  }
+  &_submenu{
+    &_list{
+      @include flexbox;
+      @include flexhashi;
+      list-style: none;
+    }
+    &_item{
+      width: 48%;
+      margin-bottom:0.5em;
+      a{
+        display: block;
+        padding:0.5em;
+        text-align: center;
+        background: #ffffff;
+        position: relative;
+        text-decoration: none;
+        border:solid 2px #aaa;
+        &::before{
+          content: ' ';
+          height: 0;
+          position: absolute;
+          width: 0;
+          border: 5px solid transparent;
+          border-left-color: #333;
+          top: 50%;
+          right: 10px;
+          margin-top: -5px;
+        }
+      }
+    }
+  }
+  &_more{
+    text-align: center;
+    a{
+      display: inline-block;
+      padding:0.7em 1.2em;
+      background: #aaa;
+      text-align: center;
+      text-decoration: none;
+      font-size:0.8em;
+      color:#fff;
+    }
+  }
+  &_topcontent{
+    background:#fff;
+    padding:1.5em 1em;
+    > *{
+      margin:0 0 1em 0;
+    }
+    h2{
+      font-size:1.4rem;
+      font-weight: bold;
+    }
+    h3{
+      font-size:1.2rem;
+      font-weight: bold;
+    }
+    h4{
+      font-size:1rem;
+      font-weight: bold;
+    }
+    a{
+      text-align: right;
     }
   }
 }
