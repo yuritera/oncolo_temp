@@ -11,7 +11,7 @@ if (have_posts()) :
   <h1 class="ttl_blblue"><?php the_title(); ?></h1>
   <?php get_template_part('temp/post_meta'); ?>
 </header>
-<main class="content_main">
+<div class="content_aside">
 <?php
 if(get_post_meta($post->ID,'single-visual',true) == 'アイキャッチ表示無し'){
 }else{
@@ -25,12 +25,29 @@ $ad1 = get_post_meta($post->ID,'related-ad1',TRUE);
 if (!empty($ad1) ){
   $args = array( 'include' =>  $ad1 );
   $ad1_post = get_posts($args);
-  print_r($ad1_post);
+  $ad_link =get_the_permalink( $ad1_post[0] -> ID );
+  $ad_img = get_the_post_thumbnail($ad1_post[0] -> ID,'thumbnail', array('alt'=>$ad1_post[0] -> post_title) );
+  $ad_time = get_the_time('Y.m.d',$ad1_post[0] -> ID);
+  echo <<< EMO
+<aside class="content_ad_wrap">
+    <h3 class="content_ad_ttl">おすすめ情報</h3>
+    <div class="content_ad">
+      <a href="{$ad_link}">
+        <figure class="content_ad_img">
+        {$ad_img}
+        </figure>
+        <p class="content_ad_txt">{$ad1_post[0] -> post_title}</p>
+        <p class="content_ad_date">{$ad_time}</p>
+      </a>
+    </div>
+  </aside>
+EMO;
 }
+  echo '</div>';
+  echo '<main class="content_main">';
   echo '<div class="ly_inner">';
   echo '<div class="entry-content">';
   the_content( __('...more &raquo;','mesocolumn') );
-  echo '</div>';
   if(in_category(array(50,174,12,14,10))):
   $the_author_id = get_the_author_meta('ID')
   ?>
@@ -46,6 +63,7 @@ if (!empty($ad1) ){
   endif;
   get_template_part('temp/post_meta_btm');
   related_posts();//関連記事
+  echo '</div>';
   get_template_part('temp/ranking');//ランキング
   echo '</div>';
   endwhile;
@@ -53,6 +71,39 @@ endif;
 ?>
 </main>
 </article>
+<aside class="content_pr_wrap">
+  <div class="ly-inner">
+    <dl class="content_pr">
+      <dt class="content_pr_ttl green">
+        がんの臨床試験（治験）をお探しの方へ
+      </dt>
+      <dd class="content_pr_txt">
+        <p>がん情報サイト「オンコロ」ではがんの臨床試験（治験）情報を掲載しています。</p>
+        <div class="btn_box">
+          <p><a href="/ct/triallist">掲載中の臨床試験（治験）情報はこちら &raquo;</a></p>
+          <p><a href="/dictionary/clinicalresarch">臨床試験（治験）とは &raquo;</a></p>
+        </div>
+      </dd>
+      <dt class="content_pr_ttl blue">
+        オンコロリサーチ
+      </dt>
+      <dd class="content_pr_txt">
+        <p>患者さんやそのご家族のがんに関わるあらゆる声を調査（リサーチ）するための調査を実施しております。</p>
+        <div class="btn_box">
+          <p><a href="/reserch/lists">実施中の調査一覧はこちら &raquo;</a></p>
+        </div>
+      </dd>
+      <dt class="content_pr_ttl orange">
+        無料メルマガ配信中
+      </dt>
+      <dd class="content_pr_txt">
+        <p>メルマガ独自のコラム、臨床試験情報、最新情報を毎週配信しています。ぜひご登録ください。</p>
+        <div class="btn_box">
+          <p><a href="/newsletter">メルマガ登録はこちら &raquo;</a></p>
+        </div>
+      </dd>
+    </dl>
+  </div>
+</aside>
 </div><!--/innner-->
-</div><!--/wrap-->
 <?php get_footer(); ?>

@@ -83,3 +83,36 @@
     margin-bottom:4em;
   }
 }
+.content{
+  &_head{
+    display: block;
+    .wp_social_bookmarking_light{
+      width:100%;
+      padding:0 3%;
+    }
+    .ttl_blblue{
+      text-align: left;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      padding: 0 2%;
+    }
+  }
+  &_day{
+    width:98%;
+    margin:0 2% 0 0;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+  &_pr{
+    &_txt{
+      padding:1em 0.5em;
+      .btn_box{
+        display: block;
+        a{
+          display: block;
+        }
+      }
+    }
+  }
+}

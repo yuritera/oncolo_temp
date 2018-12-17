@@ -6,3 +6,37 @@
   width: 90%;
   margin:0 5% 1em;
 }
+//list type3
+.postlist_type3{
+  a{
+    .eyecach{
+      width: 25%;
+    }
+    .textarea{
+      width: 73%;
+    }
+    .ttl{
+      font-size: 1rem;
+      margin-bottom:0;
+    }
+    .update{
+      display: inline;
+      color:#000;
+    }
+    .cat_list{
+      list-style: none;
+      margin-bottom:0.5em;
+      display: inline-block;
+      font-weight: 400;
+      li{
+        background:none;
+        color:#222222;
+        margin:0;
+        padding:0 0.4em 0 0;
+      }
+    }
+    .txt{
+      display: none;
+    }
+  }
+}

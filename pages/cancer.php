@@ -42,6 +42,14 @@ if (have_posts()) :
 <header id="contentHead" class="cancer_head">
   <div class="ly_inner">
     <div class="cancer_head_box">
+      <div class="cancer_topcontent">
+        <?php
+        $cancer_txt = get_post_meta($post->ID, 'cancer_txt', true);
+        if(!empty($cancer_txt)){echo $cancer_txt;}
+        ?>
+      </div>
+    </div>
+    <div class="cancer_head_box">
       <h1 class="cancer_head_ttl"><?php the_title(); ?></h1>
       <nav class="cancer_submenu">
         <ul class="cancer_submenu_list">
@@ -58,14 +66,6 @@ if (have_posts()) :
         ?>
         </ul>
       </nav>
-    </div>
-    <div class="cancer_head_box">
-      <div class="cancer_topcontent">
-        <?php
-        $cancer_txt = get_post_meta($post->ID, 'cancer_txt', true);
-        if(!empty($cancer_txt)){echo $cancer_txt;}
-        ?>
-      </div>
     </div>
   </div>
 </header>

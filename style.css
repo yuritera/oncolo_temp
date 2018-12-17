@@ -590,7 +590,6 @@ img[class*="attachment-"] {
   width: 100%;
   background: #eeeeee;
   position: absolute;
-  margin-top: 4px;
   list-style: none;
   left: 0;
   font-size: 0.9em;
@@ -835,6 +834,63 @@ img[class*="attachment-"] {
 .link_list2 > li {
   width: 48%;
   margin-bottom: 0.7em;
+}
+
+.entry-content {
+  padding: 0 5%;
+}
+
+.entry-content img {
+  padding-bottom: 0.5em;
+}
+
+.entry-content h2 {
+  background-color: #eee;
+  border-left: 5px solid #00a1e9;
+  padding: 0.5em 2em;
+  margin: 0 0 1.3em 0;
+  font-size: 1.6em;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.entry-content h2.top-sub-title {
+  color: #666;
+  text-align: center;
+}
+
+.entry-content h3 {
+  border-bottom: 3px solid #abcf22;
+  padding: 0 0px 0.2em 0;
+  margin: 0 0 1.3em 0;
+  font-size: 1.4em;
+  line-height: 1.6;
+  clear: both;
+}
+
+.entry-content h3.cancer-topic-title {
+  color: #777;
+  text-align: center;
+}
+
+.entry-content .readmore {
+  display: block;
+  text-align: right;
+  margin: 0 0 1em 0;
+}
+
+.entry-content p {
+  margin: 0 0 1.3em 0;
+}
+
+.entry-content .linkitpop {
+  color: #333333;
+  text-decoration: none;
+  border-bottom: 2px dotted #333333;
+}
+
+.entry-content .yarpp-related {
+  margin: 2em 0 2em 0;
 }
 
 /*title*/
@@ -1085,8 +1141,46 @@ fade-enter-active, .fade-leave-active {
   margin-bottom: 4em;
 }
 
+.content_aside {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.content_ad_wrap {
+  width: 28%;
+}
+
+.content_ad_ttl {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  border-top: 3px solid #f7c646;
+  padding: 0.5em;
+  text-align: center;
+  margin-bottom: 0.4em;
+}
+
+.content_ad_img img {
+  width: 100%;
+}
+
+.content_ad a {
+  color: #000000;
+  line-height: 1.4;
+  font-size: 0.9em;
+}
+
 .content_eyecach {
-  margin-bottom: 2em;
+  margin: 0 auto 2em;
+  width: 70%;
+}
+
+.content_eyecach img {
+  width: 100%;
 }
 
 .content_day {
@@ -1110,7 +1204,7 @@ fade-enter-active, .fade-leave-active {
   flex-wrap: wrap;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 1em;
+  padding: 1em 1em 3em 1em;
   margin-bottom: 2em;
   position: relative;
 }
@@ -1126,10 +1220,15 @@ fade-enter-active, .fade-leave-active {
 .content_author_info h3 {
   font-weight: bold;
   margin-bottom: 0.5em;
+  font-size: 1rem;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 .content_author_info p {
   font-size: 0.9rem;
+  margin: 0;
 }
 
 .content_author_info a {
@@ -1149,49 +1248,124 @@ fade-enter-active, .fade-leave-active {
   margin: 2em 0;
 }
 
-.entry-content h2 {
-  background-color: #eee;
-  border-left: 5px solid #00a1e9;
-  padding: 0.5em 2em;
-  margin: 0 0 1.3em 0;
-  font-size: 1.6em;
-  line-height: 1.6;
-  width: 100%;
+.content_pr {
+  border: solid 1px #ccc;
 }
 
-.entry-content h2.top-sub-title {
-  color: #666;
+.content_pr_wrap {
+  margin: 0 5% 2em;
+}
+
+.content_pr_ttl {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.5em;
+  color: #ffffff;
+}
+
+.content_pr_ttl.green {
+  background: #aace23;
+}
+
+.content_pr_ttl.blue {
+  background: #00a0e9;
+}
+
+.content_pr_ttl.orange {
+  background: #f2b013;
+}
+
+.content_pr_txt {
+  padding: 1em;
   text-align: center;
 }
 
-.entry-content h3 {
-  border-bottom: 3px solid #abcf22;
-  padding: 0 0px 0.2em 0;
-  margin: 0 0 1.3em 0;
-  font-size: 1.4em;
-  line-height: 1.6;
-  clear: both;
+.content_pr_txt p {
+  margin-bottom: 1em;
 }
 
-.entry-content h3.cancer-topic-title {
-  color: #777;
-  text-align: center;
+.content_pr .btn_box {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
-.entry-content .readmore {
-  display: block;
-  text-align: right;
-  margin: 0 0 1em 0;
-}
-
-.entry-content p {
-  margin: 0 0 1.3em 0;
-}
-
-.entry-content .linkitpop {
-  color: #333333;
+.content_pr .btn_box a {
+  background: #14568b;
   text-decoration: none;
-  border-bottom: 2px dotted #333333;
+  color: #fff;
+  padding: 0.7em;
+  border-radius: 4px;
+  border-bottom: solid 2px #aaa;
+  margin: 0 0.5em;
+}
+
+.blogcard {
+  border: solid 1px #cccccc;
+  padding: 1em;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.blogcard::after {
+  position: absolute;
+  content: '';
+  right: -3px;
+  top: -2px;
+  border-width: 0 15px 15px 0;
+  border-style: solid;
+  border-color: #abcf22 #fff #abcf22;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.blogcard figure {
+  width: 150px;
+}
+
+.blogcard_box {
+  width: calc(100% - 170px);
+}
+
+.blogcard a {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #333333;
+}
+
+.blogcard a .ttl {
+  font-weight: bold;
+  color: #0886af;
+  font-size: 1.2rem;
+  line-height: 1.4em;
+  margin-bottom: 0.5em;
+  border: none;
+}
+
+.blogcard a .txt {
+  font-size: 0.9em;
+}
+
+.movie {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.movie iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .postlist_type1 {
@@ -1361,6 +1535,7 @@ fade-enter-active, .fade-leave-active {
   flex-wrap: wrap;
   -webkit-justify-content: space-between;
   justify-content: space-between;
+  font-weight: 400;
   text-decoration: none;
 }
 
@@ -1378,6 +1553,7 @@ fade-enter-active, .fade-leave-active {
   font-size: 1.2rem;
   line-height: 1.4em;
   margin-bottom: 0.5em;
+  border: none;
 }
 
 .postlist_type3 a .update {
@@ -1628,6 +1804,9 @@ fade-enter-active, .fade-leave-active {
   flex-wrap: wrap;
   -webkit-justify-content: space-between;
   justify-content: space-between;
+  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
 }
 
 .cancer_head_box {
@@ -1744,6 +1923,13 @@ fade-enter-active, .fade-leave-active {
   }
   .ly_photo {
     padding: 2em 5%;
+  }
+  .ly_bread {
+    margin-bottom: 0.8em;
+    padding: 0 2%;
+  }
+  .ly_link {
+    background: #ffffff;
   }
   .header {
     padding: 0.7em 1em;
@@ -2056,12 +2242,92 @@ fade-enter-active, .fade-leave-active {
   .information_wrap {
     margin-bottom: 4em;
   }
+  .content_head {
+    display: block;
+  }
+  .content_head .wp_social_bookmarking_light {
+    width: 100%;
+    padding: 0 3%;
+  }
+  .content_head .ttl_blblue {
+    text-align: left;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    padding: 0 2%;
+  }
+  .content_day {
+    width: 98%;
+    margin: 0 2% 0 0;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+  .content_pr_txt {
+    padding: 1em 0.5em;
+  }
+  .content_pr_txt .btn_box {
+    display: block;
+  }
+  .content_pr_txt .btn_box a {
+    display: block;
+  }
   .postlist_type2 {
     width: 90%;
     margin: 0 5% 1em;
   }
   .postlist_type2_wrap {
     display: block;
+  }
+  .postlist_type3 a .eyecach {
+    width: 25%;
+  }
+  .postlist_type3 a .textarea {
+    width: 73%;
+  }
+  .postlist_type3 a .ttl {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .postlist_type3 a .update {
+    display: inline;
+    color: #000;
+  }
+  .postlist_type3 a .cat_list {
+    list-style: none;
+    margin-bottom: 0.5em;
+    display: inline-block;
+    font-weight: 400;
+  }
+  .postlist_type3 a .cat_list li {
+    background: none;
+    color: #222222;
+    margin: 0;
+    padding: 0 0.4em 0 0;
+  }
+  .postlist_type3 a .txt {
+    display: none;
+  }
+  .cancer_list {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .cancer_list .postlist_type1 {
+    display: inline-block;
+    width: 70%;
+    white-space: normal;
+    vertical-align: top;
+    height: 270px;
+  }
+  .cancer_list .postlist_type1_wrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+  }
+  .cancer_list .postlist_type1 .cat_list {
+    display: none;
+  }
+  .cancer_head_box {
+    width: 100%;
   }
 }
 

@@ -122,6 +122,9 @@
     .ly_inner{
       @include flexbox;
       @include flexhashi;
+      flex-direction: row-reverse;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
     }
     &_box{
       width:50%;

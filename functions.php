@@ -25,5 +25,34 @@ add_filter( 'pre_get_posts', 'search_exclude_custom_post_type' );
 add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 SCF::add_options_page( 'スライダー追加', 'スライダーオプション', 'manage_options', 'oncolo_slider_option' );
 
-//object 
+//リンクカード
+function blogcardFunc($atts) {
+    extract(shortcode_atts(array(
+        'url' => '',
+    ), $atts));
+    $url = wp_make_link_relative($url);
+    $blogcard_id = url_to_postid($url);
+    //if(get_post_status( $blogcard_id  ) == 'publish' ){
+    $blogcard_link =get_the_permalink( $blogcard_id);
+    $blogcard_img = get_the_post_thumbnail($blogcard_id,'thumbnail');
+    $blogcard_ttl = get_the_title($blogcard_id);
+    $blogcard_txt = strip_tags(mb_strimwidth(get_the_excerpt($blogcard_id), 0, 240, "…", "UTF-8"));
+    $blogcard = <<< CARD
+    <aside class="blogcard">
+      <a href="{$blogcard_link}">
+        <figure>{$blogcard_img}</figure>
+        <div class="blogcard_box">
+          <p class="ttl">{$blogcard_ttl}</p>
+          <p class="txt">{$blogcard_txt}</p>
+        </div>
+      </a>
+    </aside>
+CARD;
+    //}else{
+      //$blogcard;
+    //}
+
+    return $blogcard;
+}
+add_shortcode('blogcard', 'blogcardFunc');
 ?>

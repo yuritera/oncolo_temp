@@ -26,7 +26,12 @@ $cat_ids = get_the_category();
 endwhile;
 echo '</div>';
 echo '<div class="pager">';
-wp_pagenavi();
+wp_pagenavi(array(
+  'options' => array(
+    'pages_text' => "",
+  )
+)
+);
 echo '</div>';
 else:
 echo '<p class="nolist">記事がありません</p>';

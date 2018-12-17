@@ -88,13 +88,13 @@ function custom_content_more_link( $output ) {
 add_filter( 'the_content_more_link', 'custom_content_more_link' );
 
 //セルフピンバック禁止
-function no_self_pingst( &$links ) {
-    $home = home_url();
-    foreach ( $links as $l => $link )
-        if ( 0 === strpos( $link, $home ) )
-            unset($links[$l]);
-}
-add_action( 'pre_ping', 'no_self_pingst' );
+// function no_self_pingst( &$links ) {
+//     $home = home_url();
+//     foreach ( $links as $l => $link )
+//         if ( 0 === strpos( $link, $home ) )
+//             unset($links[$l]);
+// }
+// add_action( 'pre_ping', 'no_self_pingst' );
 
 //iframeのレスポンシブ対応
 function wrap_iframe_in_div($the_content) {

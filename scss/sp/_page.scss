@@ -1,0 +1,27 @@
+//cancer
+.cancer{
+  &_list{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    .postlist_type1{
+      display: inline-block;
+      width: 70%;
+      white-space: normal;
+      vertical-align: top;
+      height:270px;
+      &_wrap{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block;
+      }
+      .cat_list{
+        display: none;
+      }
+    }
+  }
+  &_head{
+    &_box{
+      width:100%;
+    }
+  }
+}

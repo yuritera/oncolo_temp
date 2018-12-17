@@ -6,16 +6,30 @@ Description: A simple example YARPP template.
 */
 ?>
 <section class="content_related">
-<h3 class="content_related_ttl">関連記事</h3>
+<h2 class="content_related_ttl">関連記事</h2>
 <?php if (have_posts()):?>
-<ul class="content_related_post">
+<div class="postlist_type3_wrap">
 	<?php while (have_posts()) : the_post(); ?>
-	<li><a href="<?php the_permalink() ?>" rel="bookmark">
-		<div class="content_related_post_pic"><?php the_post_thumbnail('medium'); ?></div>
-		<div class="content_related_post_ttl"><?php the_title(); ?></div>
-	</a></li>
+	<section class="postlist_type3">
+  <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+    <aside class="eyecach"><?php if(has_post_thumbnail()) {
+      $rand_img = get_the_post_thumbnail(get_the_ID(),'thumbnail', array('alt'=>get_the_title()) );
+      } else {
+      $rand_no =mt_rand(1, 4);
+      $rand_img = '<img src="'.get_stylesheet_directory_uri().'/images/noimage.jpg">';
+      } echo $rand_img; ?></aside>
+    <div class="textarea">
+      <h3 class="ttl"><?php echo strip_tags(get_the_title()); ?></h3>
+      <p class="update"><?php the_time('Y.m.d'); ?></p>
+      <ul class="cat_list"><?php foreach((get_the_category()) as $cat){ echo '<li>' . $cat->cat_name . '</li> '; } ?></ul>
+      <?php
+      echo '<p class="txt">'.strip_tags(mb_strimwidth(get_the_excerpt(), 0, 240, "…", "UTF-8")).'</p>';
+    ?>
+    </div>
+    </a>
+</section>
 	<?php endwhile; ?>
-</ul>
+</div>
 <?php else: ?>
 <p>No related posts.</p>
 <?php endif; ?>

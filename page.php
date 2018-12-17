@@ -12,7 +12,11 @@ if (have_posts()) :
   <?php get_template_part('temp/post_meta'); ?>
 </header>
 <?php
+  echo '<main class="content_main">';
+  echo '<div class="entry-content">';
   the_content();
+  echo '</div>';
+  echo '</main>';
   endwhile;
 endif;
 ?>

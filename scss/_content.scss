@@ -1,3 +1,51 @@
+//entry
+.entry-content{
+  padding:0 5%;
+  img{
+    padding-bottom:0.5em;
+  }
+  h2{
+    background-color: #eee;
+    border-left: 5px solid #00a1e9;
+    padding: 0.5em 2em;
+    margin: 0 0 1.3em 0;
+    font-size: 1.6em;
+    line-height: 1.6;
+    width:100%;
+    &.top-sub-title{
+      color:#666;
+      text-align: center;
+    }
+  }
+  h3{
+    border-bottom: 3px solid #abcf22;
+    padding: 0 0px 0.2em 0;
+    margin:0 0 1.3em 0;
+    font-size: 1.4em;
+    line-height: 1.6;
+    clear: both;
+    &.cancer-topic-title{
+      color: #777;
+      text-align: center;
+    }
+  }
+  .readmore{
+    display: block;
+    text-align: right;
+    margin:0 0 1em 0;
+  }
+  p{
+    margin:0 0 1.3em 0;
+  }
+  .linkitpop{
+    color:#333333;
+    text-decoration: none;
+    border-bottom: 2px dotted #333333;
+  }
+  .yarpp-related {
+    margin: 2em 0 2em 0;
+  }
+}
 /*title*/
 .ttl{
   &_bblue{
@@ -211,8 +259,40 @@ fade-enter-active, .fade-leave-active {
   &_main{
     margin-bottom:4em;
   }
+  &_aside{
+    @include flexbox;
+    @include flexhashi;
+  }
+  &_ad{
+    &_wrap{
+      width:28%;
+    }
+    &_ttl{
+      font-size:1.2rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      border-top:3px solid #f7c646;
+      padding:0.5em;
+      text-align: center;
+      margin-bottom:0.4em;
+    }
+    &_img{
+      img{
+        width: 100%;
+      }
+    }
+    a{
+      color:#000000;
+      line-height: 1.4;
+      font-size:0.9em;
+    }
+  }
   &_eyecach{
-    margin-bottom:2em;
+    margin:0 auto 2em;
+    width:70%;
+    img{
+      width: 100%;
+    }
   }
   &_day{
     width: 40%;
@@ -227,7 +307,7 @@ fade-enter-active, .fade-leave-active {
     border:solid 2px #cccccc;
     @include flexbox;
     @include flexhashi;
-    padding:1em;
+    padding:1em 1em 3em 1em;
     margin-bottom:2em;
     position: relative;
     &_icon{
@@ -238,9 +318,14 @@ fade-enter-active, .fade-leave-active {
       h3{
         font-weight: bold;
         margin-bottom:0.5em;
+        font-size:1rem;
+        border:none;
+        padding:0;
+        margin:0;
       }
       p{
         font-size: 0.9rem;
+        margin:0;
       }
       a{
         display: block;
@@ -259,47 +344,98 @@ fade-enter-active, .fade-leave-active {
   &_prifits{
     margin:2em 0;
   }
+  &_pr{
+    border:solid 1px #ccc;
+    &_wrap{
+      margin:0 5% 2em;
+    }
+    &_ttl{
+      font-weight: bold;
+      text-align: center;
+      font-size:1.2rem;
+      padding:0.5em;
+      color:#ffffff;
+      &.green{
+        background:#aace23;
+      }
+      &.blue{
+        background:#00a0e9;
+      }
+      &.orange{
+        background:#f2b013;
+      }
+    }
+    &_txt{
+      padding:1em;
+      text-align: center;
+      p{
+        margin-bottom:1em;
+      }
+    }
+    .btn_box{
+      @include flexbox;
+      @include flexcen;
+      a{
+        background: #14568b;
+        text-decoration: none;
+        color:#fff;
+        padding:0.7em;
+        border-radius: 4px;
+        border-bottom:solid 2px #aaa;
+        margin:0 0.5em;
+      }
+    }
+  }
 }
-
-//entry
-.entry-content{
-  h2{
-    background-color: #eee;
-    border-left: 5px solid #00a1e9;
-    padding: 0.5em 2em;
-    margin: 0 0 1.3em 0;
-    font-size: 1.6em;
-    line-height: 1.6;
-    width:100%;
-    &.top-sub-title{
-      color:#666;
-      text-align: center;
-    }
+//blogcard
+.blogcard{
+  border:solid 1px #cccccc;
+  padding:1em;
+  margin-bottom:1em;
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    right: -3px;
+    top: -2px;
+    border-width: 0 15px 15px 0;
+    border-style: solid;
+    border-color: #abcf22 #fff #abcf22;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
   }
-  h3{
-    border-bottom: 3px solid #abcf22;
-    padding: 0 0px 0.2em 0;
-    margin:0 0 1.3em 0;
-    font-size: 1.4em;
-    line-height: 1.6;
-    clear: both;
-    &.cancer-topic-title{
-      color: #777;
-      text-align: center;
-    }
+  figure{
+    width: 150px;
   }
-  .readmore{
-    display: block;
-    text-align: right;
-    margin:0 0 1em 0;
+  &_box{
+    width: calc(100% - 170px);
   }
-  p{
-    margin:0 0 1.3em 0;
-  }
-  .linkitpop{
-    color:#333333;
+  a{
+    @include flexbox;
+    @include flexhashi;
     text-decoration: none;
-    border-bottom: 2px dotted #333333;
+    color:#333333;
+    .ttl{
+      font-weight: bold;
+      color: #0886af;
+      font-size: 1.2rem;
+      line-height: 1.4em;
+      margin-bottom: 0.5em;
+      border: none;
+    }
+    .txt{
+      font-size: 0.9em;
+    }
   }
-
+}
+.movie{
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  iframe{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
