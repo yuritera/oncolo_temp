@@ -111,5 +111,9 @@
 </div>
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/base.js"></script>
+<?php if(is_single()) : ?>
+<script type="text/javascript" src="<?php echo get_template_directory_uri( '' ); ?>/js/jquery.confirm/jquery.confirm.js" charset="utf-8"></script>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri( '' ); ?>/js/jquery.confirm/jquery.confirm.css" type="text/css" />
+<?php endif; ?>
 </body>
 </html>

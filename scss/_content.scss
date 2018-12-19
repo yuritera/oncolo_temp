@@ -7,8 +7,8 @@
   h2{
     background-color: #eee;
     border-left: 5px solid #00a1e9;
-    padding: 0.5em 2em;
-    margin: 0 0 1.3em 0;
+    padding: 0.3em 1em;
+    margin: 1.5em 0 0.8em 0;
     font-size: 1.6em;
     line-height: 1.6;
     width:100%;
@@ -20,7 +20,7 @@
   h3{
     border-bottom: 3px solid #abcf22;
     padding: 0 0px 0.2em 0;
-    margin:0 0 1.3em 0;
+    margin:0.2em 0 1.3em 0;
     font-size: 1.4em;
     line-height: 1.6;
     clear: both;
@@ -44,6 +44,22 @@
   }
   .yarpp-related {
     margin: 2em 0 2em 0;
+  }
+  table{
+    border-collapse: collapse;
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 1.625em;
+    max-width: 100%;
+    clear: both;
+    width: 100%;
+    td,
+    th{
+      padding: 3px 10px;
+      text-align: left;
+      vertical-align: top;
+      border-top: 1px solid #ddd;
+      font-size: 0.85em;
+    }
   }
 }
 /*title*/
@@ -437,5 +453,41 @@ fade-enter-active, .fade-leave-active {
     right: 0;
     width: 100% !important;
     height: 100% !important;
+  }
+}
+//single-headline
+.single-headline{
+	width: 45%;
+	background-color: #eee;
+	padding: 1em;
+  margin: 0 0 2em 0;
+  p{
+    margin: 0 0 0.5em 0;
+	  color: #333;
+	  font-weight: bold;
+  }
+  ul{
+    margin: 0 0 0 1.5em;
+    li{
+      margin:0 0 0.5em 0;
+      a{
+        font-weight: bold;
+        color: #0886af;
+        padding: 0;
+        margin: 0;
+        &:hover{
+          color: #CC3434;
+        }
+      }
+      &#onlymedical{
+        font-weight: bold;
+        color: #0886af;
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover{
+	        color: #cc3434;
+        }
+      }
+    }
   }
 }

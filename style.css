@@ -847,8 +847,8 @@ img[class*="attachment-"] {
 .entry-content h2 {
   background-color: #eee;
   border-left: 5px solid #00a1e9;
-  padding: 0.5em 2em;
-  margin: 0 0 1.3em 0;
+  padding: 0.3em 1em;
+  margin: 1.5em 0 0.8em 0;
   font-size: 1.6em;
   line-height: 1.6;
   width: 100%;
@@ -862,7 +862,7 @@ img[class*="attachment-"] {
 .entry-content h3 {
   border-bottom: 3px solid #abcf22;
   padding: 0 0px 0.2em 0;
-  margin: 0 0 1.3em 0;
+  margin: 0.2em 0 1.3em 0;
   font-size: 1.4em;
   line-height: 1.6;
   clear: both;
@@ -891,6 +891,24 @@ img[class*="attachment-"] {
 
 .entry-content .yarpp-related {
   margin: 2em 0 2em 0;
+}
+
+.entry-content table {
+  border-collapse: collapse;
+  border-bottom: 1px solid #ddd;
+  margin: 0 0 1.625em;
+  max-width: 100%;
+  clear: both;
+  width: 100%;
+}
+
+.entry-content table td,
+.entry-content table th {
+  padding: 3px 10px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+  font-size: 0.85em;
 }
 
 /*title*/
@@ -1366,6 +1384,49 @@ fade-enter-active, .fade-leave-active {
   right: 0;
   width: 100% !important;
   height: 100% !important;
+}
+
+.single-headline {
+  width: 45%;
+  background-color: #eee;
+  padding: 1em;
+  margin: 0 0 2em 0;
+}
+
+.single-headline p {
+  margin: 0 0 0.5em 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.single-headline ul {
+  margin: 0 0 0 1.5em;
+}
+
+.single-headline ul li {
+  margin: 0 0 0.5em 0;
+}
+
+.single-headline ul li a {
+  font-weight: bold;
+  color: #0886af;
+  padding: 0;
+  margin: 0;
+}
+
+.single-headline ul li a:hover {
+  color: #CC3434;
+}
+
+.single-headline ul li#onlymedical {
+  font-weight: bold;
+  color: #0886af;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.single-headline ul li#onlymedical:hover {
+  color: #cc3434;
 }
 
 .postlist_type1 {
@@ -1896,6 +1957,125 @@ fade-enter-active, .fade-leave-active {
 
 .cancer_topcontent a {
   text-align: right;
+}
+
+.single-tab-menu {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.single-tab-menu li {
+  list-style: none;
+  margin: 0 0.4em;
+}
+
+.single-tab-menu li a {
+  display: block;
+  padding: 0.5em 2em;
+  border: 1px solid #d8e8f7;
+  text-align: center;
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+}
+
+.single-tab-menu li a:hover {
+  background: #40b3cc;
+  border: 1px solid #40b3cc;
+  color: #ffffff;
+}
+
+.single-tab-menu .select a {
+  background: #d8e8f7;
+}
+
+.kind-menu {
+  margin: 1em 0;
+}
+
+.kind-menu ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.kind-menu ul li {
+  list-style: none;
+  margin: 0 0.4em;
+}
+
+.kind-menu ul li a {
+  display: block;
+  padding: 0.5em;
+  border: 1px solid #d8e8f7;
+  text-align: center;
+  text-decoration: none;
+  color: #14578b;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.kind-menu ul li a span {
+  color: #0886af;
+  font-size: 0.9em;
+}
+
+.entry-content .kind-subtitle {
+  background-color: #0886af;
+  color: #fff;
+  padding: 0.2em 0.5em;
+  clear: both;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin: 0 0 0.8em 0;
+  border: none;
+  font-weight: bold;
+}
+
+.entry-content .kind-menu-list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin: 0 0 1.3em 0;
+  padding: 0 3%;
+}
+
+.entry-content .kind-menu-list li {
+  list-style: none;
+  width: 49%;
+  margin-bottom: 0.5em;
+}
+
+.entry-content .kind-menu-list li a {
+  background-color: #d8e8f7;
+  display: block;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #14578b;
+  text-decoration: none;
+  position: relative;
+}
+
+.entry-content .kind-menu-list li a::after {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 5px solid transparent;
+  border-left-color: #14578b;
+  top: 50%;
+  right: 10px;
+  margin-top: -3px;
 }
 
 @media screen and (max-width: 850px) {
