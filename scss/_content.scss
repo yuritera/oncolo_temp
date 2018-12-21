@@ -11,6 +11,7 @@
     margin: 1.5em 0 0.8em 0;
     font-size: 1.6em;
     line-height: 1.6;
+    font-weight: bold;
     width:100%;
     &.top-sub-title{
       color:#666;
@@ -23,6 +24,7 @@
     margin:0.2em 0 1.3em 0;
     font-size: 1.4em;
     line-height: 1.6;
+    font-weight: bold;
     clear: both;
     &.cancer-topic-title{
       color: #777;
@@ -59,6 +61,59 @@
       vertical-align: top;
       border-top: 1px solid #ddd;
       font-size: 0.85em;
+    }
+  }
+  dl{
+    margin:0 5% 1.3em;
+    dt{
+      font-size:1.1em;
+      font-weight: bold;
+      padding:0 0 0 0;
+      border-bottom:solid 1px #ccc;
+    }
+    dd{
+      padding:0.5em 0 0 1em;
+      margin-bottom: 1em;
+    }
+  }
+  .flex{
+    &_layout{
+    @include flexbox;
+      &.justify{
+        @include flexhashi;
+      }
+    }
+    &_box{
+      &.width10{
+        width:10%;
+      }
+      &.width20{
+        width:20%;
+      }
+      &.width30{
+        width:30%;
+      }
+      &.width40{
+        width:40%;
+      }
+      &.width50{
+        width:50%;
+      }
+      &.width60{
+        width:60%;
+      }
+      &.width70{
+        width:70%;
+      }
+      &.width80{
+        width:80%;
+      }
+      &.width90{
+        width:90%;
+      }
+      &.width100{
+        width:100%;
+      }
     }
   }
 }
@@ -186,9 +241,10 @@ fade-enter-active, .fade-leave-active {
 .ranking{
   &_wrap{
     .ly_flex &{
-      width:46%;
+      width:48%;
+      margin:0 0 4em 0;
     }
-    margin-bottom:4em;
+    margin:0 5% 4em;
   }
   &_nav{
     &_list{
@@ -239,7 +295,7 @@ fade-enter-active, .fade-leave-active {
 //newpost
 .newpost{
   &_wrap{
-    width:46%;
+    width:48%;
     margin-bottom:4em;
   }
   &_list{

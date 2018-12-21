@@ -61,6 +61,40 @@ EMO;
   </div>
   <?php
   endif;
+  if ( get_post_meta($post->ID,'related-tag',TRUE) ){ //連携タグ
+    echo '<h2>'.get_the_title().'の臨床試験（治験）</h2>';
+    $args=array(
+			'tax_query' => array(
+				array(
+				'taxonomy' => 'post_tag',
+				'field' => 'slug',
+				'terms' => get_post_meta($post->ID,'related-tag',TRUE)
+				)
+				),
+				'cat' => 15,
+				'posts_per_page'=> 5,
+				'paged' => $paged
+      );
+    $post_ids = get_posts($args);
+    get_template_part('temp/post_list4');
+  }
+  if(get_post_meta($post->ID,'cancer-tag',TRUE) ){//連携広告
+    echo '<h2>'.get_the_title().'の治験・臨床試験広告</h2>';
+    $args=array(
+			'tax_query' => array(
+				array(
+				'taxonomy' => 'post_tag',
+				'field' => 'slug',
+				'terms' => get_post_meta($post->ID,'cancer-tag',TRUE)
+				)
+				),
+				'cat' => 57,
+				'posts_per_page'=> 5,
+				'paged' => $paged
+			);
+    $post_ids = get_posts($args);
+    get_template_part('temp/post_list4');
+  }
   get_template_part('temp/post_meta_btm');
   related_posts();//関連記事
   echo '</div>';

@@ -22,9 +22,6 @@ Description: A simple example YARPP template.
       <h3 class="ttl"><?php echo strip_tags(get_the_title()); ?></h3>
       <p class="update"><?php the_time('Y.m.d'); ?></p>
       <ul class="cat_list"><?php foreach((get_the_category()) as $cat){ echo '<li>' . $cat->cat_name . '</li> '; } ?></ul>
-      <?php
-      echo '<p class="txt">'.strip_tags(mb_strimwidth(get_the_excerpt(), 0, 240, "…", "UTF-8")).'</p>';
-    ?>
     </div>
     </a>
 </section>

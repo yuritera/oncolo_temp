@@ -851,6 +851,7 @@ img[class*="attachment-"] {
   margin: 1.5em 0 0.8em 0;
   font-size: 1.6em;
   line-height: 1.6;
+  font-weight: bold;
   width: 100%;
 }
 
@@ -865,6 +866,7 @@ img[class*="attachment-"] {
   margin: 0.2em 0 1.3em 0;
   font-size: 1.4em;
   line-height: 1.6;
+  font-weight: bold;
   clear: both;
 }
 
@@ -909,6 +911,74 @@ img[class*="attachment-"] {
   vertical-align: top;
   border-top: 1px solid #ddd;
   font-size: 0.85em;
+}
+
+.entry-content dl {
+  margin: 0 5% 1.3em;
+}
+
+.entry-content dl dt {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0 0 0 0;
+  border-bottom: solid 1px #ccc;
+}
+
+.entry-content dl dd {
+  padding: 0.5em 0 0 1em;
+  margin-bottom: 1em;
+}
+
+.entry-content .flex_layout {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.entry-content .flex_layout.justify {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.entry-content .flex_box.width10 {
+  width: 10%;
+}
+
+.entry-content .flex_box.width20 {
+  width: 20%;
+}
+
+.entry-content .flex_box.width30 {
+  width: 30%;
+}
+
+.entry-content .flex_box.width40 {
+  width: 40%;
+}
+
+.entry-content .flex_box.width50 {
+  width: 50%;
+}
+
+.entry-content .flex_box.width60 {
+  width: 60%;
+}
+
+.entry-content .flex_box.width70 {
+  width: 70%;
+}
+
+.entry-content .flex_box.width80 {
+  width: 80%;
+}
+
+.entry-content .flex_box.width90 {
+  width: 90%;
+}
+
+.entry-content .flex_box.width100 {
+  width: 100%;
 }
 
 /*title*/
@@ -1048,11 +1118,12 @@ fade-enter-active, .fade-leave-active {
 }
 
 .ranking_wrap {
-  margin-bottom: 4em;
+  margin: 0 5% 4em;
 }
 
 .ly_flex .ranking_wrap {
-  width: 46%;
+  width: 48%;
+  margin: 0 0 4em 0;
 }
 
 .ranking_nav_list {
@@ -1111,7 +1182,7 @@ fade-enter-active, .fade-leave-active {
 }
 
 .newpost_wrap {
-  width: 46%;
+  width: 48%;
   margin-bottom: 4em;
 }
 
@@ -1611,8 +1682,8 @@ fade-enter-active, .fade-leave-active {
 .postlist_type3 a .ttl {
   font-weight: bold;
   color: #0886af;
-  font-size: 1.2rem;
-  line-height: 1.4em;
+  font-size: 1.1rem;
+  line-height: 1.3em;
   margin-bottom: 0.5em;
   border: none;
 }
@@ -1620,6 +1691,8 @@ fade-enter-active, .fade-leave-active {
 .postlist_type3 a .update {
   display: inline;
   color: #000;
+  font-size: 0.9em;
+  font-weight: normal;
 }
 
 .postlist_type3 a .cat_list {
@@ -1629,7 +1702,7 @@ fade-enter-active, .fade-leave-active {
 }
 
 .postlist_type3 a .cat_list li {
-  background: #666666;
+  background: #999999;
   color: #ffffff;
   font-size: 0.9em;
   margin: 0 0.5em 0.5em 0;
@@ -2078,6 +2151,63 @@ fade-enter-active, .fade-leave-active {
   margin-top: -3px;
 }
 
+.related-menu {
+  width: 100%;
+  text-align: center;
+  background-color: #eee;
+  padding: 1em;
+  margin: 1.5em 0 0 0;
+}
+
+.related-menu h4 {
+  font-size: 1.4em;
+  margin-bottom: 1em;
+}
+
+.related-menu h4 a {
+  color: #000;
+}
+
+.related-menu ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.related-menu ul li {
+  width: 48%;
+  margin: 0 1% 0.5em;
+  border: 1px solid #ccc;
+  position: relative;
+  list-style: none;
+}
+
+.related-menu ul li a {
+  width: 100%;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #fff;
+  color: #0187af;
+  padding: 0.5em;
+  text-decoration: none;
+}
+
+.related-menu ul li a::after {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 6px solid transparent;
+  border-left-color: #0187af;
+  top: 50%;
+  right: 10px;
+  margin-top: -6px;
+}
+
 @media screen and (max-width: 850px) {
   .sp {
     display: block;
@@ -2509,10 +2639,29 @@ fade-enter-active, .fade-leave-active {
   .cancer_head_box {
     width: 100%;
   }
+  .dic_navlink {
+    width: 90%;
+  }
+  .dic_navlink_item {
+    width: 45%;
+  }
+  .dic_navi_list {
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    width: 90%;
+    margin: 0 auto 1em;
+  }
+  .dic_navi_list li {
+    margin: 0 0.2em 0.5em 0;
+  }
+  .dic_box {
+    width: 90%;
+    margin: 0 auto 1em;
+  }
 }
 
 /*hover*/
-* {
+:hover {
   transition-property: all;
   transition: 0.3s linear;
 }

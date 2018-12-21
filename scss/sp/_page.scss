@@ -25,3 +25,26 @@
     }
   }
 }
+.dic{
+  &_navlink{
+    width:90%;
+    &_item{
+      width:45%;
+    }
+  }
+  &_navi{
+    &_list{
+      justify-content: flex-start;
+      -webkit-justify-content: flex-start;
+      width:90%;
+      margin:0 auto 1em;
+      li{
+        margin:0 0.2em 0.5em 0;
+      }
+    }
+  }
+  &_box{
+    width:90%;
+    margin:0 auto 1em;
+  }
+}
