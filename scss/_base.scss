@@ -24,12 +24,15 @@ body {
 a{
   color:$link_color;
 }
-a:hover{
+.ly_header,
+.ly_link,
+.ly_footer{
+  a:hover{
   opacity: 0.7;
   filter: alpha(opacity=70);
   -ms-filter: "alpha(opacity=70)";
+  }
 }
-
 /*marginset*/
 .mgt0{
   margin-top:0!important;

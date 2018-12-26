@@ -38,7 +38,12 @@ EMO;
       }
     }
   }
+  if(is_404()){
+    $bread_title = '404';
+  }else{
+    $bread_title = get_the_title();
+  }
     ?>
-    <span property="itemListElement" typeof="ListItem" class="bread_item"><span property="name"><?php the_title(); ?></span><meta property="position" content="3"></span>
+    <span property="itemListElement" typeof="ListItem" class="bread_item"><span property="name"><?php echo $bread_title; ?></span><meta property="position" content="3"></span>
   </div>
 </nav>
