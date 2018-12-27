@@ -141,6 +141,7 @@
     text-align: center;
     border-bottom:5px solid #d8e8f7;
     padding: 0 0 0.5em 0;
+    line-height: 1.5;
   }
 }
 
@@ -367,7 +368,7 @@ fade-enter-active, .fade-leave-active {
     }
   }
   &_day{
-    width: 40%;
+    width: 60%;
     @include flexbox;
     justify-content: flex-end;
     -webkit-box-pack: end;

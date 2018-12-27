@@ -60,6 +60,7 @@ EMO;
     $bread_title = '404';
   }else{
     $bread_title = get_the_title();
+    $bread_title = strip_tags($bread_title);
   }
     ?>
     <span property="itemListElement" typeof="ListItem" class="bread_item"><span property="name"><?php echo $bread_title; ?></span><meta property="position" content="3"></span>

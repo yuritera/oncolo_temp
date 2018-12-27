@@ -1008,6 +1008,7 @@ img[class*="attachment-"] {
   text-align: center;
   border-bottom: 5px solid #d8e8f7;
   padding: 0 0 0.5em 0;
+  line-height: 1.5;
 }
 
 .slider {
@@ -1275,7 +1276,7 @@ fade-enter-active, .fade-leave-active {
 }
 
 .content_day {
-  width: 40%;
+  width: 60%;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;

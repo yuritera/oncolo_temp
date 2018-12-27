@@ -34,7 +34,7 @@ wp_pagenavi(array(
 );
 echo '</div>';
 else:
-echo '<p class="nolist">記事がありません</p>';
+echo '<p class="nolist">該当する記事はありません。</p>';
 endif;
 wp_reset_postdata();
 ?>
