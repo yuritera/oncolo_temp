@@ -880,7 +880,7 @@ img[class*="attachment-"] {
 .entry-content .readmore {
   display: block;
   text-align: right;
-  margin: 0 0 1em 0;
+  margin: 2em 0 1em 0;
 }
 
 .entry-content p {

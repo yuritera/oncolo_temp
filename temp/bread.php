@@ -36,6 +36,24 @@ echo <<< EMO
       >
 EMO;
       }
+    }else{
+      $nowcat = get_the_category();
+      $nowtag = get_the_tags();
+      if($nowcat[0] -> slug == 'cancer'){
+      echo <<< EMO
+      <span property="itemListElement" typeof="ListItem" class="bread_item"><a property="item" typeof="WebPage" title="がん種一覧" href="/cancer" class="taxonomy category"><span property="name">がん種一覧</span></a><meta property="position" content="2"></span>
+      >
+      <span property="itemListElement" typeof="ListItem" class="bread_item"><a property="item" typeof="WebPage" title="{$nowtag[0] -> name}" href="/cancer/{$nowtag[0] -> slug}" class="taxonomy category"><span property="name">{$nowtag[0] -> name}</span></a><meta property="position" content="2"></span>
+      >
+EMO;
+      }else{
+      $category_link = get_category_link( $nowcat[0] -> term_id);
+      echo <<< EMO
+      <span property="itemListElement" typeof="ListItem" class="bread_item"><a property="item" typeof="WebPage" title="{$nowcat[0] -> name}" href="{$category_link }" class="taxonomy category"><span property="name">{$nowcat[0] -> name}</span></a><meta property="position" content="2"></span>
+      >
+EMO;
+      }
+
     }
   }
   if(is_404()){
