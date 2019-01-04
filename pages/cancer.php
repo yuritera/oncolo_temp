@@ -217,7 +217,7 @@ if (have_posts()) :
       ?>
     </section>
   </div>
-  <div class="entry-content ly_inner">
+  <div class="entry-content ly_inner" id="readmore">
 <?php
   the_content();
   echo '</div>';
