@@ -17,11 +17,14 @@
       color:#666;
       text-align: center;
     }
+    &+h3{
+      margin:0.3em 0 0.6em;
+    }
   }
   h3{
     border-bottom: 3px solid #abcf22;
     padding: 0 0px 0.2em 0;
-    margin:0.2em 0 1.3em 0;
+    margin:1.5em 0 0.6em 0;
     font-size: 1.4em;
     line-height: 1.6;
     font-weight: bold;
@@ -38,6 +41,10 @@
   }
   p{
     margin:0 0 1.3em 0;
+  }
+  ol,
+  ul{
+    margin:0 1.5em 1em;
   }
   .linkitpop{
     color:#333333;
@@ -460,6 +467,17 @@ fade-enter-active, .fade-leave-active {
     }
   }
 }
+//はじめて治験を
+.hajimete{
+  border:solid 2px #f00;
+  text-align: center;
+  padding:0.5em;
+  font-weight: bold;
+  margin-bottom:2em;
+  a{
+    display: block;
+  }
+}
 //blogcard
 .blogcard{
   border:solid 1px #cccccc;
@@ -512,6 +530,7 @@ fade-enter-active, .fade-leave-active {
     height: 100% !important;
   }
 }
+
 //single-headline
 .single-headline{
 	width: 45%;

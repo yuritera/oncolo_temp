@@ -16,8 +16,14 @@ blockquote {
     display: block;
     margin: 0 auto;
 }
-.alignright { float: right; }
-.alignleft { float: left; }
+.alignright {
+    float: right;
+    margin-left: 1.625em;
+}
+.alignleft {
+    float: left;
+    margin-right: 1.625em;
+}
 
 img[class*="wp-image-"],
 img[class*="attachment-"] {

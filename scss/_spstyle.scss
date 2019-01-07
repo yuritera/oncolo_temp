@@ -13,3 +13,18 @@
 @import "sp/page";//辞書など
 @import "sp/error";//error
 }//end media
+
+@media screen and (max-width:560px) {
+  .youtube-container{
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    iframe{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+}

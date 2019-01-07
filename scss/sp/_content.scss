@@ -86,13 +86,14 @@
 .content{
   &_head{
     display: block;
+    width:90%;
+    margin:0 5% 1em;
     .wp_social_bookmarking_light{
       width:100%;
-      padding:0 3%;
     }
     .ttl_blblue{
       text-align: left;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       line-height: 1.6;
       padding: 0 2%;
     }
@@ -103,6 +104,7 @@
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    font-size:0.8em;
   }
   &_pr{
     &_txt{
@@ -115,4 +117,21 @@
       }
     }
   }
+  &_eyecach{
+    width:90%;
+  }
+}
+//entry content
+.entry-content{
+  h2{
+    font-size:1.3rem;
+  }
+  h3{
+    font-size:1.1rem;
+  }
+}
+//はじめて治験を
+.hajimete{
+  font-size:0.9em;
+  margin:0 5% 2em;
 }

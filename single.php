@@ -7,6 +7,9 @@ if (have_posts()) :
 ?>
 <?php get_template_part('temp/bread'); ?>
 <article class="content">
+<?php if(in_category(array(57,15))) : ?>
+<div class="hajimete"><a href="/guide">はじめて治験のお問合せする方へのお願い</a></div>
+<?php endif; ?>
 <header id="contentHead" class="content_head">
   <h1 class="ttl_blblue"><?php the_title(); ?></h1>
   <?php get_template_part('temp/post_meta'); ?>
