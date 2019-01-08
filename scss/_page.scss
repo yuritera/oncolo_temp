@@ -257,6 +257,41 @@
   }
 }
 .entry-content{
+  //event year
+  .event-year {
+    list-style: none;
+    width:60%;
+    max-width:240px;
+    @include flexbox;
+    @include flexcen;
+    align-items: center;
+    -webkit-box-align: center;
+    margin:2em auto 0;
+    li{
+      margin: 0 1em;
+      b{
+        font-size: 1.2em;
+      }
+      a{
+        display: block;
+        padding: 0.5em 0.7em;
+        font-size: 1.1em;
+        text-decoration: none;
+        background-color: #3687b0;
+        color: #fff;
+        &:hover{
+          background-color: #58a3d0;
+        }
+      }
+      span{
+        display: block;
+        padding: 0.5em 0.7em;
+        font-size: 1.1em;
+        background-color: #eee;
+        color: #999;
+      }
+    }
+    }
   .kind-subtitle{
     background-color: #0886af;
     color: #fff;
@@ -346,40 +381,7 @@
     }
   }
 }
-.event-year {
- 	list-style: none;
-  width:60%;
-  max-width:240px;
-  @include flexbox;
-  @include flexcen;
-  align-items: center;
-  -webkit-box-align: center;
-  margin:2em auto 0;
-  li{
-	  margin: 0 1em;
-    b{
-      font-size: 1.2em;
-    }
-    a{
-      display: block;
-      padding: 0.5em 0.7em;
-      font-size: 1.1em;
-      text-decoration: none;
-      background-color: #3687b0;
-      color: #fff;
-      &:hover{
-        background-color: #58a3d0;
-      }
-    }
-    span{
-      display: block;
-      padding: 0.5em 0.7em;
-      font-size: 1.1em;
-      background-color: #eee;
-      color: #999;
-    }
-  }
-}
+
 .event-list{
 	width: 100%;
 	border-collapse: collapse;

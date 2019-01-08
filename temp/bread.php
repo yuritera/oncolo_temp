@@ -24,6 +24,7 @@ EMO;
     $linked_page = get_post_meta($post->ID, 'linked-page', true);
     if(!empty($linked_page)){
       $linked_pieces = explode(":", $linked_page);
+
 echo <<< EMO
       <span property="itemListElement" typeof="ListItem" class="bread_item"><a property="item" typeof="WebPage" title="がん種一覧" href="/cancer" class="taxonomy category"><span property="name">がん種一覧</span></a><meta property="position" content="2"></span>
       >
