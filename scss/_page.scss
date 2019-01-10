@@ -180,9 +180,20 @@
   }
   &_topcontent{
     background:#fff;
-    padding:1.5em 1em;
-    > *{
-      margin:0 0 1em 0;
+    >:not(img) {
+      margin:0 1rem 1rem 1rem;
+    }
+    >.movie{
+      margin:0;
+      iframe{
+        padding:1rem;
+      }
+    }
+    >:last-child:not(img):not(.movie){
+      padding-bottom:1.5rem;
+    }
+    >:first-child:not(img):not(.movie){
+      padding-top:1.5rem;
     }
     h2{
       font-size:1.4rem;
@@ -340,7 +351,7 @@
   text-align: center;
   background-color: #eee;
   padding: 1em;
-  margin: 1.5em 0 0 0;
+  margin: 1.5em 0 1.5em 0;
   h4{
     font-size: 1.4em;
     margin-bottom:1em;
@@ -360,12 +371,13 @@
     a{
       width: 100%;
       display: block;
-      font-size: 1.2em;
+      font-size: 1.1rem;
       font-weight: bold;
       background-color: #fff;
       color: #0187af;
-      padding: 0.5em;
+      padding: 0.5em 1.5em 0.5em 0.5em;
       text-decoration: none;
+      height:100%;
       &::after{
         content: ' ';
         height: 0;

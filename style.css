@@ -2032,11 +2032,26 @@ fade-enter-active, .fade-leave-active {
 
 .cancer_topcontent {
   background: #fff;
-  padding: 1.5em 1em;
 }
 
-.cancer_topcontent > * {
-  margin: 0 0 1em 0;
+.cancer_topcontent > :not(img) {
+  margin: 0 1rem 1rem 1rem;
+}
+
+.cancer_topcontent > .movie {
+  margin: 0;
+}
+
+.cancer_topcontent > .movie iframe {
+  padding: 1rem;
+}
+
+.cancer_topcontent > :last-child:not(img):not(.movie) {
+  padding-bottom: 1.5rem;
+}
+
+.cancer_topcontent > :first-child:not(img):not(.movie) {
+  padding-top: 1.5rem;
 }
 
 .cancer_topcontent h2 {
@@ -2227,7 +2242,7 @@ fade-enter-active, .fade-leave-active {
   text-align: center;
   background-color: #eee;
   padding: 1em;
-  margin: 1.5em 0 0 0;
+  margin: 1.5em 0 1.5em 0;
 }
 
 .related-menu h4 {
@@ -2259,12 +2274,13 @@ fade-enter-active, .fade-leave-active {
 .related-menu ul li a {
   width: 100%;
   display: block;
-  font-size: 1.2em;
+  font-size: 1.1rem;
   font-weight: bold;
   background-color: #fff;
   color: #0187af;
-  padding: 0.5em;
+  padding: 0.5em 1.5em 0.5em 0.5em;
   text-decoration: none;
+  height: 100%;
 }
 
 .related-menu ul li a::after {

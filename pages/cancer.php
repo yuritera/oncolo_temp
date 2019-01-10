@@ -143,9 +143,7 @@ if (have_posts()) :
       })
       </script>
     </section>
-    <section class="cancer_wrap">
-      <h2 class="cancer_ttl">募集中の臨床試験・治験広告</h2>
-      <?php
+      <?php //治験広告があれば表示
         $cat_view = "治験広告";
         $date_view = true;
         $post_datas  = array();
@@ -175,7 +173,10 @@ if (have_posts()) :
           'no_found_rows' => true
         );
         $cancer_items = get_posts($args);
-        foreach ($cancer_items as $cancer_item) {
+        if(!empty($cancer_items)){
+          echo '<section class="cancer_wrap">';
+          echo '<h2 class="cancer_ttl">募集中の臨床試験・治験広告</h2>';
+          foreach ($cancer_items as $cancer_item) {
           $post_datas[] = [
           'post_num'=>$cancer_item -> ID,
           'post_title'=>'',
@@ -184,11 +185,10 @@ if (have_posts()) :
           ];
         }
         get_template_part('temp/post_list2_c');
+        echo '</section>';
+        }
       ?>
-    </section>
-    <section class="cancer_wrap">
-      <h2 class="cancer_ttl">セミナー動画</h2>
-      <?php
+      <?php //セミナー動画があれば表示
       $cat_view = "";
       $date_view = true;
       $post_datas  = array();
@@ -205,7 +205,10 @@ if (have_posts()) :
           'no_found_rows' => true
         );
         $cancer_items = get_posts($args);
-        foreach ($cancer_items as $cancer_item) {
+        if(!empty($cancer_items)){
+          echo '<section class="cancer_wrap">';
+          echo '<h2 class="cancer_ttl">セミナー動画</h2>';
+          foreach ($cancer_items as $cancer_item) {
           $post_datas[] = [
           'post_num'=>$cancer_item -> ID,
           'post_title'=>'',
@@ -214,8 +217,9 @@ if (have_posts()) :
           ];
         }
         get_template_part('temp/post_list2_c');
+        echo '</section>';
+        }
       ?>
-    </section>
   </div>
   <div class="entry-content ly_inner" id="readmore">
 <?php

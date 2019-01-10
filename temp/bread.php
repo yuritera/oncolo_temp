@@ -44,9 +44,13 @@ EMO;
       echo <<< EMO
       <span property="itemListElement" typeof="ListItem" class="bread_item"><a property="item" typeof="WebPage" title="がん種一覧" href="/cancer" class="taxonomy category"><span property="name">がん種一覧</span></a><meta property="position" content="2"></span>
       >
+EMO;
+      if(!empty($nowtag)){
+      echo <<< EMO
       <span property="itemListElement" typeof="ListItem" class="bread_item"><a property="item" typeof="WebPage" title="{$nowtag[0] -> name}" href="/cancer/{$nowtag[0] -> slug}" class="taxonomy category"><span property="name">{$nowtag[0] -> name}</span></a><meta property="position" content="2"></span>
       >
 EMO;
+      }
       }else{
       $category_link = get_category_link( $nowcat[0] -> term_id);
       echo <<< EMO
