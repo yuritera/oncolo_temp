@@ -90,7 +90,7 @@
   width: 48%;
   display: block;
   position: relative;
-  margin-bottom:2em;
+  margin: 0 1% 2em;
   border:1px solid #adadad;
   padding:0.8em;
   .eyecach{
@@ -124,6 +124,7 @@
 //list type3
 .postlist_type3{
   margin-bottom:1em;
+  width:100%;
   &_wrap{
     margin-bottom: 2em;
   }

@@ -51,10 +51,6 @@ img {
   vertical-align: bottom;
 }
 
-hr {
-  display: none;
-}
-
 :root ul {
   letter-spacing: -1px;
   word-spacing: -1px;
@@ -119,13 +115,13 @@ body {
 }
 
 ::-moz-selection {
-  background: #ccc;
-  color: #ccc;
+  background: #d8e8f7;
+  color: #000000;
 }
 
 ::selection {
-  background: #ccc;
-  color: #ccc;
+  background: #d8e8f7;
+  color: #000000;
 }
 
 a {
@@ -841,7 +837,7 @@ img[class*="attachment-"] {
 }
 
 .entry-content {
-  padding: 0 5%;
+  padding: 0 60px;
 }
 
 .entry-content img {
@@ -862,10 +858,6 @@ img[class*="attachment-"] {
 .entry-content h2.top-sub-title {
   color: #666;
   text-align: center;
-}
-
-.entry-content h2 + h3 {
-  margin: 0.3em 0 0.6em;
 }
 
 .entry-content h3 {
@@ -891,6 +883,7 @@ img[class*="attachment-"] {
 
 .entry-content p {
   margin: 0 0 1.3em 0;
+  font-size: 1.15rem;
 }
 
 .entry-content ol,
@@ -1626,7 +1619,7 @@ fade-enter-active, .fade-leave-active {
   width: 48%;
   display: block;
   position: relative;
-  margin-bottom: 2em;
+  margin: 0 1% 2em;
   border: 1px solid #adadad;
   padding: 0.8em;
 }
@@ -1678,6 +1671,7 @@ fade-enter-active, .fade-leave-active {
 
 .postlist_type3 {
   margin-bottom: 1em;
+  width: 100%;
 }
 
 .postlist_type3_wrap {
@@ -1919,6 +1913,7 @@ fade-enter-active, .fade-leave-active {
 .cancer_nav {
   text-align: center;
   margin: 0 0 1.5em 0;
+  line-height: 1.2;
 }
 
 .cancer_nav_list {
@@ -1932,7 +1927,7 @@ fade-enter-active, .fade-leave-active {
 }
 
 .cancer_nav_item {
-  padding: 0.4em 1em;
+  padding: 0.6em 0.5em;
   border: solid 1px #aaa;
   background: #ffffff;
   margin: 0 0.5em;
@@ -1946,6 +1941,7 @@ fade-enter-active, .fade-leave-active {
   text-decoration: none;
   color: #333333;
   width: 100%;
+  display: block;
 }
 
 .cancer_nav_item:hover a, .cancer_nav_item.active a {
@@ -1996,12 +1992,13 @@ fade-enter-active, .fade-leave-active {
 
 .cancer_submenu_item a {
   display: block;
-  padding: 0.5em;
-  text-align: center;
+  padding: 0.5em 1.5em 0.5em 1em;
+  text-align: left;
   background: #ffffff;
   position: relative;
   text-decoration: none;
   border: solid 2px #aaa;
+  line-height: 1.2;
 }
 
 .cancer_submenu_item a::before {
@@ -2724,6 +2721,9 @@ fade-enter-active, .fade-leave-active {
   .content_eyecach {
     width: 90%;
   }
+  .entry-content {
+    padding: 0 5%;
+  }
   .entry-content h2 {
     font-size: 1.3rem;
   }
@@ -2769,6 +2769,12 @@ fade-enter-active, .fade-leave-active {
   }
   .postlist_type3 a .txt {
     display: none;
+  }
+  .cancer_nav {
+    font-size: 0.9em;
+  }
+  .cancer_nav_item {
+    padding: 0.3em 0.2em;
   }
   .cancer_list {
     overflow-x: scroll;

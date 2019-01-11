@@ -1,6 +1,6 @@
 //entry
 .entry-content{
-  padding:0 5%;
+  padding:0 60px;
   img{
     padding-bottom:0.5em;
   }
@@ -16,9 +16,6 @@
     &.top-sub-title{
       color:#666;
       text-align: center;
-    }
-    &+h3{
-      margin:0.3em 0 0.6em;
     }
   }
   h3{
@@ -41,6 +38,7 @@
   }
   p{
     margin:0 0 1.3em 0;
+    font-size:1.15rem;
   }
   ol,
   ul{

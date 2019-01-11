@@ -7,21 +7,24 @@ $ancestors_ids = get_ancestors( $post->ID, 'page' );
 $ancestors_ids = array_reverse($ancestors_ids);
 $this_pages = get_post($ancestors_ids[1]);
 $cancer_color = get_post_meta($this_pages -> ID, 'cancer_color', true);
+if(empty($cancer_color)){$cancer_color = "#d8e8f7";}
 $cancer_color2 = get_post_meta($this_pages -> ID, 'cancer_color2', true);
+if(empty($cancer_color2)){$cancer_color2 = "#333";}
 ?>
 <style>
 .cancer_subpage .postlist_type1,
 .cancer_subpage .cancer_head,
-.cancer_subpage .cancer_nav_item
+.cancer_subpage .cancer_nav_item.active
 {
   background:<?php echo $cancer_color; ?>;
 }
-.cancer_subpage .cancer_ttl{
+.cancer_subpage .cancer_ttl,
+.cancer_subpage .cancer_nav_item.active a{
   color:<?php echo $cancer_color2; ?>;
 }
 .cancer_subpage .cancer_more,
-.cancer_subpage .cancer_nav_item:hover,
-.cancer_subpage .cancer_nav_item.active {
+.cancer_subpage .cancer_nav_item:hover
+{
   background:<?php echo $cancer_color2; ?>;
 }
 .cancer_subpage .ttl_blblue{
@@ -82,19 +85,56 @@ if (have_posts()) :
   ?>
   </p>
   </div>
-  <?php if($this_page_type == 'ct'|| $this_page_type == 'ad') : ?>
+  <?php
+  //関数関連ページ取得
+  function get_child_page($slug_name){
+    $args=array(
+      'pagename' => $slug_name,
+      'posts_per_page'=> 1,
+      'no_found_rows' => true,
+      'post_type' => 'page',
+    );
+  $child_page = get_posts($args);
+  return $child_page;
+  }
+  if($this_page_type == 'ct'|| $this_page_type == 'ad') :
+  $ct_page_name = '/cancer/'.$this_pages -> post_name.'/ct';
+  $ct_page = get_child_page($ct_page_name);
+  $ad_page_name = '/cancer/'.$this_pages -> post_name.'/ct/ad';
+  $ad_page = get_child_page($ad_page_name);
+  ?>
   <nav class="cancer_nav">
     <ul class="cancer_nav_list">
-      <li class="cancer_nav_item <?php if($this_page_type == 'ct'){echo 'active';} ?>"><a href="/cancer/<?php echo $this_pages -> post_name; ?>/ct">ALL</a></li>
-      <li class="cancer_nav_item <?php if($this_page_type == 'ad'){echo 'active';} ?>"><a href="/cancer/<?php echo $this_pages -> post_name; ?>/ct/ad">広告</a></li>
+    <?php if(!empty($ct_page)) :?>
+      <li class="cancer_nav_item <?php if($this_page_type == 'ct'){echo 'active';} ?>"><a href="<?php echo $ct_page_name; ?>">ALL</a></li>
+    <?php endif;
+        if(!empty($ad_page)) :
+    ?>
+      <li class="cancer_nav_item <?php if($this_page_type == 'ad'){echo 'active';} ?>"><a href="<?php echo $ad_page_name; ?>">広告</a></li>
+    <?php endif; ?>
     </ul>
   </nav>
-<?php elseif($this_page_type == 'news'|| $this_page_type == 'pick-up'||$this_page_type == 'feature') : ?>
+<?php elseif($this_page_type == 'news'|| $this_page_type == 'pick-up'||$this_page_type == 'feature') :
+  $news_page_name = '/cancer/'.$this_pages -> post_name.'/news';
+  $news_page = get_child_page($news_page_name);
+  $pick_page_name = '/cancer/'.$this_pages -> post_name.'/news/pick-up';
+  $pick_page = get_child_page($pick_page_name);
+  $feature_page_name = '/cancer/'.$this_pages -> post_name.'/news/feature';
+  $feature_page = get_child_page($feature_page_name);
+  ?>
   <nav class="cancer_nav">
     <ul class="cancer_nav_list">
-      <li class="cancer_nav_item <?php if($this_page_type == 'news'){echo 'active';} ?>"><a href="/cancer/<?php echo $this_pages -> post_name; ?>/news"><?php echo $this_pages -> post_title; ?>のニュース</a></li>
-      <li class="cancer_nav_item <?php if($this_page_type == 'pick-up'){echo 'active';} ?>"><a href="/cancer/<?php echo $this_pages -> post_name; ?>/news/pick-up">全般のニュース</a></li>
-      <li class="cancer_nav_item <?php if($this_page_type == 'feature'){echo 'active';} ?>"><a href="/cancer/<?php echo $this_pages -> post_name; ?>/news/feature">特集</a></li>
+    <?php if(!empty($news_page)) :?>
+      <li class="cancer_nav_item <?php if($this_page_type == 'news'){echo 'active';} ?>"><a href="<?php echo $news_page_name; ?>"><?php echo $this_pages -> post_title; ?>のニュース</a></li>
+    <?php endif;
+        if(!empty($pick_page)) :
+    ?>
+      <li class="cancer_nav_item <?php if($this_page_type == 'pick-up'){echo 'active';} ?>"><a href="<?php echo $pick_page_name; ?>">全般のニュース</a></li>
+    <?php endif;
+        if(!empty($feature_page)) :
+    ?>
+      <li class="cancer_nav_item <?php if($this_page_type == 'feature'){echo 'active';} ?>"><a href="<?php echo $feature_page_name; ?>">特集</a></li>
+    <?php endif; ?>
     </ul>
   </nav>
 <?php endif; ?>

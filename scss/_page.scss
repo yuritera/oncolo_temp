@@ -89,13 +89,14 @@
   &_nav{
     text-align: center;
     margin:0 0 1.5em 0;
+    line-height:1.2;
     &_list{
       @include flexbox;
       @include flexcen;
       list-style: none;
     }
     &_item{
-      padding:0.4em 1em;
+      padding:0.6em 0.5em;
       border:solid 1px #aaa;
       background: #ffffff;
       margin:0 0.5em;
@@ -107,6 +108,7 @@
         text-decoration: none;
         color:#333333;
         width: 100%;
+        display: block;
       }
       &:hover,
       &.active{
@@ -146,12 +148,13 @@
       margin-bottom:0.5em;
       a{
         display: block;
-        padding:0.5em;
-        text-align: center;
+        padding:0.5em 1.5em 0.5em 1em;
+        text-align: left;
         background: #ffffff;
         position: relative;
         text-decoration: none;
         border:solid 2px #aaa;
+        line-height:1.2;
         &::before{
           content: ' ';
           height: 0;

@@ -14,11 +14,11 @@ body {
 //ドラッグした時の色
 ::-moz-selection {
   background: $selection;
-  color: $selection;
+  color: #000000;
 }
 ::selection {
   background: $selection;
-  color: $selection;
+  color: #000000;
 }
 //リンクカラー
 a{
