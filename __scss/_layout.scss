@@ -2,6 +2,7 @@
   &_header{
     width: 100%;
     margin-bottom:0.5em;
+    background:red;
   }
   &_inner{
     @include pcsize;

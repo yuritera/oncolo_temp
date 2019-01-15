@@ -31,6 +31,9 @@ if(empty($cancer_color2)){$cancer_color2 = "#333";}
   color:<?php echo $cancer_color2; ?>;
   border-color:<?php echo $cancer_color; ?>;
 }
+.cancer_subpage .cancer_nav_item.active a:hover{
+  color:#fff;
+}
 </style>
 <div class="ly_wrap">
 <?php
