@@ -121,7 +121,7 @@ if (have_posts()) :
           get_template_part('temp/post_list');
         ?>
         </div>
-        <p class="cancer"><a href="/category/news">もっと見る &#8811; </a></p>
+        <p class="cancer_more"><a href="/category/news">もっと見る &#8811; </a></p>
         </div>
 
       </transition>
