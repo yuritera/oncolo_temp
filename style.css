@@ -2735,6 +2735,18 @@ fade-enter-active, .fade-leave-active {
     font-size: 0.9em;
     margin: 0 5% 2em;
   }
+  .blogcard figure {
+    width: 30%;
+  }
+  .blogcard a .txt {
+    display: none;
+  }
+  .blogcard a .ttl {
+    font-size: 1.1rem;
+  }
+  .blogcard_box {
+    width: 68%;
+  }
   .postlist_type2 {
     width: 90%;
     margin: 0 5% 1em;
@@ -2747,26 +2759,36 @@ fade-enter-active, .fade-leave-active {
   }
   .postlist_type3 a .textarea {
     width: 73%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .postlist_type3 a .ttl {
     font-size: 1rem;
-    margin-bottom: 0;
+    margin-bottom: 0.4em;
+    width: 100%;
   }
   .postlist_type3 a .update {
     display: inline;
     color: #000;
+    margin: 0 0.4em 0 0;
   }
   .postlist_type3 a .cat_list {
     list-style: none;
-    margin-bottom: 0.5em;
-    display: inline-block;
     font-weight: 400;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0;
   }
   .postlist_type3 a .cat_list li {
     background: none;
     color: #222222;
-    margin: 0;
+    margin: 0 0.4em 0.2em 0;
     padding: 0 0.4em 0 0;
+    border: solid 1px #ccc;
   }
   .postlist_type3 a .txt {
     display: none;

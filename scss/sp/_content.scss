@@ -136,3 +136,20 @@
   font-size:0.9em;
   margin:0 5% 2em;
 }
+//blogcard
+.blogcard{
+  figure{
+    width:30%;
+  }
+  a{
+    .txt{
+      display: none;
+    }
+    .ttl{
+      font-size: 1.1rem;
+    }
+  }
+  &_box{
+    width: 68%;
+  }
+}

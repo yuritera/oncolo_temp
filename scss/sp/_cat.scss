@@ -14,25 +14,29 @@
     }
     .textarea{
       width: 73%;
+      @include flexbox;
     }
     .ttl{
       font-size: 1rem;
-      margin-bottom:0;
+      margin-bottom:0.4em;
+      width: 100%;
     }
     .update{
       display: inline;
       color:#000;
+      margin:0 0.4em 0 0;
     }
     .cat_list{
       list-style: none;
-      margin-bottom:0.5em;
-      display: inline-block;
       font-weight: 400;
+      @include flexbox;
+      margin:0;
       li{
         background:none;
         color:#222222;
-        margin:0;
+        margin:0 0.4em 0.2em 0;
         padding:0 0.4em 0 0;
+        border:solid 1px #ccc;
       }
     }
     .txt{
