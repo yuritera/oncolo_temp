@@ -36,7 +36,8 @@ function blogcardFunc($atts) {
     $blogcard_link =get_the_permalink( $blogcard_id);
     $blogcard_img = get_the_post_thumbnail($blogcard_id,'thumbnail');
     $blogcard_ttl = get_the_title($blogcard_id);
-    $blogcard_txt = strip_tags(mb_strimwidth(get_the_excerpt($blogcard_id), 0, 240, "…", "UTF-8"));
+    $blogcard_txt = mb_strimwidth(get_post_field('post_content', $blogcard_id), 0, 240, "…", "UTF-8");
+    $blogcard_txt = wp_strip_all_tags( $blogcard_txt );
     $blogcard = <<< CARD
     <aside class="blogcard">
       <a href="{$blogcard_link}">
