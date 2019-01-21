@@ -3,11 +3,8 @@
 Template Name: LinkIT
 */
 
-if($_GET['id']){
+if(isset($_GET['id'])){
 $my_postid = $_GET['id'];
-}else{
-$my_postid = 16;
-}
 $content_post = get_post($my_postid);
 
 
@@ -18,13 +15,18 @@ $contents = apply_filters('the_content', $content);
 $contents = str_replace(']]>', ']]&gt;', $contents);
 
 $contents = preg_replace('#<img.+?src="([^"]*)".*?/?>#i', '<img src="$1" class="img">', $contents);
+}else{
+$contents = "";
+$title = "";
+}
+
 
 
 ?>
 <html>
 <head>
 <title><?php echo $title; ?></title>
-
+<meta name=”robots” content=”noindex,follow” />
 <script type='text/javascript' src='https://oncolo.jp/wp/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -41,6 +43,8 @@ $contents = preg_replace('#<img.+?src="([^"]*)".*?/?>#i', '<img src="$1" class="
 }
 h1{
   padding-bottom:15px;
+  font-size:2rem;
+  font-weight:bold;
 }
 
 </style>
