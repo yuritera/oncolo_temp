@@ -11,3 +11,16 @@
 .pcbreak {
   display: inline;
 }
+/* iOSでのデフォルトスタイルをリセット */
+input[type="submit"],
+button{
+  -webkit-appearance: none;
+  border-radius: 0;
+  border:none;
+    &::-webkit-search-decoration {
+      display: none;
+    }
+    &::focus {
+      outline-offset: -2px;
+    }
+}

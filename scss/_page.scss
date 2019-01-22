@@ -212,6 +212,7 @@
     }
     a{
       text-align: right;
+      color:#1b7dcc;
     }
   }
 }
@@ -274,7 +275,7 @@
   //event year
   .event-year {
     list-style: none;
-    width:60%;
+    width:80%;
     max-width:240px;
     @include flexbox;
     @include flexcen;

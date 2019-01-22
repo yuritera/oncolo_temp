@@ -4,7 +4,7 @@
     <div class="ly_inner">
       <h2 class="ttl_bblue">オンコロ応援団</h2>
       <?php
-      $gallery_rand = get_post_meta( '50099', 'foogallery_attachments', true );
+      $gallery_rand = get_post_meta( '53032', 'foogallery_attachments', true );
       $gallery_keys  = array_rand($gallery_rand , 6);
       if($gallery_keys ){
         echo '<ul class="photo_list">';

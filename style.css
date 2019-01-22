@@ -880,6 +880,7 @@ img[class*="attachment-"] {
   display: block;
   text-align: right;
   margin: 2em 0 1em 0;
+  color: #1b7dcc;
 }
 
 .entry-content p {
@@ -2069,6 +2070,7 @@ fade-enter-active, .fade-leave-active {
 
 .cancer_topcontent a {
   text-align: right;
+  color: #1b7dcc;
 }
 
 .single-tab-menu {
@@ -2142,7 +2144,7 @@ fade-enter-active, .fade-leave-active {
 
 .entry-content .event-year {
   list-style: none;
-  width: 60%;
+  width: 80%;
   max-width: 240px;
   display: -webkit-flex;
   display: flex;
@@ -2343,6 +2345,12 @@ fade-enter-active, .fade-leave-active {
   text-decoration: none;
 }
 
+@media screen and (max-width: 960px) {
+  .header_search {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 850px) {
   .sp {
     display: block;
@@ -2355,6 +2363,21 @@ fade-enter-active, .fade-leave-active {
   }
   .pcbreak {
     display: inline;
+  }
+  /* iOSでのデフォルトスタイルをリセット */
+  input[type="submit"],
+  button {
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
+  }
+  input[type="submit"]::-webkit-search-decoration,
+  button::-webkit-search-decoration {
+    display: none;
+  }
+  input[type="submit"]::focus,
+  button::focus {
+    outline-offset: -2px;
   }
   .ly_header {
     margin: 0;
@@ -2388,6 +2411,9 @@ fade-enter-active, .fade-leave-active {
     max-width: 110px;
     padding: 0;
   }
+  .is_fixed .header_logo {
+    width: 35%;
+  }
   .header_btn {
     padding: 0.5em 0 0 0;
     margin-right: 0.5em;
@@ -2398,11 +2424,17 @@ fade-enter-active, .fade-leave-active {
     padding: 0;
     height: 30px;
   }
+  .is_fixed .header_btn_mail {
+    width: auto;
+  }
   .header_btn_tel {
     width: auto;
     padding: 0;
     height: 30px;
     margin: 0;
+  }
+  .is_fixed .header_btn_tel {
+    width: auto;
   }
   .header_btn img {
     height: 100%;
@@ -2747,6 +2779,10 @@ fade-enter-active, .fade-leave-active {
   .blogcard_box {
     width: 68%;
   }
+  .ly_flex .ranking_wrap {
+    width: 90%;
+    margin: 0 5% 2em;
+  }
   .postlist_type2 {
     width: 90%;
     margin: 0 5% 1em;
@@ -2839,6 +2875,19 @@ fade-enter-active, .fade-leave-active {
   .dic_box {
     width: 90%;
     margin: 0 auto 1em;
+  }
+  .entry-content .single-tab-menu {
+    margin: 0 0 2em 0;
+  }
+  .single-tab-menu li {
+    margin: 0 0.2em;
+  }
+  .single-tab-menu li a {
+    padding: 0.3em 0.4em;
+    font-size: 0.8rem;
+  }
+  .event-list th {
+    width: 7em;
   }
 }
 

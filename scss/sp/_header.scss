@@ -7,6 +7,9 @@
     width:35%;
     max-width: 110px;
     padding:0;
+    .is_fixed & {
+      width:35%;
+    }
   }
   &_btn{
     padding:0.5em 0 0 0;
@@ -16,12 +19,18 @@
       margin-right:0.5em;
       padding:0;
       height:30px;
+      .is_fixed & {
+        width:auto;
+      }
     }
     &_tel{
       width:auto;
       padding:0;
       height:30px;
       margin:0;
+      .is_fixed & {
+        width:auto;
+      }
     }
     img{
       height:100%;

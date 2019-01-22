@@ -20,10 +20,13 @@ $cancer_color2 = get_post_meta($post->ID, 'cancer_color2', true);
 .cancer_page .cat_list li {
   background:<?php echo $cancer_color2; ?>;
 }
-.cancer_page .cancer_submenu_item a,
+
 .cancer_page .cancer_nav_item.active
 {
   color:<?php echo $cancer_color2; ?>;
+  border-color:<?php echo $cancer_color2; ?>;
+}
+.cancer_page .cancer_submenu_item a{
   border-color:<?php echo $cancer_color2; ?>;
 }
 .cancer_page .cancer_nav_item{
@@ -173,10 +176,7 @@ if (have_posts()) :
           'no_found_rows' => true
         );
         $cancer_items = get_posts($args);
-        if(!empty($cancer_items)){
-          echo '<section class="cancer_wrap">';
-          echo '<h2 class="cancer_ttl">募集中の臨床試験・治験広告</h2>';
-          foreach ($cancer_items as $cancer_item) {
+        foreach ($cancer_items as $cancer_item) {
           $post_datas[] = [
           'post_num'=>$cancer_item -> ID,
           'post_title'=>'',
@@ -184,8 +184,11 @@ if (have_posts()) :
           'post_link'=>''
           ];
         }
-        get_template_part('temp/post_list2_c');
-        echo '</section>';
+        if(!empty($post_datas)){
+          echo '<section class="cancer_wrap">';
+          echo '<h2 class="cancer_ttl">募集中の臨床試験・治験広告</h2>';
+          get_template_part('temp/post_list2_c');
+          echo '</section>';
         }
       ?>
       <?php //セミナー動画があれば表示

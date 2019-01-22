@@ -54,3 +54,21 @@
     margin:0 auto 1em;
   }
 }
+//single-tab-menu
+.single-tab-menu{
+  .entry-content &{
+    margin:0 0 2em 0;
+  }
+  li{
+    margin:0 0.2em;
+    a{
+      padding:0.3em 0.4em;
+      font-size:0.8rem;
+    }
+  }
+}
+.event-list{
+  th{
+    width: 7em;
+  }
+}

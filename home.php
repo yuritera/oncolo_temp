@@ -65,7 +65,7 @@ SLIDER;
           if(has_post_thumbnail($hot_topic -> ID)) {
             $slider_img = get_the_post_thumbnail($hot_topic -> ID,'full', array('alt'=> $hot_topic -> post_title) );
           }
-          $slider_txt = strip_tags(mb_strimwidth($hot_topic -> post_content , 0, 100, "…", "UTF-8"));
+          $slider_txt = mb_strimwidth(strip_tags($hot_topic -> post_content) , 0, 100, "…", "UTF-8");
           if(is_mobile()){
             $slider_ttl = mb_strimwidth($hot_topic -> post_title , 0, 64, "…", "UTF-8");
           }else{

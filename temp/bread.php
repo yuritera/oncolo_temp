@@ -1,6 +1,6 @@
 <nav class="ly_bread">
   <div class="bread" vocab="http://schema.org/" typeof="BreadcrumbList">
-    <span property="itemListElement" typeof="ListItem" class="bread_item"><a property="item" typeof="WebPage" href="/internal-seo/" class="home"><span property="name">HOME</span></a><meta property="position" content="1"></span>
+    <span property="itemListElement" typeof="ListItem" class="bread_item"><a property="item" typeof="WebPage" href="/" class="home"><span property="name">HOME</span></a><meta property="position" content="1"></span>
     >
     <?php
     //親部分
@@ -20,6 +20,7 @@ echo <<< EMO
       >
 EMO;
     }
+    $bread_title = get_the_title();
   }elseif(is_single()){
     $linked_page = get_post_meta($post->ID, 'linked-page', true);
     if(!empty($linked_page)){
@@ -58,11 +59,19 @@ EMO;
       >
 EMO;
       }
-
     }
-  }
-  if(is_404()){
+    $bread_title = get_the_title();
+  }elseif(is_404()){
     $bread_title = '404';
+  }elseif(is_category()||is_tag()){
+  if(is_category()){
+    $term_query = get_term(get_query_var('cat'),'category');
+  }elseif(is_tag()){
+    $term_query = get_term(get_query_var('tag_id'),'post_tag');
+  }
+  $bread_title = $term_query->name;
+  }elseif(is_search()){
+    $bread_title = the_search_query().'の検索結果';
   }else{
     $bread_title = get_the_title();
     $bread_title = strip_tags($bread_title);

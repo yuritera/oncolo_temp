@@ -127,7 +127,7 @@
     'orderby'          => 'modified',  //更新順
     'order'            => 'ASC', //昇順
     'meta_key' => 'headline_news_chk', //カスタムフィールドのキー
-    'meta_value' => '1', //カスタムフィールドの値
+    'meta_value' => 'headline', //カスタムフィールドの値
     'meta_compare' => 'LIKE' , //'meta_value'のテスト演算子
     'no_found_rows' => true,
       );
