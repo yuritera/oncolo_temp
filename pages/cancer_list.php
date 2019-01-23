@@ -151,6 +151,9 @@ if($this_page_type == 'pick-up'){
 }elseif($this_page_type == 'story'){
   $this_page_type = 'mystory';
   $cat_slug = $this_pages -> post_name;
+}elseif($this_page_type == 'latest'){
+  $this_page_type = 'news,ct,mystory,feature,reserch,blog,ad,event';
+  $cat_slug = $this_pages -> post_name;
 }else{
   $cat_slug = $this_pages -> post_name;
 }
@@ -159,7 +162,7 @@ $args=array(
       array(
         'taxonomy' => 'post_tag',
         'field' => 'slug',
-        'terms' => $cat_slug
+        'terms' => array($cat_slug,'all-cancer')
       )
     ),
     'category_name' => $this_page_type,

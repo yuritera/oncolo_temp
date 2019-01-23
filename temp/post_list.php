@@ -14,14 +14,16 @@ $cat_ids = get_the_category();
       } echo $rand_img; ?></aside>
     <div class="textarea">
       <p class="update"><?php the_time('Y.m.d'); ?></p>
-      <ul class="cat_list"><?php foreach((get_the_category()) as $cat){ echo '<li>' . $cat->cat_name . '</li> '; } ?></ul>
-      <h3 class="ttl"><?php echo mb_strimwidth(get_the_title(), 0, 70, "…", "UTF-8"); ?></h3>
+      <?php if(!in_category('ad')) : ?>
+      <ul class="cat_list"><?php foreach($cat_ids as $cat){ echo '<li>' . $cat->cat_name . '</li> '; } ?></ul>
+      <?php endif; ?>
+      <h3 class="ttl"><?php echo mb_strimwidth(strip_tags(get_the_title()), 0, 70, "…", "UTF-8"); ?></h3>
     </div>
   </div>
   <div class="recent_popup">
     <a href="<?php echo get_the_permalink( $post ); ?>">
     <?php
-      echo '<p class="txt">'.mb_strimwidth(get_the_excerpt(), 0, 240, "…", "UTF-8").'</p>';
+      echo '<p class="txt">'.mb_strimwidth(strip_tags(get_the_excerpt()), 0, 240, "…", "UTF-8").'</p>';
     ?>
     <div class="more">記事を読む</div>
     </a>

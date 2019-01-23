@@ -37,6 +37,15 @@
     margin:2em 0 1em 0;
     color:#1b7dcc;
   }
+  .square_btn{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+  }
   p{
     margin:0 0 1.3em 0;
     font-size:1.15rem;
@@ -208,6 +217,10 @@ fade-enter-active, .fade-leave-active {
   &_wrap{
     margin-bottom: 2em;
   }
+  &_list{
+    max-height: 960px;
+    overflow-y: auto;
+  }
   &_nav{
     display: block;
     text-align: center;
@@ -330,6 +343,10 @@ fade-enter-active, .fade-leave-active {
     margin-bottom:1em;
     [class^="ttl_"]{
       width: 100%;
+    }
+    .ttl_blblue_sub{
+      display: block;
+      font-size:1.6rem;
     }
     .wp_social_bookmarking_light{
       width:40%;

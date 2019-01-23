@@ -2,13 +2,16 @@
 .postlist_type1{
   &_wrap{
     @include flexbox;
-    @include flexhashi;
   }
-  width: 31%;;
+  width: 32%;
   display: block;
   background: #d8e8f7;
   position: relative;
   margin-bottom:1em;
+  margin-right:2%;
+  &:nth-child(3n){
+    margin-right:0;
+  }
   &:hover{
     .recent_popup{
       opacity: 1;

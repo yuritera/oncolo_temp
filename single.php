@@ -11,7 +11,12 @@ if (have_posts()) :
 <div class="hajimete"><a href="/guide">はじめて治験のお問合せする方へのお願い</a></div>
 <?php endif; ?>
 <header id="contentHead" class="content_head">
-  <h1 class="ttl_blblue"><?php the_title(); ?></h1>
+  <h1 class="ttl_blblue"><?php the_title();
+  $subtitle = get_post_meta($post->ID,'sub-title',TRUE);
+  if(!empty($subtitle)){
+    echo '<span class="ttl_blblue_sub">'.$subtitle.'</span>';
+  }
+  ?></h1>
   <?php get_template_part('temp/post_meta'); ?>
 </header>
 <div class="content_aside">

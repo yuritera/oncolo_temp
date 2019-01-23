@@ -114,7 +114,7 @@ if (have_posts()) :
           get_template_part('temp/post_list');
         ?>
         </div>
-        <p class="cancer_more"><a href="/latest">もっと見る &#8811; </a></p>
+        <p class="cancer_more"><a href="/cancer/<?php echo $slug_name; ?>/news/latest">もっと見る &#8811; </a></p>
         </div>
 
         <div class="cancer" v-if="isCurrent('news')" key="news">
@@ -124,7 +124,7 @@ if (have_posts()) :
           get_template_part('temp/post_list');
         ?>
         </div>
-        <p class="cancer_more"><a href="/category/news">もっと見る &#8811; </a></p>
+        <p class="cancer_more"><a href="/cancer/<?php echo $slug_name; ?>/news">もっと見る &#8811; </a></p>
         </div>
 
       </transition>
@@ -159,7 +159,8 @@ if (have_posts()) :
           'post_num'=>'',
           'post_title'=>$cancer_item['cancer_ct_ttl'],
           'post_img'=>$canser_img,
-          'post_link'=>$cancer_item['cancer_ct_link']
+          'post_link'=>$cancer_item['cancer_ct_link'],
+          'post_date'=>$cancer_item['cancer_ct_date']
           ];
         }
         }

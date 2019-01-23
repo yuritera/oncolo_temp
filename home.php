@@ -67,7 +67,7 @@ SLIDER;
           }
           $slider_txt = mb_strimwidth(strip_tags($hot_topic -> post_content) , 0, 100, "…", "UTF-8");
           if(is_mobile()){
-            $slider_ttl = mb_strimwidth($hot_topic -> post_title , 0, 64, "…", "UTF-8");
+            $slider_ttl = mb_strimwidth(strip_tags($hot_topic -> post_content) , 0, 64, "…", "UTF-8");
           }else{
             $slider_ttl = $hot_topic -> post_title;
           }
@@ -102,7 +102,7 @@ SLIDER;
       <transition name="fade" mode="out-in">
         <div class="picup" v-if="isCurrent('new')" key="new">
         <div class="pickup_list">
-        <?php
+        <?php //新着記事
         $picup_cat = '12,22,174,10,50,57,173,15';
         $post_ids = homePicupList($picup_cat);
         get_template_part('temp/post_list');
@@ -113,7 +113,7 @@ SLIDER;
 
         <div class="picup" v-if="isCurrent('news')" key="news">
         <div class="pickup_list">
-        <?php
+        <?php //ニュース記事
         $picup_cat = '12';
         $post_ids = homePicupList($picup_cat);
         get_template_part('temp/post_list');
@@ -124,7 +124,7 @@ SLIDER;
 
         <div class="picup" v-if="isCurrent('feature')" key="feature">
         <div class="pickup_list">
-        <?php
+        <?php //特集記事
         $picup_cat = '174';
         $post_ids = homePicupList($picup_cat);
         get_template_part('temp/post_list');
@@ -135,7 +135,7 @@ SLIDER;
 
         <div class="picup" v-if="isCurrent('movie')" key="movie">
         <div class="pickup_list">
-        <?php
+        <?php //動画記事
         $picup_cat = '779';
         $post_ids = homePicupList($picup_cat);
         get_template_part('temp/post_list');
@@ -146,13 +146,56 @@ SLIDER;
 
         <div class="picup" v-if="isCurrent('ct')" key="ct">
         <div class="pickup_list">
-        <?php
-        $picup_cat = '12,22,174,10,50,57,173,15';
-        $post_ids = homePicupList($picup_cat);
-        get_template_part('temp/post_list');
+        <?php //治験広告記事
+        $post_datas  = array();
+        $picup_cat = '57';
+        $args = array(
+          'category' => $picup_cat,
+          'posts_per_page' => -1,
+          'no_found_rows' => true,
+        );
+        $post_ids = get_posts( $args );
+        foreach ($post_ids as $post_id) {
+          $post_datas[] = [
+            'post_num'=>$post_id -> ID
+          ];
+        }
+        get_template_part('temp/post_list_c');
+        $post_datas  = array();
+        $cancers = get_posts(array(
+        'post_type' => 'page',
+        'posts_per_page' => '-1',
+        'post_parent' => 16657,
+        ));
+        foreach ($cancers as $cancer) {
+          $cancer_group = SCF::get( 'cancer_grop' , $cancer->ID );
+          if(!empty($cancer_group[0]['cancer_ct_ttl'])){
+            foreach ($cancer_group as $cancer_item) {
+              $canser_img = wp_get_attachment_image_src($cancer_item['cancer_ct_img'],'large');
+              $canser_img = esc_url($canser_img[0]);
+              if(empty($cancer_item['cancer_ct_txt'])){
+                $post_txt = $cancer_item['cancer_ct_ttl'];
+              }else{
+                $post_txt =$cancer_item['cancer_ct_txt'];
+              }
+              $post_datas[] = [
+              'post_title'=>$cancer_item['cancer_ct_ttl'],
+              'post_img'=>$canser_img,
+              'post_link'=>$cancer_item['cancer_ct_link'],
+              'post_date'=>$cancer_item['cancer_ct_date'],
+              'post_txt'=>$post_txt,
+              ];
+            }
+          }
+        }
+        foreach($post_datas as $key => $value)
+        {
+          $sort_keys[$key] = $value['post_date'];
+        }
+        array_multisort($sort_keys, SORT_DESC, $post_datas);
+        get_template_part('temp/post_list_c');
         ?>
         </div>
-        <p class="pickup_more"><a href="/latest">もっと見る &#8811; </a></p>
         </div>
 
       </transition>
@@ -183,25 +226,26 @@ SLIDER;
         $date_view = false;
         $post_datas  = array();
         $post_datas[] = [
-          'post_num'=>21673,
-          'post_title'=>'全国のがんイベント情報一覧','post_img'=>'/wp-content/uploads/2017/11/ibent1.jpg',
-          'post_link'=>''
+          'post_num'=>52302,//該当する記事(外部に飛ばす場合は空白)
+          'post_title'=>'全国のがんイベント情報一覧',//表示したいタイトル（空白だと記事タイトル）
+          'post_img'=>'/wp-content/uploads/2017/11/ibent1.jpg',//表示したい画像（空白だと記事アイキャッチ）
+          'post_link'=>''//飛ばしたい飛び先（空白だと記事へリンク）
         ];
         $post_datas[] = [
-          'post_num'=>39879,
+          'post_num'=>47313,
           'post_title'=>'',
           'post_img'=>'',
           'post_link'=>''
         ];
         $post_datas[] = [
-          'post_num'=>'',
-          'post_title'=>'〜希少がんを知り・学び・集うセミナー！〜希少がん Meet the Expert2018 参加者募集！',
-          'post_img'=>'/wp-content/uploads/2017/11/02fd2a8b45935818c98874362f9b7d7d.jpg',
-          'post_link'=>'https://oncolo.jp/rarecancer_mte2018/',
+          'post_num'=>49635,
+          'post_title'=>'〜希少がんを知り・学び・集うセミナー！〜希少がん Meet the Expert2019 参加者募集！',
+          'post_img'=>'',
+          'post_link'=>'',
         ];
         $post_datas[] = [
-          'post_num'=>33312,
-          'post_title'=>'',
+          'post_num'=>48765,
+          'post_title'=>'ONCOLO Meets Cancer Experts（OMCE）2019 参加者募集！',
           'post_img'=>'',
           'post_link'=>''
         ];
@@ -219,10 +263,16 @@ SLIDER;
         $post_datas  = array();
         $info_posts = wp_get_nav_menu_items( 'top_info' );
         foreach ($info_posts as $info_post) {
+          if(!empty($info_post -> thumbnail_id)){
+            $image_url = wp_get_attachment_image_src ($info_post -> thumbnail_id, true);
+            $image_url = $image_url[0];
+          }else{
+            $image_url = "";
+          }
           $post_datas[] = [
           'post_num'=>$info_post -> object_id,
           'post_title'=>$info_post -> title,
-          'post_img'=>'',
+          'post_img'=>$image_url,
           'post_link'=>$info_post -> url
         ];
         }

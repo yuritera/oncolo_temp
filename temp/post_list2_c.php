@@ -8,6 +8,12 @@ if(!empty($post_data['post_link'])){
 }else{
   $post_link =get_the_permalink( $post_data['post_num']);
 }
+if(!empty($post_data['post_date'])){
+  $post_date = new DateTime($post_data['post_date']);
+  $post_date = $post_date->format('Y.m.d');
+}else{
+  $post_date =get_the_time('Y.m.d',$post_data['post_num']);
+}
 ?>
 <section class="postlist_type2">
   <a href="<?php echo $post_link; ?>">
@@ -21,7 +27,7 @@ if(!empty($post_data['post_link'])){
     } echo $rand_img; ?></aside>
     <div class="textarea">
       <?php if($date_view === true) : ?>
-      <p class="update"><?php echo get_the_time('Y.m.d',$post_data['post_num']); ?></p>
+      <p class="update"><?php echo $post_date; ?></p>
       <?php endif; ?>
       <?php if($cat_view === 'view') : ?>
         <ul class="cat_list"><?php foreach((get_the_category()) as $cat){ echo '<li>' . $cat->cat_name . '</li> '; } ?></ul>

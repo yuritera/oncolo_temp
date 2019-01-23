@@ -21,10 +21,10 @@ if(
 ?>
   <nav class="news_navi">
     <ul class="news_navi_list">
-      <li class="news_navi_item <?php if($cat_info -> slug == "news" ){echo 'active';} ?>"><a href="/category/news">オリジナル</a></li>
-      <li class="news_navi_item <?php if($cat_info -> slug == "pick-up" ){echo 'active';} ?>"><a href="/category/pick-up">ピックアップ</a></li>
-      <li class="news_navi_item <?php if($cat_info -> slug == "feature" ){echo 'active';} ?>"><a href="/category/feature">特集</a></li>
-      <li class="news_navi_item <?php if($cat_info -> slug == "reserch" ){echo 'active';} ?>"><a href="/category/reserch">リサーチ</a></li>
+      <li class="news_navi_item <?php if($term_query -> slug == "news" ){echo 'active';} ?>"><a href="/category/news">オリジナル</a></li>
+      <li class="news_navi_item <?php if($term_query -> slug == "pick-up" ){echo 'active';} ?>"><a href="/category/pick-up">ピックアップ</a></li>
+      <li class="news_navi_item <?php if($term_query -> slug == "feature" ){echo 'active';} ?>"><a href="/category/feature">特集</a></li>
+      <li class="news_navi_item <?php if($term_query -> slug == "reserch" ){echo 'active';} ?>"><a href="/category/reserch">リサーチ</a></li>
     </ul>
   </nav>
 <?php

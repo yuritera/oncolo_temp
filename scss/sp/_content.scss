@@ -48,6 +48,9 @@
       white-space: normal;
       vertical-align: top;
       height:270px;
+      &:nth-child(3n){
+        margin-right:2%;
+      }
       &_wrap{
         white-space: nowrap;
         text-overflow: ellipsis;

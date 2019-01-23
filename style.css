@@ -883,6 +883,16 @@ img[class*="attachment-"] {
   color: #1b7dcc;
 }
 
+.entry-content .square_btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
 .entry-content p {
   margin: 0 0 1.3em 0;
   font-size: 1.15rem;
@@ -1082,6 +1092,11 @@ fade-enter-active, .fade-leave-active {
   margin-bottom: 2em;
 }
 
+.pickup_list {
+  max-height: 960px;
+  overflow-y: auto;
+}
+
 .pickup_nav {
   display: block;
   text-align: center;
@@ -1229,6 +1244,11 @@ fade-enter-active, .fade-leave-active {
 
 .content_head [class^="ttl_"] {
   width: 100%;
+}
+
+.content_head .ttl_blblue_sub {
+  display: block;
+  font-size: 1.6rem;
 }
 
 .content_head .wp_social_bookmarking_light {
@@ -1522,11 +1542,12 @@ fade-enter-active, .fade-leave-active {
 }
 
 .postlist_type1 {
-  width: 31%;
+  width: 32%;
   display: block;
   background: #d8e8f7;
   position: relative;
   margin-bottom: 1em;
+  margin-right: 2%;
 }
 
 .postlist_type1_wrap {
@@ -1534,8 +1555,10 @@ fade-enter-active, .fade-leave-active {
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
+}
+
+.postlist_type1:nth-child(3n) {
+  margin-right: 0;
 }
 
 .postlist_type1:hover .recent_popup {
@@ -2483,6 +2506,7 @@ fade-enter-active, .fade-leave-active {
     width: 40px;
     height: 40px;
     position: relative;
+    background: none;
   }
   .spmenu_close_btn::before, .spmenu_close_btn::after {
     content: "";
@@ -2697,6 +2721,9 @@ fade-enter-active, .fade-leave-active {
     white-space: normal;
     vertical-align: top;
     height: 270px;
+  }
+  .pickup_list .postlist_type1:nth-child(3n) {
+    margin-right: 2%;
   }
   .pickup_list .postlist_type1_wrap {
     white-space: nowrap;
