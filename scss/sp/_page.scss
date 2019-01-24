@@ -72,3 +72,31 @@
     width: 7em;
   }
 }
+.related-menu{
+  padding:1em 0.4em;
+  ul{
+    margin:0;
+    li{
+    width: 100%;
+    margin: 0 0 0.4em;
+    a{
+      padding:0.5em 1em 0.5em 0;
+      &::after{
+      right:0;
+      }
+    }
+    }
+  }
+}
+//foo-box
+.fbx-modal.fbx-phone .fbx-close, .fbx-modal.fbx-phone .fbx-next, .fbx-modal.fbx-phone .fbx-prev {
+    position: absolute!important;
+    top:-40px!important;
+}
+.foogallery {
+  @include flexhashi;
+  .fg-item{
+    width:32%;
+    margin:0 0 1% 0;
+  }
+ }

@@ -441,3 +441,14 @@
     }
   }
 }
+.foogallery {
+  @include flexbox;
+  .fg-item{
+    width:calc(95%/6);
+    margin-bottom:1%;
+    margin-right:1%;
+    &:nth-child(6n){
+      margin-right:0;
+    }
+  }
+ }

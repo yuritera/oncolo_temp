@@ -47,14 +47,19 @@ window.onload = function () {
       || polyfill;
   }(window));
 
-  const target = document.getElementById('pc_fix'),
-    height = 159;
-  lastPosition = 0,
-    ticking = false;
+  const target = document.getElementById('pc_fix');
+  const target2 = document.getElementById('gotop_fix');
+  height = 159;
+  lastPosition = 0;
+  ticking = false;
 
   function onScroll(lastPosition, lastWidth) {
     if (lastWidth < 850) {
-      return;
+      if (lastPosition > 400) {
+        target2.classList.add('is_add');
+      } else {
+        target2.classList.remove('is_add');
+      }
     } else {
       if (lastPosition > height) {
         target.classList.add('is_fixed');

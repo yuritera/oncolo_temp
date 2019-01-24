@@ -107,7 +107,7 @@ body {
   -webkit-text-size-adjust: none;
   font-family: "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-weight: normal;
-  color: #000;
+  color: #333;
   line-height: 1.6;
   letter-spacing: 0.02em;
   text-align: justify;
@@ -125,7 +125,7 @@ body {
 }
 
 a {
-  color: #000;
+  color: #333;
 }
 
 .ly_header a:hover,
@@ -632,6 +632,7 @@ img[class*="attachment-"] {
   color: #ffffff;
   transform: scale(1, 0.7);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .footer {
@@ -2368,6 +2369,23 @@ fade-enter-active, .fade-leave-active {
   text-decoration: none;
 }
 
+.foogallery {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.foogallery .fg-item {
+  width: calc(95%/6);
+  margin-bottom: 1%;
+  margin-right: 1%;
+}
+
+.foogallery .fg-item:nth-child(6n) {
+  margin-right: 0;
+}
+
 @media screen and (max-width: 960px) {
   .header_search {
     display: none;
@@ -2386,6 +2404,9 @@ fade-enter-active, .fade-leave-active {
   }
   .pcbreak {
     display: inline;
+  }
+  body {
+    color: #626262;
   }
   /* iOSでのデフォルトスタイルをリセット */
   input[type="submit"],
@@ -2677,6 +2698,50 @@ fade-enter-active, .fade-leave-active {
   .link_list2 > li {
     width: 100%;
   }
+  .gotop_fix {
+    position: fixed;
+    bottom: 2em;
+    right: 0;
+    z-index: 10;
+  }
+  .gotop_fix a {
+    display: none;
+    color: #fff;
+    font-size: 20px;
+    background: #5882FA;
+    width: 46px;
+    text-decoration: none;
+    line-height: 40px;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    opacity: 0;
+  }
+  .gotop_fix a.is_add {
+    display: block;
+    opacity: 1;
+    animation-duration: 0.5s;
+    animation-name: fade-in;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-name: fade-in;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: fade-in;
+  }
+  @keyframes fade-in {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    1% {
+      display: block;
+      opacity: 0;
+    }
+    100% {
+      display: block;
+      opacity: 1;
+    }
+  }
   /*title*/
   .ttl_bblue {
     margin-bottom: 0.5em;
@@ -2685,7 +2750,7 @@ fade-enter-active, .fade-leave-active {
     margin-bottom: 0.5em;
   }
   .slider {
-    padding: 1em;
+    padding: 1em 0 0 0;
   }
   .slider_image {
     width: 100%;
@@ -2693,13 +2758,14 @@ fade-enter-active, .fade-leave-active {
   }
   .slider_content {
     width: 100%;
+    padding: 0 1em;
   }
   .slider_ttl {
     font-size: 1em;
   }
   .slider_txt {
     font-size: 0.75rem;
-    margin-bottom: 1em;
+    margin-bottom: 0;
   }
   .slider_more {
     display: none;
@@ -2789,6 +2855,9 @@ fade-enter-active, .fade-leave-active {
   }
   .entry-content h3 {
     font-size: 1.1rem;
+  }
+  .entry-content p {
+    font-size: 1rem;
   }
   .hajimete {
     font-size: 0.9em;
@@ -2915,6 +2984,34 @@ fade-enter-active, .fade-leave-active {
   }
   .event-list th {
     width: 7em;
+  }
+  .related-menu {
+    padding: 1em 0.4em;
+  }
+  .related-menu ul {
+    margin: 0;
+  }
+  .related-menu ul li {
+    width: 100%;
+    margin: 0 0 0.4em;
+  }
+  .related-menu ul li a {
+    padding: 0.5em 1em 0.5em 0;
+  }
+  .related-menu ul li a::after {
+    right: 0;
+  }
+  .fbx-modal.fbx-phone .fbx-close, .fbx-modal.fbx-phone .fbx-next, .fbx-modal.fbx-phone .fbx-prev {
+    position: absolute !important;
+    top: -40px !important;
+  }
+  .foogallery {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+  .foogallery .fg-item {
+    width: 32%;
+    margin: 0 0 1% 0;
   }
 }
 

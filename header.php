@@ -21,13 +21,24 @@
   <link rel="dns-prefetch" href="//urls.api.twitter.com">
   <link rel="dns-prefetch" href="//graph.facebook.com">
 
-  <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/picturefill.min.js"></script>
 
   <?php wp_head(); ?>
+
+  <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61005136-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-61005136-1');
+  </script>
 
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];

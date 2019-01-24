@@ -49,7 +49,7 @@
     </div>
   </aside>
 </div>
-<nav class="gotop"><span class="gotop_icon">▲</span></nav>
+<nav class="gotop"><a href="#" class="gotop_icon smooth">▲</a></nav>
 <footer class="ly_footer" id="footer">
   <div class="ly_inner footer">
     <div class="footer_left">
@@ -109,6 +109,7 @@
     </ul>
   </nav>
 </div>
+<nav class="sp gotop_fix"><a href="#" class="smooth" id="gotop_fix">↑</a></nav>
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/base.js"></script>
 <?php if(is_single()) : ?>

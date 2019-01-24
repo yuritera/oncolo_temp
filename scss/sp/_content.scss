@@ -9,20 +9,21 @@
 }
 //slider
 .slider{
-  padding:1em;
+  padding:1em 0 0 0;
   &_image{
     width: 100%;
     margin-bottom:1em;
   }
   &_content{
     width: 100%;
+    padding:0 1em;
   }
   &_ttl{
     font-size:1em;
   }
   &_txt{
     font-size:0.75rem;
-    margin-bottom:1em;
+    margin-bottom:0;
   }
   &_more{
     display: none;
@@ -132,6 +133,9 @@
   }
   h3{
     font-size:1.1rem;
+  }
+  p{
+    font-size:1rem;
   }
 }
 //はじめて治験を

@@ -17,11 +17,11 @@ Version: 1.0
 //デフォルトフォント
 $base_font:"ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo,  Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 //ベースカラー
-$base_color:#000000;
+$base_color:#333333;
 //ドラッグした際の背景
 $selection:#d8e8f7;
 //リンクの色
-$link_color:#000000;
+$link_color:#333333;
 
 @import "base";//共通パーツ
 @import "wp";//WP特有のもの
