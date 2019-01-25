@@ -397,7 +397,7 @@
     }
   }
 }
-
+.entry-content{
 .event-list{
 	width: 100%;
 	border-collapse: collapse;
@@ -406,15 +406,16 @@
     width: 12em;
     background-color: #fff;
     border-bottom: 1px solid #ccc;
-    font-size:1rem;
-    padding: 0.5em 0;
+    font-size:0.9rem;
+    padding: 0.7em 0;
+    font-weight: 400;
   }
   td{
     width: auto;
     background-color: #fff;
     border-bottom: 1px solid #ccc;
-    font-size: 1rem;
-    padding: 0.5em 0;
+    font-size: 0.9rem;
+    padding: 0.7em 0;
   }
   .tag-oncolo{
     padding: 2px 5px;
@@ -441,6 +442,8 @@
     }
   }
 }
+}
+
 .foogallery {
   @include flexbox;
   .fg-item{

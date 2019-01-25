@@ -842,6 +842,64 @@ img[class*="attachment-"] {
   padding: 0 60px;
 }
 
+.entry-content .related_tag {
+  float: right;
+  width: 48%;
+  vertical-align: top;
+  margin-bottom: 1.5em;
+}
+
+.entry-content .related_tag_ttl {
+  width: 100%;
+  display: block;
+  padding: 0.5em 1em;
+  background-color: #0886af;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  margin: 0em 0 0.8em 0;
+}
+
+.entry-content .related_tag_list {
+  margin: 0 0 1em 0;
+}
+
+.entry-content .related_tag_item {
+  list-style: none;
+}
+
+.entry-content .related_tag_item a {
+  color: #0886af;
+  border-bottom: 1px dotted #ccc;
+  display: block;
+  font-size: 0.9rem;
+  padding: 0.5em 0;
+}
+
+.entry-content .related_tag_item a:hover {
+  color: #CC3434;
+}
+
+.entry-content .related_tag_item span {
+  display: block;
+  text-align: right;
+  font-size: 0.9em;
+}
+
+.entry-content .related_tag_more {
+  text-align: right;
+}
+
+.entry-content .related_tag_more a {
+  display: inline-block;
+  background-color: #d8e8f7;
+  color: #3285af;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.2em 2em;
+  text-decoration: none;
+}
+
 .entry-content img {
   padding-bottom: 0.5em;
 }
@@ -2319,50 +2377,51 @@ fade-enter-active, .fade-leave-active {
   margin-top: -6px;
 }
 
-.event-list {
+.entry-content .event-list {
   width: 100%;
   border-collapse: collapse;
   border-top: 1px solid #ccc;
 }
 
-.event-list th {
+.entry-content .event-list th {
   width: 12em;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
-  font-size: 1rem;
-  padding: 0.5em 0;
+  font-size: 0.9rem;
+  padding: 0.7em 0;
+  font-weight: 400;
 }
 
-.event-list td {
+.entry-content .event-list td {
   width: auto;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
-  font-size: 1rem;
-  padding: 0.5em 0;
+  font-size: 0.9rem;
+  padding: 0.7em 0;
 }
 
-.event-list .tag-oncolo {
+.entry-content .event-list .tag-oncolo {
   padding: 2px 5px;
   color: #fff;
   font-size: 0.9em;
   background-color: #e5007e;
 }
 
-.event-list .tag-oncolo a {
+.entry-content .event-list .tag-oncolo a {
   color: #fff;
   font-size: 0.9em;
   background-color: #e5007e;
   text-decoration: none;
 }
 
-.event-list .tag-report {
+.entry-content .event-list .tag-report {
   padding: 2px 5px;
   color: #fff;
   font-size: 12px;
   background-color: #abcf22;
 }
 
-.event-list .tag-report a {
+.entry-content .event-list .tag-report a {
   color: #fff;
   font-size: 12px;
   background-color: #abcf22;

@@ -19,7 +19,7 @@ $cat_ids = get_the_category();
     </div>
   </div>
   <div class="recent_popup">
-    <a href="<?php $post_link =get_the_permalink( $post ); ?>">
+    <a href="<?php echo get_the_permalink( $post ); ?>">
     <?php
       echo '<p class="txt">'.mb_strimwidth(get_the_excerpt(), 0, 240, "…", "UTF-8").'</p>';
     ?>

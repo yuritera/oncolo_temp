@@ -5,7 +5,7 @@ foreach( $post_ids as $post ) :setup_postdata($post);
 $cat_ids = get_the_category();
 ?>
 <section class="postlist_type3">
-  <a href="<?php $post_link =get_the_permalink( $post ); ?>">
+  <a href="<?php echo get_the_permalink( $post ); ?>">
     <aside class="eyecach"><?php if(has_post_thumbnail()) {
       $rand_img = get_the_post_thumbnail(get_the_ID(),'thumbnail', array('alt'=>get_the_title()) );
       } else {

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name:新着ニュース一覧
+Template Name:記事一覧（薬剤）
 */
 get_header();
 ?>
@@ -20,17 +20,25 @@ if (have_posts()) :
 <div class="ly_inner">
 <section class="cancer_sublist">
   <div class="entry-content">
-  <p>新着ニュースをご紹介しています。</p>
+  <p><?php echo get_the_title().'のニュースをご紹介しています。'; ?>
+
   </div>
 
 <?php
   endwhile;
 endif;
-    $args=array(
-      'cat' => '12,22,174,10,50,57,173,15',
-      'posts_per_page'=> 10,
-      'paged' => $paged
-    );
+$args=array(
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'post_tag',
+        'field' => 'slug',
+        'terms' => 'ペムブロリズマブ',//キイトルーダ暫定固定
+      )
+    ),
+    'cat' => 12,
+    'posts_per_page'=> 10,
+    'paged' => $paged
+  );
   $wp_query = new WP_Query( $args );
   get_template_part('temp/post_list3_b');
 ?>

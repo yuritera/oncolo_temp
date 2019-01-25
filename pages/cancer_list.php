@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name:ガン記事一覧（各種）
+Template Name:記事一覧（がん種）
 */
 get_header();
 $ancestors_ids = get_ancestors( $post->ID, 'page' );

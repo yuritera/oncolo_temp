@@ -55,6 +55,29 @@ EMO;
   echo '<main class="content_main">';
   echo '<div class="ly_inner">';
   echo '<div class="entry-content">';
+  if(get_post_meta($post->ID,'related-tag',TRUE) ){//タグ連携
+    echo '<section class="related_tag">';
+    echo '<h2 class="related_tag_ttl">'.get_the_title().'のニュース</h2>';
+    echo '<ul class="related_tag_list">';
+    $args=array(
+			'tax_query' => array(
+				array(
+				'taxonomy' => 'post_tag',
+				'field' => 'slug',
+				'terms' => get_post_meta($post->ID,'related-tag',TRUE)
+				)
+				),
+				'cat' => 12,
+				'posts_per_page'=> 5,
+				'no_found_rows' => true
+			);
+    $post_ids = get_posts($args);
+    foreach ($post_ids as $post_id) {
+      echo '<li class="related_tag_item"><a href="'.get_the_permalink( $post_id ->ID ).'">'.$post_id -> post_title.'<span>'.get_the_date( 'Y年m月d日', $post_id -> ID ).'</span></a></li>';
+    }
+    echo '</ul><p class="related_tag_more"><a href="/drugs/'.get_post_meta($post->ID,'related-tag',TRUE).'/news">もっと見る &raquo;</a></p>';
+    echo '</section>';
+  }
   the_content( __('...more &raquo;','mesocolumn') );
   if(in_category(array(50,174,12,14,10))):
   $the_author_id = get_the_author_meta('ID')
@@ -81,7 +104,7 @@ EMO;
 				),
 				'cat' => 15,
 				'posts_per_page'=> 5,
-				'paged' => $paged
+				'no_found_rows' => true
       );
     $post_ids = get_posts($args);
     get_template_part('temp/post_list4');
@@ -98,7 +121,7 @@ EMO;
 				),
 				'cat' => 57,
 				'posts_per_page'=> 5,
-				'paged' => $paged
+				'no_found_rows' => true
 			);
     $post_ids = get_posts($args);
     get_template_part('temp/post_list4');
